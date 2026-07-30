@@ -240,6 +240,70 @@ a { color: inherit; text-decoration: none; }
 
 .contact-sub, .section-head p { color: var(--text-dim); font-size: 15px; margin: 0; }
 
+.fake-calendar {
+  margin-top: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.fake-cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.fake-cal-badge {
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.fake-cal-days {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.fake-cal-day {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fake-cal-date {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.75;
+  margin-bottom: 2px;
+}
+
+.fake-cal-day button {
+  background: rgba(255, 255, 255, 0.12);
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-radius: 7px;
+  padding: 7px 6px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.fake-cal-note {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
 .features, .how {
   max-width: 1100px;
   margin: 0 auto;
