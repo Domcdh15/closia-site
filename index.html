@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clos'IA — L'assistant commercial qui organise votre journée</title>
+  <meta name="description" content="Clos'IA réunit pipeline, agenda, tâches et emails générés par IA dans un seul outil pensé pour les commerciaux terrain." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <svg width="34" height="34" viewBox="0 0 40 40">
+          <defs>
+            <linearGradient id="logo-g" x1="0" y1="0" x2="40" y2="40">
+              <stop offset="0" stop-color="#3b6cff" />
+              <stop offset="1" stop-color="#1d3fc4" />
+            </linearGradient>
+          </defs>
+          <rect width="40" height="40" rx="11" fill="url(#logo-g)" />
+          <path d="M11.5 21l5 5 12-14" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M29.5 7.5l1 2.8 2.8 1-2.8 1-1 2.8-1-2.8-2.8-1 2.8-1z" fill="#fff" opacity="0.9" />
+        </svg>
+        <span class="brand-text">Clos'IA</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#features">Fonctionnalités</a>
+        <a href="#how">Comment ça marche</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-primary btn-sm">Demander une démo</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="badge">✨ Assistant commercial propulsé par l'IA</div>
+        <h1>L'assistant commercial qui organise votre journée pour que vous puissiez vendre.</h1>
+        <p class="hero-sub">Pipeline, agenda, tâches et emails générés par IA — réunis dans un seul outil pensé pour les commerciaux terrain, pas pour les tâches administratives.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Demander une démo</a>
+          <a href="#features" class="btn btn-ghost">Voir les fonctionnalités</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mock-window">
+          <div class="mock-bar"><span></span><span></span><span></span></div>
+          <div class="mock-body">
+            <div class="mock-banner">
+              <div class="mock-greeting">Bonjour Camille 👋</div>
+              <div class="mock-tip">💡 Conseil du jour : commence par ta relance chez Girard Coiffure, le devis est prêt depuis 3 jours.</div>
+            </div>
+            <div class="mock-row">
+              <div class="mock-card"><span class="mock-dot blue"></span>RDV Aujourd'hui<b>3</b></div>
+              <div class="mock-card"><span class="mock-dot violet"></span>Appels à faire<b>5</b></div>
+              <div class="mock-card"><span class="mock-dot amber"></span>Emails en attente<b>2</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="logos-strip">
+      <p>Pensé pour les commerciaux terrain — indépendants, PME, artisans, agences.</p>
+    </section>
+
+    <section id="features" class="features">
+      <div class="section-head">
+        <span class="eyebrow">Fonctionnalités</span>
+        <h2>Tout ce dont un commercial a besoin, sans le superflu.</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#e8f0fe;color:#2563eb;">🎯</div>
+          <h3>Pipeline commercial</h3>
+          <p>Un tableau clair et une vue Kanban pour suivre chaque prospect, de la prise de contact à la signature.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#e0f2fe;color:#0ea5e9;">🗓️</div>
+          <h3>Agenda unifié</h3>
+          <p>Rendez-vous et tâches au même endroit, positionnés à l'heure — avec préparation de rendez-vous générée par IA.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;">☕</div>
+          <h3>Assistant IA</h3>
+          <p>Rédaction d'emails, scripts d'appel, analyse de notes d'échange et coaching commercial en un clic.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#dcfce7;color:#0ea968;">⚡</div>
+          <h3>Activités &amp; reporting</h3>
+          <p>Taux de conversion, CA généré, appels et rendez-vous suivis automatiquement, avec résumé IA à la demande.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#fdf0dc;color:#b45309;">✉️</div>
+          <h3>Signature &amp; relances</h3>
+          <p>Signature email personnalisée ajoutée automatiquement, et relances qui ne tombent jamais dans l'oubli.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#f1f5f9;color:#475569;">🔒</div>
+          <h3>Sécurité par conception</h3>
+          <p>Chaque compte ne voit que ses propres données (RLS), authentification sécurisée, hébergement européen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <div class="section-head">
+        <span class="eyebrow">Comment ça marche</span>
+        <h2>Trois étapes pour reprendre le contrôle de votre journée.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Connectez votre agenda</h3>
+          <p>Google ou Outlook, en un clic. Vos rendez-vous apparaissent directement dans Clos'IA.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Laissez l'IA organiser</h3>
+          <p>Priorités du jour, relances à faire, préparation de rendez-vous — générées automatiquement chaque matin.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Concentrez-vous sur la vente</h3>
+          <p>Clos'IA s'occupe du suivi et des tâches répétitives. Vous, vous vendez.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-inner">
+        <div class="section-head" style="text-align:left;">
+          <span class="eyebrow">Contact</span>
+          <h2>Demandez une démo</h2>
+          <p class="contact-sub">Présentez-nous votre activité, on vous montre comment Clos'IA s'intègre à votre quotidien commercial.</p>
+        </div>
+        <form id="lead-form" class="lead-form">
+          <label>Nom
+            <input type="text" name="name" required placeholder="Votre nom" />
+          </label>
+          <label>Email professionnel
+            <input type="email" name="email" required placeholder="vous@entreprise.com" />
+          </label>
+          <label>Entreprise
+            <input type="text" name="company" placeholder="Nom de votre entreprise" />
+          </label>
+          <label>Message
+            <textarea name="message" rows="4" placeholder="Parlez-nous de votre activité et de vos besoins..."></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary btn-block">Envoyer la demande</button>
+          <p id="lead-status" class="lead-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <svg width="24" height="24" viewBox="0 0 40 40">
+          <rect width="40" height="40" rx="11" fill="#1d3fc4" />
+          <path d="M11.5 21l5 5 12-14" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="brand-text">Clos'IA</span>
+      </div>
+      <p>© 2026 Clos'IA. Mon assistant commercial.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
