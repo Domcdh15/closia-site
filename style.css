@@ -209,13 +209,6 @@ a { color: inherit; text-decoration: none; }
 .mock-dot.violet { background: #7c3aed; }
 .mock-dot.amber { background: #b45309; }
 
-.logos-strip {
-  text-align: center;
-  padding: 10px 24px 60px;
-  color: var(--text-faint);
-  font-size: 13px;
-}
-
 .section-head {
   text-align: center;
   max-width: 640px;
