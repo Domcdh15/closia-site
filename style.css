@@ -384,16 +384,79 @@ a { color: inherit; text-decoration: none; }
   border-radius: 32px;
 }
 
-.price-card {
-  max-width: 420px;
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1080px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #fff, var(--panel));
-  border: 1.5px solid #c7d5fb;
-  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.12);
-  border-radius: 20px;
-  padding: 32px;
-  text-align: center;
+  align-items: stretch;
 }
+
+@media (max-width: 860px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+}
+
+.pricing-note-below {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 14px;
+  margin: 28px auto 0;
+  max-width: 640px;
+}
+
+.pricing-note-below a { color: var(--blue); font-weight: 600; }
+
+.price-card {
+  position: relative;
+  background: linear-gradient(180deg, #fff, var(--panel));
+  border: 1.5px solid var(--hairline);
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06);
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-card-featured {
+  border: 1.5px solid #c7d5fb;
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.16);
+  transform: scale(1.03);
+}
+
+@media (max-width: 860px) {
+  .price-card-featured { transform: none; }
+}
+
+.price-featured-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.price-plan {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.price-sub {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin: 4px 0 18px;
+}
+
+.price-card .price-includes { flex: 1; }
 
 .price-badge {
   display: inline-flex;
