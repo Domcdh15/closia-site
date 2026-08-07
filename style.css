@@ -6,9 +6,12 @@
   --text: #101828;
   --text-dim: #5b6b85;
   --text-faint: #94a3b8;
-  --blue: #2563eb;
-  --blue-dim: #e8f0fe;
-  --blue-deep: #1631a8;
+  --blue: #2a3ed6;
+  --blue-dim: #e7e9fb;
+  --blue-deep: #16209e;
+  --gold: #b8862e;
+  --gold-deep: #8a661f;
+  --gold-dim: #fbf1dd;
 }
 
 * { box-sizing: border-box; }
@@ -112,7 +115,7 @@ a { color: inherit; text-decoration: none; }
   gap: 48px;
   align-items: center;
   background:
-    radial-gradient(480px circle at 88% -10%, rgba(59, 130, 246, 0.16), transparent 65%),
+    radial-gradient(480px circle at 88% -10%, rgba(42, 62, 214, 0.16), transparent 65%),
     radial-gradient(380px circle at -5% 30%, rgba(124, 58, 237, 0.13), transparent 65%);
 }
 
@@ -150,7 +153,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 380px;
   border-radius: 16px;
   border: 0.5px solid var(--hairline);
-  box-shadow: 0 24px 60px rgba(29, 63, 168, 0.18);
+  box-shadow: 0 24px 60px rgba(22, 32, 158, 0.18);
   overflow: hidden;
   background: #fff;
 }
@@ -171,7 +174,7 @@ a { color: inherit; text-decoration: none; }
 .mock-body { padding: 0; }
 
 .mock-banner {
-  background: linear-gradient(135deg, #3b6cff, #1631a8);
+  background: linear-gradient(135deg, #4d5eea, #16209e);
   color: #fff;
   padding: 20px;
 }
@@ -420,8 +423,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .price-card-featured {
-  border: 1.5px solid #c7d5fb;
-  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.16);
+  border: 1.5px solid #c2c9f5;
+  box-shadow: 0 20px 50px rgba(42, 62, 214, 0.16);
   transform: scale(1.03);
 }
 
@@ -434,7 +437,7 @@ a { color: inherit; text-decoration: none; }
   top: -13px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--blue);
+  background: var(--gold);
   color: #fff;
   font-size: 11.5px;
   font-weight: 700;
@@ -589,7 +592,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .contact-inner {
-  background: linear-gradient(135deg, #3b6cff, #1631a8);
+  background: linear-gradient(135deg, #4d5eea, #16209e);
   border-radius: 24px;
   padding: 48px;
   display: grid;
