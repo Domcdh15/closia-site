@@ -44,30 +44,52 @@
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="hero-inner">
+    <section class="hero-v2">
+      <svg class="momentum-line" viewBox="0 0 1200 620" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M -60 560 C 220 560 300 400 480 380 C 660 360 700 200 900 160 C 1050 130 1120 60 1260 -40" stroke="url(#momentumGrad)" stroke-width="2" fill="none" stroke-dasharray="1 11" stroke-linecap="round" />
+        <circle cx="60" cy="558" r="4" fill="var(--hairline)" />
+        <circle cx="330" cy="452" r="5" fill="var(--text-faint)" />
+        <circle cx="620" cy="330" r="6" fill="var(--blue)" />
+        <circle cx="960" cy="115" r="9" fill="var(--gold)" />
+        <defs>
+          <linearGradient id="momentumGrad" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="var(--hairline)" />
+            <stop offset="0.6" stop-color="var(--blue)" stop-opacity="0.5" />
+            <stop offset="1" stop-color="var(--gold)" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div class="hero-v2-top">
         <div class="badge">✨ Assistant commercial propulsé par l'IA</div>
-        <h1>Le CRM qui empêche vos deals de tomber dans l'oubli.</h1>
-        <p class="hero-sub">Chaque matin, Closia vous dit qui relancer, qui appeler et quels prospects sont en train de refroidir — pour que plus aucune opportunité ne se perde dans un agenda ou un tableur.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Demander une démo</a>
-          <a href="#features" class="btn btn-ghost">Voir les fonctionnalités</a>
-        </div>
+        <h1 class="hero-v2-title">Le CRM qui empêche<br />vos deals de tomber <span class="fade-word">dans l'oubli.</span></h1>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="mock-window">
-          <div class="mock-bar"><span></span><span></span><span></span></div>
-          <div class="mock-body">
-            <div class="mock-banner">
-              <div class="mock-greeting">Bonjour Camille 👋</div>
-              <div class="mock-tip">Conseil du jour : commence par ta relance chez Girard Coiffure, le devis est prêt depuis 3 jours.</div>
-            </div>
-            <div class="mock-row">
-              <div class="mock-card"><span class="mock-dot blue"></span>Prospects chauds<b>5</b></div>
-              <div class="mock-card"><span class="mock-dot amber"></span>Relances en retard<b>3</b></div>
-              <div class="mock-card"><span class="mock-dot violet"></span>Actions prioritaires<b>8</b></div>
+
+      <div class="hero-v2-lower">
+        <div class="hero-v2-copy">
+          <p class="hero-sub">Chaque matin, Closia vous dit qui relancer, qui appeler et quels prospects sont en train de refroidir — pour que plus aucune opportunité ne se perde dans un agenda ou un tableur.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Demander une démo</a>
+            <a href="#features" class="btn btn-ghost">Voir les fonctionnalités</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="mock-window">
+            <div class="mock-bar"><span></span><span></span><span></span></div>
+            <div class="mock-body">
+              <div class="mock-banner">
+                <div class="mock-greeting">Bonjour Camille 👋</div>
+                <div class="mock-tip">Conseil du jour : commence par ta relance chez Girard Coiffure, le devis est prêt depuis 3 jours.</div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-card"><span class="mock-dot blue"></span>Prospects chauds<b>5</b></div>
+                <div class="mock-card"><span class="mock-dot amber"></span>Relances en retard<b>3</b></div>
+                <div class="mock-card"><span class="mock-dot violet"></span>Actions prioritaires<b>8</b></div>
+              </div>
             </div>
           </div>
+          <div class="hero-visual-tag">Généré chaque matin par l'IA →</div>
         </div>
       </div>
     </section>
@@ -103,12 +125,13 @@
       </div>
 
       <div class="feature-grid">
-        <div class="feature-card" style="border-top-color:#2a3ed6;">
+        <div class="feature-card feature-lead">
           <div class="feature-icon" style="background:#e7e9fb;color:#2a3ed6;">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none" /></svg>
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none" /></svg>
           </div>
           <h3>Priorités générées par IA</h3>
-          <p>Chaque matin, un point IA analyse rendez-vous, relances en attente et retards pour vous dire par quoi commencer votre journée.</p>
+          <p>Chaque matin, un point IA analyse rendez-vous, relances en attente et retards pour vous dire par quoi commencer votre journée — pas une liste de contacts à trier vous-même.</p>
+          <div class="feature-lead-tag">Le cœur du produit</div>
         </div>
         <div class="feature-card" style="border-top-color:#0ea5e9;">
           <div class="feature-icon" style="background:#e0f2fe;color:#0ea5e9;">
@@ -174,21 +197,32 @@
 
     <section id="deals-oublies" class="forgotten-deals">
       <div class="section-head">
-        <span class="eyebrow">Bientôt disponible</span>
-        <h2>Closia détectera les deals oubliés.</h2>
-        <p>Un prospect important sans activité depuis plusieurs jours ? Une proposition envoyée sans relance ? Closia vous alertera avant que l'opportunité ne refroidisse.</p>
+        <span class="eyebrow">Fonctionnalité phare</span>
+        <h2>Un deal ne devrait jamais s'éteindre en silence.</h2>
+        <p>Un prospect important sans activité depuis plusieurs jours ? Une proposition envoyée sans relance ? Closia vous alerte avant que l'opportunité ne refroidisse pour de bon.</p>
       </div>
-      <div class="forgotten-card">
-        <div class="forgotten-card-head">
-          <div>
-            <div class="forgotten-company">Société Martin</div>
-            <div class="forgotten-meta">Aucune activité depuis 9 jours · dernier email ouvert hier</div>
-          </div>
-          <span class="forgotten-value">4 800€</span>
+
+      <div class="fade-trail">
+        <div class="fade-trail-card" style="opacity:1;">
+          <div class="forgotten-company">Société Leroy</div>
+          <div class="forgotten-meta">Contact aujourd'hui</div>
+          <span class="forgotten-value">2 100€</span>
         </div>
-        <button type="button" class="btn btn-ghost btn-block" disabled>Relancer maintenant</button>
-        <div class="forgotten-soon-badge">Aperçu — fonctionnalité en cours de développement</div>
+        <div class="fade-trail-arrow">→</div>
+        <div class="fade-trail-card" style="opacity:0.68;">
+          <div class="forgotten-company">Société Dupont</div>
+          <div class="forgotten-meta">Silence depuis 5 jours</div>
+          <span class="forgotten-value">3 400€</span>
+        </div>
+        <div class="fade-trail-arrow">→</div>
+        <div class="fade-trail-card fade-trail-alert">
+          <div class="forgotten-company">Société Martin</div>
+          <div class="forgotten-meta">Aucune activité depuis 9 jours · dernier email ouvert hier</div>
+          <span class="forgotten-value">4 800€</span>
+          <button type="button" class="btn btn-primary btn-sm" style="margin-top:14px;">Relancer maintenant</button>
+        </div>
       </div>
+      <div class="forgotten-soon-badge">Détection automatique disponible dans l'application dès aujourd'hui</div>
     </section>
 
     <section id="pricing" class="pricing">
