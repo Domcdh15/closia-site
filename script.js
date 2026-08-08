@@ -4,6 +4,13 @@ const SUPABASE_ANON_KEY = "sb_publishable_IqBG4JndPA3wgsji3ovftg_5VQ2ULIa";
 const form = document.getElementById("lead-form");
 const status = document.getElementById("lead-status");
 
+document.querySelectorAll("[data-lead-intent]").forEach((el) => {
+  el.addEventListener("click", () => {
+    const messageField = form.querySelector('textarea[name="message"]');
+    if (messageField && !messageField.value) messageField.value = el.dataset.leadIntent;
+  });
+});
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(form).entries());
