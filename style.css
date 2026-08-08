@@ -198,17 +198,6 @@ a { color: inherit; text-decoration: none; }
   .momentum-line { height: 420px; }
 }
 
-.badge {
-  display: inline-flex;
-  background: var(--blue-dim);
-  color: var(--blue);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 999px;
-  margin-bottom: 22px;
-}
-
 .hero-sub {
   font-size: 17.5px;
   color: var(--text-dim);
