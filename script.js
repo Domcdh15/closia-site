@@ -39,7 +39,7 @@ form.addEventListener("submit", async (e) => {
       body: JSON.stringify({
         name: data.name,
         email: data.email,
-        company: data.company || null,
+        team_size: data.team_size || null,
         message: data.message || null,
       }),
     });

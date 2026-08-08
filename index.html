@@ -362,13 +362,20 @@
           <label>Email professionnel
             <input type="email" name="email" required placeholder="vous@entreprise.com" />
           </label>
-          <label>Entreprise
-            <input type="text" name="company" placeholder="Nom de votre entreprise" />
+          <label>Taille de l'équipe
+            <select name="team_size">
+              <option value="">Choisir...</option>
+              <option value="1">Seul(e)</option>
+              <option value="2-5">2 à 5</option>
+              <option value="6-10">6 à 10</option>
+              <option value="11-20">11 à 20</option>
+              <option value="20+">Plus de 20</option>
+            </select>
           </label>
           <label>Message
             <textarea name="message" rows="4" placeholder="Parlez-nous de votre activité et de vos besoins..."></textarea>
           </label>
-          <button type="submit" class="btn btn-primary btn-block">Envoyer la demande</button>
+          <button type="submit" class="btn btn-primary btn-block">Réserver une démo de 15 min</button>
           <p id="lead-status" class="lead-status" role="status"></p>
         </form>
       </div>
