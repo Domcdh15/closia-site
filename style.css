@@ -146,10 +146,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .fade-word {
-  background: linear-gradient(90deg, var(--text) 0%, var(--text-faint) 65%, transparent 105%);
+  background: linear-gradient(90deg, var(--text) 0%, var(--text) 45%, var(--text-dim) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
 }
 
 .hero-v2-lower {
