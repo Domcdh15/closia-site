@@ -45,20 +45,6 @@
 
   <main id="top">
     <section class="hero-v2">
-      <svg class="momentum-line" viewBox="0 0 1200 620" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M -60 560 C 220 560 300 400 480 380 C 660 360 700 200 900 160 C 1050 130 1120 60 1260 -40" stroke="url(#momentumGrad)" stroke-width="2" fill="none" stroke-dasharray="1 11" stroke-linecap="round" />
-        <circle cx="60" cy="558" r="4" fill="var(--hairline)" />
-        <circle cx="330" cy="452" r="5" fill="var(--text-faint)" />
-        <circle cx="620" cy="330" r="6" fill="var(--blue)" />
-        <circle cx="960" cy="115" r="9" fill="var(--gold)" />
-        <defs>
-          <linearGradient id="momentumGrad" x1="0" y1="1" x2="1" y2="0">
-            <stop offset="0" stop-color="var(--hairline)" />
-            <stop offset="0.6" stop-color="var(--blue)" stop-opacity="0.5" />
-            <stop offset="1" stop-color="var(--gold)" />
-          </linearGradient>
-        </defs>
-      </svg>
 
       <div class="hero-v2-top">
         <span class="eyebrow">✨ Assistant commercial propulsé par l'IA</span>
@@ -190,28 +176,37 @@
         <p>Un prospect important sans activité depuis plusieurs jours ? Une proposition envoyée sans relance ? Closia vous alerte avant que l'opportunité ne refroidisse pour de bon.</p>
       </div>
 
-      <p class="fade-trail-caption">Trois deals, trois niveaux d'urgence — Closia surveille ce glissement en continu.</p>
-      <div class="fade-trail">
-        <div class="fade-trail-card" style="opacity:1;">
-          <span class="fade-trail-status status-ok">Suivi à jour</span>
-          <div class="forgotten-company">Société Leroy</div>
-          <div class="forgotten-meta">Contact aujourd'hui</div>
-          <span class="forgotten-value">2 100€</span>
-        </div>
-        <div class="fade-trail-arrow">→</div>
-        <div class="fade-trail-card" style="opacity:0.68;">
-          <span class="fade-trail-status status-warn">Silence qui s'installe</span>
-          <div class="forgotten-company">Société Dupont</div>
-          <div class="forgotten-meta">Silence depuis 5 jours</div>
-          <span class="forgotten-value">3 400€</span>
-        </div>
-        <div class="fade-trail-arrow">→</div>
-        <div class="fade-trail-card fade-trail-alert">
-          <span class="fade-trail-status status-risk">Deal en danger</span>
-          <div class="forgotten-company">Société Martin</div>
-          <div class="forgotten-meta">Aucune activité depuis 9 jours · dernier email ouvert hier</div>
-          <span class="forgotten-value">4 800€</span>
-          <button type="button" class="btn btn-primary btn-sm" style="margin-top:14px;">Relancer maintenant</button>
+      <p class="fade-trail-caption">Directement dans l'application, colonne "À surveiller" — Closia surveille ce glissement en continu.</p>
+      <div class="watch-window">
+        <div class="mock-bar"><span></span><span></span><span></span></div>
+        <div class="watch-list">
+          <div class="watch-card hot">
+            <div class="watch-head">
+              <span class="watch-emoji">🔥</span>
+              <span class="watch-company">Société Leroy</span>
+              <span class="watch-value">2 100 €</span>
+            </div>
+            <div class="watch-reason">Contact récent, forte dynamique.</div>
+            <div class="watch-cta">→ Relancer aujourd'hui</div>
+          </div>
+          <div class="watch-card warn">
+            <div class="watch-head">
+              <span class="watch-emoji">⚠️</span>
+              <span class="watch-company">Société Dupont</span>
+              <span class="watch-value">3 400 €</span>
+            </div>
+            <div class="watch-reason">Aucune activité depuis 5 jours.</div>
+            <div class="watch-cta">→ Planifier un suivi</div>
+          </div>
+          <div class="watch-card danger">
+            <div class="watch-head">
+              <span class="watch-emoji">⚠️</span>
+              <span class="watch-company">Société Martin</span>
+              <span class="watch-value">4 800 €</span>
+            </div>
+            <div class="watch-reason">Aucune activité depuis 9 jours · dernier email ouvert hier.</div>
+            <div class="watch-cta">→ Relancer maintenant</div>
+          </div>
         </div>
       </div>
       <div class="forgotten-soon-badge">Détection automatique disponible dans l'application dès aujourd'hui</div>
