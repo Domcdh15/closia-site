@@ -469,6 +469,25 @@ a { color: inherit; text-decoration: none; }
 }
 .fade-trail-alert .forgotten-meta { color: var(--red); }
 
+.fade-trail-caption {
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 13px;
+  margin: -16px 0 28px;
+}
+
+.fade-trail-status {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.status-ok { background: var(--green-dim, #e2f7ec); color: #0ea968; }
+.status-warn { background: var(--gold-dim); color: var(--gold-deep); }
+.status-risk { background: var(--red-dim, #fbe7e7); color: var(--red); }
+
 .compare-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
