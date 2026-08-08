@@ -7,9 +7,9 @@
   --text: #0f172a;
   --text-dim: #475569;
   --text-faint: #94a3b8;
-  --blue: #2a3ed6;
+  --blue: #2563eb;
   --blue-dim: #e7e9fb;
-  --blue-deep: #16209e;
+  --blue-deep: #1d4ed8;
   --gold: #b8862e;
   --gold-deep: #8a661f;
   --gold-dim: #fbf1dd;
@@ -233,7 +233,7 @@ a { color: inherit; text-decoration: none; }
 .mock-body { padding: 0; }
 
 .mock-banner {
-  background: linear-gradient(135deg, #4d5eea, #16209e);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: #fff;
   padding: 20px;
 }
@@ -891,7 +891,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .contact-inner {
-  background: linear-gradient(135deg, #4d5eea, #16209e);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   border-radius: var(--radius-xl);
   padding: 48px;
   display: grid;
