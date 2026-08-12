@@ -386,29 +386,40 @@ a { color: inherit; text-decoration: none; }
 
 .contact-sub, .section-head p { color: var(--text-dim); font-size: 15px; margin: 0; }
 
-.fake-calendar {
-  margin-top: 28px;
+.booking-card {
+  margin-top: 32px;
   background: rgba(255, 255, 255, 0.1);
-  border: 0.5px solid rgba(255, 255, 255, 0.25);
-  border-radius: 14px;
-  padding: 18px;
+  border: 0.5px solid rgba(255, 255, 255, 0.28);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 380px;
 }
 
-.fake-cal-head {
+.booking-card-icon {
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 13px;
-  font-weight: 600;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
   margin-bottom: 14px;
 }
 
-.fake-cal-badge {
-  font-size: 11px;
+.booking-card-head {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.18);
-  padding: 3px 9px;
-  border-radius: 999px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.booking-card-note {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.55;
 }
 
 .hp-field {
@@ -417,45 +428,6 @@ a { color: inherit; text-decoration: none; }
   width: 1px;
   height: 1px;
   overflow: hidden;
-}
-
-.fake-cal-days {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.fake-cal-day {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.fake-cal-date {
-  font-size: 11px;
-  font-weight: 600;
-  opacity: 0.75;
-  margin-bottom: 2px;
-}
-
-.fake-cal-day button {
-  background: rgba(255, 255, 255, 0.12);
-  border: 0.5px solid rgba(255, 255, 255, 0.25);
-  color: #fff;
-  border-radius: 7px;
-  padding: 7px 6px;
-  font-size: 12px;
-  font-family: inherit;
-  cursor: not-allowed;
-  opacity: 0.75;
-}
-
-.fake-cal-note {
-  margin: 0;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.5;
 }
 
 .features, .how {
@@ -932,6 +904,10 @@ a { color: inherit; text-decoration: none; }
   border-radius: 16px;
   padding: 24px;
 }
+
+.lead-form-head { margin-bottom: 2px; }
+.lead-form-title { font-family: "Plus Jakarta Sans", sans-serif; font-size: 15px; font-weight: 700; color: #fff; }
+.lead-form-sub { margin: 4px 0 0; font-size: 12.5px; color: rgba(255,255,255,0.75); }
 
 .lead-form label {
   display: flex;

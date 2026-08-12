@@ -354,15 +354,20 @@
           <h2>Voyez vos prochaines relances en moins de 15 minutes</h2>
           <p class="contact-sub">On importe quelques prospects, on connecte votre agenda, et on vous montre exactement quelles actions Closia proposerait pour faire avancer vos deals.</p>
 
-          <div class="fake-calendar">
-            <div class="fake-cal-head">
-              <span>Choisir un créneau</span>
+          <div class="booking-card">
+            <div class="booking-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
             </div>
-            <p class="fake-cal-note" style="margin-bottom:14px;">Réservez directement un appel de 15 minutes dans mon agenda — vous recevez l'invitation par email dès que c'est confirmé.</p>
-            <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary btn-block">Voir mes disponibilités</a>
+            <div class="booking-card-head">Réservez votre créneau</div>
+            <p class="booking-card-note">Un appel de 15 minutes dans mon agenda, en direct — vous recevez l'invitation par email dès que c'est confirmé.</p>
+            <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary btn-block">Voir mes disponibilités →</a>
           </div>
         </div>
         <form id="lead-form" class="lead-form">
+          <div class="lead-form-head">
+            <div class="lead-form-title">Une question avant de réserver ?</div>
+            <p class="lead-form-sub">Laissez-nous vos coordonnées, on vous répond directement.</p>
+          </div>
           <label class="hp-field" aria-hidden="true">Site web (ne pas remplir)
             <input type="text" name="website" tabindex="-1" autocomplete="off" />
           </label>
@@ -385,7 +390,7 @@
           <label>Message
             <textarea name="message" rows="4" placeholder="Parlez-nous de votre activité et de vos besoins..."></textarea>
           </label>
-          <button type="submit" class="btn btn-primary btn-block">Réserver une démo de 15 min</button>
+          <button type="submit" class="btn btn-ghost btn-block">Envoyer le message</button>
           <p id="lead-status" class="lead-status" role="status"></p>
         </form>
       </div>
