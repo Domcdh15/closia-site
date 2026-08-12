@@ -372,6 +372,11 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 12px;
 }
 
+.hero-v2-top .eyebrow {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
 .section-head h2 {
   font-size: 32px;
   font-weight: 800;
