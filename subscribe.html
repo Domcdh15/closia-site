@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirmer mon abonnement — Closia</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .sub-main { max-width: 720px; margin: 0 auto; padding: 56px 24px 100px; }
+    .sub-head { margin-bottom: 36px; }
+    .sub-head h1 { font-size: 30px; margin: 0 0 8px; }
+    .sub-head p { color: var(--text-dim); font-size: 14.5px; margin: 0; }
+    a.back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--blue); margin-bottom: 20px; }
+
+    .sub-section { margin-bottom: 36px; }
+    .sub-label { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 14px; }
+
+    .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    @media (max-width: 640px) { .plan-grid { grid-template-columns: 1fr; } }
+
+    .plan-card {
+      text-align: left;
+      background: var(--surface);
+      border: 1.5px solid var(--hairline);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+    }
+    .plan-card:hover { transform: translateY(-1px); }
+    .plan-card.selected { border-color: var(--blue); background: var(--blue-dim); }
+    .plan-card .plan-name { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 15.5px; margin-bottom: 2px; }
+    .plan-card .plan-price { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 20px; margin: 6px 0 4px; }
+    .plan-card .plan-price span { font-size: 12px; font-weight: 500; color: var(--text-dim); }
+    .plan-card .plan-desc { font-size: 12.5px; color: var(--text-dim); line-height: 1.5; }
+
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .field label { font-size: 13px; font-weight: 500; color: var(--text); }
+    .field .hint { font-size: 12px; color: var(--text-faint); font-weight: 400; }
+    .field input, .field select {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 14px;
+      color: var(--text);
+      font-family: inherit;
+    }
+    .field input:focus, .field select:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .field-row { grid-template-columns: 1fr; } }
+
+    .seats-field { display: none; }
+    .seats-field.visible { display: flex; }
+
+    .summary {
+      background: var(--panel2);
+      border: 0.5px solid var(--hairline);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      margin-bottom: 24px;
+    }
+    .summary-row { display: flex; justify-content: space-between; font-size: 13.5px; color: var(--text-dim); margin-bottom: 6px; }
+    .summary-row:last-child { margin-bottom: 0; }
+    .summary-total { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; color: var(--text); font-size: 15px; }
+    .summary-note { font-size: 12px; color: var(--text-faint); margin-top: 10px; line-height: 1.5; }
+
+    #sub-status { font-size: 13px; min-height: 18px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo-icon.png" width="34" height="34" alt="Closia" style="object-fit:contain;" />
+        <span class="brand-text">Closia</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="sub-main">
+    <a href="index.html#pricing" class="back">← Retour aux tarifs</a>
+
+    <div class="sub-head">
+      <h1>Confirmer votre abonnement</h1>
+      <p>Choisissez votre formule et vos coordonnées de facturation — nous préparons votre espace et revenons vers vous sous 24h avec votre accès et votre facture.</p>
+    </div>
+
+    <form id="subscribe-form">
+      <div class="sub-section">
+        <div class="sub-label">Formule</div>
+        <div class="plan-grid" id="plan-grid">
+          <button type="button" class="plan-card" data-plan="solo" data-price="9" data-seats-included="1" data-overage="0">
+            <div class="plan-name">Solo</div>
+            <div class="plan-price">9€<span>/mois</span></div>
+            <div class="plan-desc">1 utilisateur · pipeline · agenda · IA</div>
+          </button>
+          <button type="button" class="plan-card" data-plan="equipe" data-price="19" data-seats-included="3" data-overage="12">
+            <div class="plan-name">Équipe</div>
+            <div class="plan-price">19€<span>/mois</span></div>
+            <div class="plan-desc">Jusqu'à 3 utilisateurs inclus · +12€/utilisateur</div>
+          </button>
+          <button type="button" class="plan-card" data-plan="business" data-price="79" data-seats-included="10" data-overage="10">
+            <div class="plan-name">Business</div>
+            <div class="plan-price">79€<span>/mois</span></div>
+            <div class="plan-desc">Jusqu'à 10 utilisateurs inclus · +10€/utilisateur</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="sub-section seats-field" id="seats-field">
+        <div class="field">
+          <label for="seats">Combien de personnes ont besoin de l'outil ?</label>
+          <input type="number" id="seats" name="seats" min="1" value="1" />
+          <span class="hint" id="seats-hint"></span>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <div class="sub-label">Entreprise</div>
+        <div class="field">
+          <label for="company_name">Nom de l'entreprise *</label>
+          <input type="text" id="company_name" name="company_name" required placeholder="ex : Girard Coiffure SAS" />
+        </div>
+        <div class="field">
+          <label for="billing_siret_or_vat">SIRET (France) ou n° de TVA intracommunautaire (UE)</label>
+          <input type="text" id="billing_siret_or_vat" name="billing_siret_or_vat" placeholder="ex : 123 456 789 00012" />
+        </div>
+        <div class="field">
+          <label for="billing_address">Adresse de facturation *</label>
+          <input type="text" id="billing_address" name="billing_address" required placeholder="Numéro et rue" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="billing_postal_code">Code postal *</label>
+            <input type="text" id="billing_postal_code" name="billing_postal_code" required />
+          </div>
+          <div class="field">
+            <label for="billing_city">Ville *</label>
+            <input type="text" id="billing_city" name="billing_city" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="billing_country">Pays *</label>
+          <input type="text" id="billing_country" name="billing_country" required value="France" />
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <div class="sub-label">Contact facturation</div>
+        <div class="field-row">
+          <div class="field">
+            <label for="contact_name">Nom du contact *</label>
+            <input type="text" id="contact_name" name="contact_name" required placeholder="Votre nom" />
+          </div>
+          <div class="field">
+            <label for="contact_email">Email de facturation *</label>
+            <input type="email" id="contact_email" name="contact_email" required placeholder="facturation@entreprise.com" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="contact_phone">Téléphone <span class="hint">(facultatif)</span></label>
+          <input type="tel" id="contact_phone" name="contact_phone" placeholder="06 12 34 56 78" />
+        </div>
+        <div class="field">
+          <label for="payment_method">Mode de paiement souhaité *</label>
+          <select id="payment_method" name="payment_method" required>
+            <option value="">Choisir...</option>
+            <option value="virement">Virement bancaire</option>
+            <option value="carte">Carte bancaire</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message <span class="hint">(facultatif)</span></label>
+          <input type="text" id="message" name="message" placeholder="Une précision à nous donner ?" />
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-row"><span>Formule</span><span id="summary-plan">Solo</span></div>
+        <div class="summary-row"><span>Utilisateurs</span><span id="summary-seats">1 (inclus)</span></div>
+        <div class="summary-row summary-total"><span>Total estimé</span><span id="summary-total">9€ / mois</span></div>
+        <div class="summary-note">Ce montant est une estimation. Aucun paiement n'est prélevé maintenant — nous vous envoyons une facture selon le mode de paiement choisi une fois votre espace créé.</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Confirmer mon abonnement</button>
+      <p id="sub-status" role="status"></p>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <img src="logo-icon.png" width="24" height="24" alt="Closia" style="object-fit:contain;" />
+        <span class="brand-text">Closia</span>
+      </div>
+      <p>© 2026 Closia. L'assistant du commercial.</p>
+      <div style="display:flex; gap:16px;">
+        <a href="mentions-legales.html" class="footer-legal">Mentions légales</a>
+        <a href="confidentialite.html" class="footer-legal">Confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="subscribe.js"></script>
+</body>
+</html>
