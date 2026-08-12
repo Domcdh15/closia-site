@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .sub-main { max-width: 720px; margin: 0 auto; padding: 56px 24px 100px; }
+    .sub-main { max-width: 820px; margin: 0 auto; padding: 56px 24px 100px; }
+    .sub-main form > .sub-section:not(:first-child),
+    .sub-main .summary { max-width: 620px; }
     .sub-head { margin-bottom: 36px; }
     .sub-head h1 { font-size: 30px; margin: 0 0 8px; }
     .sub-head p { color: var(--text-dim); font-size: 14.5px; margin: 0; }
@@ -19,24 +21,45 @@
     .sub-section { margin-bottom: 36px; }
     .sub-label { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 14px; }
 
-    .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    @media (max-width: 640px) { .plan-grid { grid-template-columns: 1fr; } }
+    .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+    @media (max-width: 860px) { .plan-grid { grid-template-columns: 1fr; } }
 
     .plan-card {
       text-align: left;
       background: var(--surface);
       border: 1.5px solid var(--hairline);
       border-radius: var(--radius-lg);
-      padding: 18px;
+      padding: 20px;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
       transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
     }
     .plan-card:hover { transform: translateY(-1px); }
     .plan-card.selected { border-color: var(--blue); background: var(--blue-dim); }
-    .plan-card .plan-name { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 15.5px; margin-bottom: 2px; }
-    .plan-card .plan-price { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 20px; margin: 6px 0 4px; }
+    .plan-card .plan-name { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 16px; }
+    .plan-card .plan-sub { font-size: 12px; color: var(--text-faint); margin-top: 1px; }
+    .plan-card .plan-price { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 22px; margin: 10px 0 14px; }
     .plan-card .plan-price span { font-size: 12px; font-weight: 500; color: var(--text-dim); }
     .plan-card .plan-desc { font-size: 12.5px; color: var(--text-dim); line-height: 1.5; }
+
+    .plan-features { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .plan-features li {
+      font-size: 12.5px;
+      color: var(--text-dim);
+      line-height: 1.4;
+      padding-left: 20px;
+      position: relative;
+    }
+    .plan-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .plan-ai-note { font-size: 12px; color: var(--text-faint); margin: 14px 2px 0; line-height: 1.5; }
 
     .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
     .field label { font-size: 13px; font-weight: 500; color: var(--text); }
@@ -98,20 +121,47 @@
         <div class="plan-grid" id="plan-grid">
           <button type="button" class="plan-card" data-plan="solo" data-price="9" data-seats-included="1" data-overage="0">
             <div class="plan-name">Solo</div>
+            <div class="plan-sub">Indépendants</div>
             <div class="plan-price">9€<span>/mois</span></div>
-            <div class="plan-desc">1 utilisateur · pipeline · agenda · IA</div>
+            <ul class="plan-features">
+              <li>1 utilisateur</li>
+              <li>Pipeline illimité</li>
+              <li>Agenda &amp; tâches synchronisés</li>
+              <li>Assistant IA (emails, scripts, analyses)</li>
+              <li>Relances &amp; détection des deals à risque</li>
+              <li>Signature email personnalisée</li>
+              <li>Connexion Google / Outlook Calendar</li>
+              <li>Export CSV</li>
+            </ul>
           </button>
           <button type="button" class="plan-card" data-plan="equipe" data-price="19" data-seats-included="3" data-overage="12">
             <div class="plan-name">Équipe</div>
+            <div class="plan-sub">Jusqu'à 3 utilisateurs inclus</div>
             <div class="plan-price">19€<span>/mois</span></div>
-            <div class="plan-desc">Jusqu'à 3 utilisateurs inclus · +12€/utilisateur</div>
+            <ul class="plan-features">
+              <li>Tout Solo, pour chaque utilisateur</li>
+              <li>Jusqu'à 3 utilisateurs inclus</li>
+              <li>Rôles (admin, commercial, customer success)</li>
+              <li>Attribution commercial &amp; CSM par prospect</li>
+              <li>Statistiques d'équipe</li>
+              <li>+12€/mois par utilisateur au-delà de 3</li>
+            </ul>
           </button>
           <button type="button" class="plan-card" data-plan="business" data-price="79" data-seats-included="10" data-overage="10">
             <div class="plan-name">Business</div>
+            <div class="plan-sub">PME commerciales</div>
             <div class="plan-price">79€<span>/mois</span></div>
-            <div class="plan-desc">Jusqu'à 10 utilisateurs inclus · +10€/utilisateur</div>
+            <ul class="plan-features">
+              <li>Tout Équipe, pour chaque utilisateur</li>
+              <li>Jusqu'à 10 utilisateurs inclus</li>
+              <li>Tableaux de performance personnalisés</li>
+              <li>Historique complet des activités</li>
+              <li>Support prioritaire</li>
+              <li>+10€/mois par utilisateur au-delà de 10</li>
+            </ul>
           </button>
         </div>
+        <p class="plan-ai-note">L'Assistant IA est inclus sans quota fixe sur toutes les formules à ce jour — un plafond d'usage équitable pourra être introduit plus tard si nécessaire.</p>
       </div>
 
       <div class="sub-section seats-field" id="seats-field">
@@ -189,8 +239,10 @@
         <div class="summary-note">Ce montant est une estimation. Aucun paiement n'est prélevé maintenant — nous vous envoyons une facture selon le mode de paiement choisi une fois votre espace créé.</div>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-block">Confirmer mon abonnement</button>
-      <p id="sub-status" role="status"></p>
+      <div style="max-width: 620px;">
+        <button type="submit" class="btn btn-primary btn-block">Confirmer mon abonnement</button>
+        <p id="sub-status" role="status"></p>
+      </div>
     </form>
   </main>
 
