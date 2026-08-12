@@ -19,6 +19,7 @@ function selectPlan(card) {
   selectedPlan = {
     key: card.dataset.plan,
     price: Number(card.dataset.price),
+    standardPrice: Number(card.dataset.standardPrice),
     seatsIncluded: Number(card.dataset.seatsIncluded),
     overage: Number(card.dataset.overage),
   };
@@ -40,13 +41,17 @@ function updateSummary() {
   if (!selectedPlan) return;
   const seats = Math.max(1, Number(seatsInput.value) || 1);
   const extra = Math.max(0, seats - selectedPlan.seatsIncluded);
-  const total = selectedPlan.price + extra * selectedPlan.overage;
+  const launchTotal = selectedPlan.price + extra * selectedPlan.overage;
+  const standardTotal = selectedPlan.standardPrice + extra * selectedPlan.overage;
+  const hasDiscount = selectedPlan.standardPrice > selectedPlan.price;
 
   summaryPlan.textContent = PLAN_LABELS[selectedPlan.key];
   summarySeats.textContent = selectedPlan.key === "solo"
     ? "1 (inclus)"
     : `${seats}${extra > 0 ? ` (${selectedPlan.seatsIncluded} inclus + ${extra} en plus)` : " (inclus)"}`;
-  summaryTotal.textContent = `${total}€ / mois`;
+  summaryTotal.textContent = hasDiscount
+    ? `${launchTotal}€ / mois pendant 3 mois, puis ${standardTotal}€ / mois`
+    : `${launchTotal}€ / mois`;
 }
 
 planCards.forEach((card) => card.addEventListener("click", () => selectPlan(card)));
@@ -101,7 +106,7 @@ form.addEventListener("submit", async (e) => {
     status.style.fontWeight = "600";
   } catch (err) {
     status.textContent = "Une erreur est survenue. Réessayez ou écrivez-nous directement.";
-    status.style.color = "var(--gold-deep)";
+    status.style.color = "var(--red)";
   } finally {
     submitBtn.disabled = false;
   }

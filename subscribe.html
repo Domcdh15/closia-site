@@ -39,8 +39,12 @@
     .plan-card.selected { border-color: var(--blue); background: var(--blue-dim); }
     .plan-card .plan-name { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 16px; }
     .plan-card .plan-sub { font-size: 12px; color: var(--text-faint); margin-top: 1px; }
+    .plan-card .plan-price-row { display: flex; align-items: baseline; gap: 10px; margin-top: 10px; }
+    .plan-card .plan-price-row .price-old { font-size: 16px; }
     .plan-card .plan-price { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 22px; margin: 10px 0 14px; }
+    .plan-price-row .plan-price { margin: 0; }
     .plan-card .plan-price span { font-size: 12px; font-weight: 500; color: var(--text-dim); }
+    .plan-card .plan-launch-note { font-size: 11.5px; color: var(--blue); font-weight: 600; margin: 4px 0 14px; }
     .plan-card .plan-desc { font-size: 12.5px; color: var(--text-dim); line-height: 1.5; }
 
     .plan-features { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
@@ -90,7 +94,8 @@
     }
     .summary-row { display: flex; justify-content: space-between; font-size: 13.5px; color: var(--text-dim); margin-bottom: 6px; }
     .summary-row:last-child { margin-bottom: 0; }
-    .summary-total { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; color: var(--text); font-size: 15px; }
+    .summary-total { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; color: var(--text); font-size: 15px; flex-direction: column; align-items: flex-start; gap: 3px; }
+    .summary-total span:first-child { font-family: "Inter", sans-serif; font-weight: 500; font-size: 13.5px; color: var(--text-dim); }
     .summary-note { font-size: 12px; color: var(--text-faint); margin-top: 10px; line-height: 1.5; }
 
     #sub-status { font-size: 13px; min-height: 18px; margin-top: 12px; }
@@ -119,10 +124,11 @@
       <div class="sub-section">
         <div class="sub-label">Formule</div>
         <div class="plan-grid" id="plan-grid">
-          <button type="button" class="plan-card" data-plan="solo" data-price="9" data-seats-included="1" data-overage="0">
+          <button type="button" class="plan-card" data-plan="solo" data-price="9" data-standard-price="19" data-seats-included="1" data-overage="0">
             <div class="plan-name">Solo</div>
             <div class="plan-sub">Indépendants</div>
-            <div class="plan-price">9€<span>/mois</span></div>
+            <div class="plan-price-row"><span class="price-old">19€</span><span class="plan-price">9€<span>/mois</span></span></div>
+            <div class="plan-launch-note">Pendant 3 mois, puis 19€/mois</div>
             <ul class="plan-features">
               <li>1 utilisateur</li>
               <li>Pipeline illimité</li>
@@ -134,10 +140,11 @@
               <li>Export CSV</li>
             </ul>
           </button>
-          <button type="button" class="plan-card" data-plan="equipe" data-price="19" data-seats-included="3" data-overage="12">
+          <button type="button" class="plan-card" data-plan="equipe" data-price="19" data-standard-price="39" data-seats-included="3" data-overage="12">
             <div class="plan-name">Équipe</div>
             <div class="plan-sub">Jusqu'à 3 utilisateurs inclus</div>
-            <div class="plan-price">19€<span>/mois</span></div>
+            <div class="plan-price-row"><span class="price-old">39€</span><span class="plan-price">19€<span>/mois</span></span></div>
+            <div class="plan-launch-note">Pendant 3 mois, puis 39€/mois</div>
             <ul class="plan-features">
               <li>Tout Solo, pour chaque utilisateur</li>
               <li>Jusqu'à 3 utilisateurs inclus</li>
@@ -147,7 +154,7 @@
               <li>+12€/mois par utilisateur au-delà de 3</li>
             </ul>
           </button>
-          <button type="button" class="plan-card" data-plan="business" data-price="79" data-seats-included="10" data-overage="10">
+          <button type="button" class="plan-card" data-plan="business" data-price="79" data-standard-price="79" data-seats-included="10" data-overage="10">
             <div class="plan-name">Business</div>
             <div class="plan-sub">PME commerciales</div>
             <div class="plan-price">79€<span>/mois</span></div>
