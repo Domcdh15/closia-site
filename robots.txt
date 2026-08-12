@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /subscribe.html
+
+Sitemap: https://clos-ia.fr/sitemap.xml
