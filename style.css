@@ -233,12 +233,13 @@ a { color: inherit; text-decoration: none; }
   background: var(--hairline);
 }
 
-.mock-window-body { display: flex; }
+.mock-window-body { display: flex; background: #f4f6fb; }
 
 .mock-sidebar {
   width: 40px;
   flex-shrink: 0;
-  background: var(--navy);
+  background: #fff;
+  border-right: 0.5px solid var(--hairline);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -250,7 +251,7 @@ a { color: inherit; text-decoration: none; }
   width: 16px;
   height: 16px;
   border-radius: 5px;
-  background: linear-gradient(135deg, var(--cyan), #fff);
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
   margin-bottom: 4px;
 }
 
@@ -258,27 +259,43 @@ a { color: inherit; text-decoration: none; }
   width: 20px;
   height: 5px;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--hairline);
 }
 
 .mock-sidebar-item.active {
-  background: var(--cyan);
-  box-shadow: 0 0 6px rgba(0, 194, 255, 0.5);
+  background: var(--blue);
 }
 
-.mock-body { flex: 1; min-width: 0; padding: 0; }
+.mock-body { flex: 1; min-width: 0; padding: 12px; background: #f4f6fb; }
 
 .mock-banner {
-  background: var(--cyan);
+  background: linear-gradient(135deg, #2e7cff 0%, #1746b8 100%);
   color: #fff;
-  padding: 20px;
+  padding: 18px;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(23, 70, 184, 0.26);
 }
 
-.mock-greeting { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+.mock-banner::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
 
-.mock-sub { font-size: 12px; opacity: 0.85; margin-bottom: 14px; }
+.mock-greeting { position: relative; font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+
+.mock-sub { position: relative; font-size: 12px; opacity: 0.85; margin-bottom: 14px; }
 
 .mock-stats {
+  position: relative;
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
@@ -301,17 +318,18 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 14px;
+  padding: 12px 0 2px;
 }
 
 .mock-task {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--panel2);
+  background: #fff;
   border: 0.5px solid var(--hairline);
   border-left: 2.5px solid var(--blue);
-  border-radius: var(--radius-sm);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
   padding: 9px 10px;
 }
 
