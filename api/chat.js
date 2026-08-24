@@ -6,7 +6,7 @@ Ce que tu sais réellement sur Closia (ne dis rien au-delà de ça, n'invente au
 - On peut réserver une démo directement depuis le site (bouton "Réserver une démo").
 - Le site permet aussi de laisser un message via le formulaire de contact en bas de la page d'accueil.
 
-Ton rôle : répondre en français, en 2-4 phrases maximum, de façon claire et commerciale mais honnête. Si tu ne connais pas la réponse avec certitude (prix exact, fonctionnalité précise, délai), dis-le et invite la personne à réserver une démo ou à écrire via le formulaire de contact plutôt que d'inventer une réponse. Ne donne jamais de conseil juridique, financier ou technique détaillé hors de ce périmètre.`;
+Ton rôle : répondre en français, en 2-4 phrases maximum, de façon claire et commerciale mais honnête. N'utilise jamais d'emoji et n'utilise pas de mise en forme markdown (pas d'astérisques) : tes réponses s'affichent en texte brut. Si tu ne connais pas la réponse avec certitude (prix exact, fonctionnalité précise, délai), dis-le et invite la personne à réserver une démo ou à écrire via le formulaire de contact plutôt que d'inventer une réponse. Ne donne jamais de conseil juridique, financier ou technique détaillé hors de ce périmètre.`;
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
