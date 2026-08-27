@@ -1264,6 +1264,10 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 560px) {
   .feature-grid { grid-template-columns: 1fr; }
+  /* Sans cette ligne, .feature-lead garde son span 2 hérité du palier
+     précédent : la grille crée une seconde colonne implicite et la page
+     déborde horizontalement de près de 100 px sur téléphone. */
+  .feature-lead { grid-column: auto; }
 }
 
 /* Assistant IA flottant */
