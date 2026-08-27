@@ -1394,3 +1394,603 @@ a { color: inherit; text-decoration: none; }
   .cw-panel { right: 16px; bottom: 84px; }
   .cw-toggle { right: 16px; bottom: 16px; }
 }
+
+/* ============================================================
+   REFONTE NARRATIVE — CRM vs Closia, 40→4, Pourquoi, Préparer, IA
+   Réutilise les tokens existants : aucune nouvelle couleur.
+   ============================================================ */
+
+.demo-note {
+  margin: 22px auto 0;
+  max-width: 640px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+/* --- 3. CRM classique vs Closia --- */
+.contrast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contrast-col {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 26px 26px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contrast-col-accent {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.contrast-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.contrast-col-accent .contrast-label { color: var(--blue); }
+
+.contrast-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contrast-list li {
+  font-size: 15px;
+  color: var(--text-dim);
+  padding-left: 20px;
+  position: relative;
+}
+
+.contrast-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hairline);
+}
+
+.contrast-col-accent .contrast-list li { color: var(--text); }
+.contrast-col-accent .contrast-list li::before { background: var(--blue); }
+
+.contrast-verdict {
+  margin: 4px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+.contrast-col-accent .contrast-verdict { color: var(--text); }
+
+.flowline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 34px;
+}
+
+.flowline-step {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--panel2);
+  border-radius: 999px;
+  padding: 7px 15px;
+  white-space: nowrap;
+}
+
+.flowline-step-accent {
+  background: var(--blue);
+  color: #fff;
+}
+
+.flowline-arrow {
+  width: 18px;
+  height: 1.5px;
+  background: var(--hairline);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.flowline-arrow::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -2.5px;
+  border-left: 5px solid var(--hairline);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+/* --- 4. 40 opportunités → 4 priorités --- */
+.funnel-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) auto minmax(0, 1.6fr);
+  gap: 26px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.funnel-side { display: flex; flex-direction: column; gap: 6px; }
+
+.funnel-count {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(44px, 7vw, 68px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.funnel-count-accent { color: var(--blue); }
+
+.funnel-caption {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.funnel-dots {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+  max-width: 200px;
+}
+
+.funnel-dots span {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--panel2);
+  border: 1px solid var(--hairline);
+}
+
+.funnel-dots span.is-prio {
+  background: var(--blue-dim);
+  border-color: var(--blue);
+}
+
+.funnel-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.funnel-chevron {
+  width: 26px;
+  height: 26px;
+  border-right: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  transform: rotate(-45deg);
+  opacity: 0.75;
+}
+
+.funnel-middle-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.prio-list {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prio-card {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: 13px 15px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.prio-card:hover { transform: translateX(2px); box-shadow: var(--shadow-sm); }
+
+.prio-hot { border-left-color: var(--red); }
+.prio-warm { border-left-color: var(--warning); }
+.prio-ok { border-left-color: var(--success); }
+
+.prio-rank {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-faint);
+}
+
+.prio-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+
+.prio-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.prio-why {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+.prio-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  text-align: right;
+}
+
+.prio-value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.prio-action {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+/* --- 5. Pourquoi cette action --- */
+.why-card {
+  max-width: 620px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.why-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--panel2);
+}
+
+.why-company {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.why-contact {
+  display: block;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.why-head-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.why-value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.why-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--red);
+  background: var(--red-dim);
+  border-radius: 999px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.why-card-body { padding: 22px 24px 24px; }
+
+.why-title {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+
+.why-reasons {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.why-reasons li {
+  font-size: 14.5px;
+  color: var(--text);
+  padding-left: 22px;
+  position: relative;
+}
+
+.why-reasons li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--blue);
+  opacity: 0.55;
+}
+
+.why-conclusion {
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  background: var(--panel2);
+  border-radius: var(--radius-sm);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+.why-reco {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  background: var(--blue-dim);
+  border-radius: var(--radius-sm);
+}
+
+.why-reco-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.why-reco-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--blue-deep);
+}
+
+/* --- 6. Préparer --- */
+.prepare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.prepare-card {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prepare-card-accent {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.prepare-kind {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.prepare-card h3 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.prepare-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.prepare-card li {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.45;
+  padding-left: 18px;
+  position: relative;
+}
+
+.prepare-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+  opacity: 0.5;
+}
+
+/* --- 10. IA contextuelle --- */
+.context-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.context-inputs,
+.context-outputs {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.context-outputs { align-items: flex-end; text-align: right; }
+
+.context-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 3px;
+}
+
+.context-chip {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 9px 17px;
+}
+
+.context-chip-accent {
+  color: var(--blue-deep);
+  background: var(--blue-dim);
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.context-core {
+  position: relative;
+  width: 116px;
+  height: 116px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.context-core-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--gradient-cta);
+  opacity: 0.14;
+}
+
+.context-core-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--blue-deep);
+}
+
+.context-note {
+  max-width: 640px;
+  margin: 30px auto 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* --- Adaptations mobile --- */
+@media (max-width: 880px) {
+  .funnel-flow,
+  .context-flow {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .funnel-middle { flex-direction: row; gap: 12px; }
+  .funnel-chevron { width: 18px; height: 18px; }
+
+  .context-outputs { align-items: stretch; text-align: left; }
+  .context-core { margin: 0 auto; width: 92px; height: 92px; }
+
+  .why-card-head { flex-direction: column; }
+  .why-head-meta { align-items: flex-start; flex-direction: row; gap: 12px; align-items: center; }
+}
+
+@media (max-width: 560px) {
+  .prio-card { grid-template-columns: 20px minmax(0, 1fr); }
+  .prio-meta {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .flowline-arrow { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prio-card { transition: none; }
+  .prio-card:hover { transform: none; }
+}

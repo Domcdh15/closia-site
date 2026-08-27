@@ -44,6 +44,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <noscript>
+    <style>
+      /* Les sections s'affichent au défilement via JavaScript. S'il ne
+         s'exécute pas — blocage, erreur réseau, robot d'indexation — la page
+         entière resterait invisible. */
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 </head>
 <body>
 
@@ -54,7 +62,7 @@
         <span class="brand-text">Closia</span>
       </a>
       <nav class="nav-links">
-        <a href="#features">Fonctionnalités</a>
+        <a href="#priorites">Le produit</a>
         <a href="#how">Comment ça marche</a>
         <a href="#pricing">Tarif</a>
         <a href="#faq">FAQ</a>
@@ -74,7 +82,7 @@
         <p class="hero-sub">Closia vous indique chaque jour qui relancer, qui appeler et quelles opportunités risquent de se refroidir.</p>
         <div class="hero-actions">
           <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary">Demander une démo</a>
-          <a href="#features" class="btn btn-ghost">Voir les fonctionnalités</a>
+          <a href="#priorites" class="btn btn-ghost">Voir comment ça marche</a>
         </div>
         <div class="hero-trust">
           <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sans engagement</span>
@@ -155,6 +163,217 @@
           </div>
         </div>
         <div class="hero-visual-tag">Capture de l'application — généré chaque matin par l'IA →</div>
+      </div>
+    </section>
+
+
+    <!-- 3. CRM classique vs Closia -->
+    <section id="difference" class="contrast reveal">
+      <div class="section-head">
+        <span class="eyebrow">La différence</span>
+        <h2>Votre CRM contient les données.<br />Closia vous dit quoi en faire.</h2>
+        <p>Remplir un CRM prend du temps. Le relire pour décider quoi faire en prend encore plus. Closia s'occupe de la seconde moitié.</p>
+      </div>
+
+      <div class="contrast-grid">
+        <div class="contrast-col">
+          <span class="contrast-label">Un CRM classique vous donne</span>
+          <ul class="contrast-list">
+            <li>Des contacts</li>
+            <li>Des emails</li>
+            <li>Des rendez-vous</li>
+            <li>Des opportunités</li>
+            <li>Des tâches</li>
+          </ul>
+          <p class="contrast-verdict">« Voici vos données. »</p>
+        </div>
+
+        <div class="contrast-col contrast-col-accent">
+          <span class="contrast-label">Closia y ajoute</span>
+          <ul class="contrast-list">
+            <li>Une analyse de votre pipeline</li>
+            <li>Un ordre de priorité</li>
+            <li>Le contexte de chaque dossier</li>
+            <li>Une recommandation d'action</li>
+            <li>De quoi la réaliser tout de suite</li>
+          </ul>
+          <p class="contrast-verdict">« Voici ce qui mérite votre attention. »</p>
+        </div>
+      </div>
+
+      <div class="flowline" aria-label="De vos données aux deals qui avancent">
+        <span class="flowline-step">Vos données</span>
+        <span class="flowline-arrow" aria-hidden="true"></span>
+        <span class="flowline-step flowline-step-accent">Closia</span>
+        <span class="flowline-arrow" aria-hidden="true"></span>
+        <span class="flowline-step">Priorités</span>
+        <span class="flowline-arrow" aria-hidden="true"></span>
+        <span class="flowline-step">Actions</span>
+        <span class="flowline-arrow" aria-hidden="true"></span>
+        <span class="flowline-step">Deals qui avancent</span>
+      </div>
+    </section>
+
+    <!-- 4. 40 opportunités, 4 priorités -->
+    <section id="priorites" class="funnel reveal">
+      <div class="section-head">
+        <span class="eyebrow">Le cœur du produit</span>
+        <h2>Vous avez 40 opportunités.<br />Vous ne pouvez pas vous occuper des 40 aujourd'hui.</h2>
+        <p>Closia identifie celles qui méritent réellement votre attention, et vous dit pourquoi.</p>
+      </div>
+
+      <div class="funnel-flow">
+        <div class="funnel-side">
+          <span class="funnel-count">40</span>
+          <span class="funnel-caption">opportunités ouvertes</span>
+          <div class="funnel-dots" aria-hidden="true"></div>
+        </div>
+
+        <div class="funnel-middle" aria-hidden="true">
+          <span class="funnel-chevron"></span>
+          <span class="funnel-middle-label">Closia analyse</span>
+        </div>
+
+        <div class="funnel-side">
+          <span class="funnel-count funnel-count-accent">4</span>
+          <span class="funnel-caption">à traiter aujourd'hui</span>
+
+          <ul class="prio-list">
+            <li class="prio-card prio-hot">
+              <span class="prio-rank">1</span>
+              <span class="prio-body">
+                <span class="prio-name">Martin Industrie</span>
+                <span class="prio-why">9 jours sans activité · proposition sans réponse</span>
+              </span>
+              <span class="prio-meta">
+                <span class="prio-value">4 800 €</span>
+                <span class="prio-action">Appeler</span>
+              </span>
+            </li>
+            <li class="prio-card prio-hot">
+              <span class="prio-rank">2</span>
+              <span class="prio-body">
+                <span class="prio-name">Horizon BTP</span>
+                <span class="prio-why">Activité en baisse sur un dossier à forte valeur</span>
+              </span>
+              <span class="prio-meta">
+                <span class="prio-value">9 400 €</span>
+                <span class="prio-action">Réactiver</span>
+              </span>
+            </li>
+            <li class="prio-card prio-warm">
+              <span class="prio-rank">3</span>
+              <span class="prio-body">
+                <span class="prio-name">Dupont Services</span>
+                <span class="prio-why">Proposition envoyée il y a 6 jours, aucune réponse</span>
+              </span>
+              <span class="prio-meta">
+                <span class="prio-value">3 400 €</span>
+                <span class="prio-action">Relancer</span>
+              </span>
+            </li>
+            <li class="prio-card prio-ok">
+              <span class="prio-rank">4</span>
+              <span class="prio-body">
+                <span class="prio-name">Leroy Conseil</span>
+                <span class="prio-why">Rendez-vous aujourd'hui à 16h</span>
+              </span>
+              <span class="prio-meta">
+                <span class="prio-value">6 200 €</span>
+                <span class="prio-action">Préparer</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="demo-note">Exemple de démonstration. Les entreprises et montants sont fictifs.</p>
+    </section>
+
+    <!-- 5. Pourquoi cette action ? -->
+    <section id="pourquoi" class="why reveal">
+      <div class="section-head">
+        <span class="eyebrow">Transparence</span>
+        <h2>Pas seulement quoi faire.<br />Pourquoi le faire.</h2>
+        <p>Une recommandation qu'on ne comprend pas, on ne la suit pas. Closia montre toujours le raisonnement derrière l'action qu'il propose.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-head">
+          <div>
+            <span class="why-company">Martin Industrie</span>
+            <span class="why-contact">Julien Martin · Directeur des achats</span>
+          </div>
+          <div class="why-head-meta">
+            <span class="why-value">4 800 €</span>
+            <span class="why-badge">Priorité élevée</span>
+          </div>
+        </div>
+
+        <div class="why-card-body">
+          <span class="why-title">Pourquoi agir maintenant&nbsp;?</span>
+          <ul class="why-reasons">
+            <li>9 jours sans aucune activité</li>
+            <li>Proposition envoyée il y a 12 jours</li>
+            <li>Dernier email ouvert récemment</li>
+            <li>Montant supérieur à votre moyenne</li>
+            <li>Aucune prochaine étape planifiée</li>
+          </ul>
+
+          <p class="why-conclusion">L'intérêt semble toujours présent, mais l'absence de suivi augmente le risque de décrochage.</p>
+
+          <div class="why-reco">
+            <span class="why-reco-label">Action recommandée</span>
+            <span class="why-reco-value">Appeler aujourd'hui</span>
+          </div>
+        </div>
+      </div>
+      <p class="demo-note">Exemple de démonstration. Les entreprises et montants sont fictifs.</p>
+    </section>
+
+    <!-- 6. Préparer -->
+    <section id="preparer" class="prepare reveal">
+      <div class="section-head">
+        <span class="eyebrow">Passage à l'acte</span>
+        <h2>Quand il faut agir, Closia vous prépare.</h2>
+        <p>L'IA ne part pas d'une page blanche : elle s'appuie sur vos échanges réels, votre historique et l'état du dossier.</p>
+      </div>
+
+      <div class="prepare-grid">
+        <article class="prepare-card">
+          <span class="prepare-kind">Appel</span>
+          <h3>Un script, pas un modèle</h3>
+          <ul>
+            <li>Le contexte du dossier</li>
+            <li>Ce qui s'est dit au dernier échange</li>
+            <li>L'objectif de l'appel</li>
+            <li>Les questions à poser</li>
+            <li>Les objections probables</li>
+          </ul>
+        </article>
+
+        <article class="prepare-card prepare-card-accent">
+          <span class="prepare-kind">Email</span>
+          <h3>Une relance qui tient compte du fil</h3>
+          <ul>
+            <li>Le contenu réel de vos échanges</li>
+            <li>Ce qui a déjà été proposé</li>
+            <li>Le bon moment pour relancer</li>
+            <li>Le ton adapté au dossier</li>
+            <li>Envoi depuis votre propre boîte</li>
+          </ul>
+        </article>
+
+        <article class="prepare-card">
+          <span class="prepare-kind">Rendez-vous</span>
+          <h3>Arriver préparé, pas improviser</h3>
+          <ul>
+            <li>L'historique complet du prospect</li>
+            <li>Les besoins exprimés</li>
+            <li>Les sujets à aborder</li>
+            <li>Les points restés en suspens</li>
+            <li>La prochaine étape à proposer</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -390,6 +609,42 @@
           <div class="stat-trend up">↑ 5 vs mois dernier</div>
         </div>
       </div>
+    </section>
+
+
+    <!-- 10. IA contextuelle -->
+    <section id="ia" class="context reveal">
+      <div class="section-head">
+        <span class="eyebrow">Ce que l'IA regarde</span>
+        <h2>L'IA travaille sur votre contexte commercial.</h2>
+        <p>Pas sur des généralités. Sur ce que vous avez réellement échangé, planifié et noté.</p>
+      </div>
+
+      <div class="context-flow">
+        <div class="context-inputs">
+          <span class="context-label">Ce que Closia lit</span>
+          <span class="context-chip">Vos emails Gmail et Outlook</span>
+          <span class="context-chip">Votre agenda</span>
+          <span class="context-chip">Votre pipeline</span>
+          <span class="context-chip">Vos activités</span>
+          <span class="context-chip">Vos notes</span>
+        </div>
+
+        <div class="context-core" aria-hidden="true">
+          <span class="context-core-ring"></span>
+          <span class="context-core-label">Closia</span>
+        </div>
+
+        <div class="context-outputs">
+          <span class="context-label">Ce qu'il en fait</span>
+          <span class="context-chip context-chip-accent">Un ordre de priorité</span>
+          <span class="context-chip context-chip-accent">Le contexte de chaque dossier</span>
+          <span class="context-chip context-chip-accent">Une recommandation motivée</span>
+          <span class="context-chip context-chip-accent">L'action prête à envoyer</span>
+        </div>
+      </div>
+
+      <p class="context-note">Plus Closia comprend votre activité commerciale, plus ses recommandations deviennent utiles. Vos données restent les vôtres et ne servent jamais à entraîner de modèle.</p>
     </section>
 
     <section id="pricing" class="pricing reveal">

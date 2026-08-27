@@ -75,3 +75,19 @@ if (revealEls.length) {
     revealEls.forEach((el) => observer.observe(el));
   }
 }
+
+// Les 40 pastilles de la section « 40 opportunités → 4 priorités ».
+// Générées ici plutôt qu'écrites à la main : 40 <span> dans le HTML seraient
+// du bruit pour un lecteur d'écran comme pour quelqu'un qui relit la page.
+(function drawFunnelDots() {
+  const grid = document.querySelector(".funnel-dots");
+  if (!grid) return;
+  const PRIORITY_POSITIONS = new Set([3, 11, 22, 34]);
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < 40; i++) {
+    const dot = document.createElement("span");
+    if (PRIORITY_POSITIONS.has(i)) dot.className = "is-prio";
+    fragment.appendChild(dot);
+  }
+  grid.appendChild(fragment);
+})();
