@@ -2942,3 +2942,9 @@ a { color: inherit; text-decoration: none; }
      le collerait au-dessus de son propre contenu. */
   .split-text { position: static; }
 }
+
+/* L'agenda de la semaine reprend toute la largeur : cinq colonnes de
+   jours dans une demi-page donnaient des pastilles de 50 px, où chaque
+   libellé se coupait au milieu d'un mot. */
+#fonctions .week-intro { max-width: 620px; margin: 44px auto 20px; text-align: center; }
+#fonctions .essentials-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
