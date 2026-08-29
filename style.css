@@ -472,7 +472,7 @@ a { color: inherit; text-decoration: none; }
 .features, .how {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: 68px 24px;
 }
 
 .feature-grid {
@@ -634,11 +634,11 @@ a { color: inherit; text-decoration: none; }
 .forgotten-deals {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: 68px 24px;
 }
 
 /* Dispersion → Closia */
-.dispersion { max-width: 1100px; margin: 0 auto; padding: 96px 24px; }
+.dispersion { max-width: 1100px; margin: 0 auto; padding: 68px 24px; }
 
 .dispersion-visual {
   display: flex;
@@ -693,7 +693,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Votre journée — démonstration */
-.your-day { max-width: 1100px; margin: 0 auto; padding: 96px 24px; }
+.your-day { max-width: 1100px; margin: 0 auto; padding: 68px 24px; }
 
 .day-window {
   border-radius: var(--radius-xl);
@@ -779,7 +779,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Modules — hub visuel */
-.modules { max-width: 1100px; margin: 0 auto; padding: 96px 24px; }
+.modules { max-width: 1100px; margin: 0 auto; padding: 68px 24px; }
 
 .hub {
   position: relative;
@@ -867,7 +867,7 @@ a { color: inherit; text-decoration: none; }
 .step-snippet-actions span { background: var(--blue-dim); color: var(--blue-deep); border-radius: 999px; padding: 6px 12px; font-weight: 600; }
 
 /* Reporting */
-.reporting { max-width: 1100px; margin: 0 auto; padding: 96px 24px; }
+.reporting { max-width: 1100px; margin: 0 auto; padding: 68px 24px; }
 
 .stat-grid {
   display: grid;
@@ -953,7 +953,7 @@ a { color: inherit; text-decoration: none; }
 .pricing {
   max-width: 1100px;
   margin: 40px auto;
-  padding: 96px 24px;
+  padding: 68px 24px;
   background: radial-gradient(circle at 50% 0%, var(--blue-dim), transparent 60%);
   border-radius: var(--radius-xl);
 }
@@ -1125,7 +1125,7 @@ a { color: inherit; text-decoration: none; }
 .faq {
   max-width: 760px;
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: 68px 24px;
 }
 
 .faq-list {
@@ -1411,7 +1411,7 @@ a { color: inherit; text-decoration: none; }
 .integrations {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: 68px 24px;
 }
 
 @media (max-width: 720px) {
@@ -1421,7 +1421,7 @@ a { color: inherit; text-decoration: none; }
   .prepare,
   .context,
   .integrations {
-    padding: 64px 20px;
+    padding: 48px 20px;
   }
 }
 
@@ -2133,7 +2133,7 @@ a { color: inherit; text-decoration: none; }
 .essentials {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: 68px 24px;
 }
 
 /* --- Détecter → Comprendre → Préparer → Agir --- */
@@ -2219,7 +2219,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 720px) {
   .journey,
-  .essentials { padding: 64px 20px; }
+  .essentials { padding: 48px 20px; }
   .journey-steps { grid-template-columns: 1fr; gap: 22px; }
 }
 
@@ -2525,38 +2525,6 @@ a { color: inherit; text-decoration: none; }
 
 
 
-
-/* ============================================================
-   UNE SECTION PAR ÉCRAN — sans rendre le contenu inaccessible
-   Deux pièges évités ici :
-   1. L'accrochage au défilement (scroll-snap) sautait au-dessus
-      du bas des sections plus hautes qu'un écran : on ne pouvait
-      plus les lire en entier. Il est retiré.
-   2. « justify-content: center » sur un contenu plus haut que son
-      conteneur fait déborder le HAUT hors de portée du défilement.
-      C'est ce qui coupait le premier titre. « safe center » place
-      le contenu au début quand il ne tient pas.
-   ============================================================ */
-
-.hero-v2,
-section[id] {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: safe center;
-  box-sizing: border-box;
-}
-
-@media (max-width: 760px) {
-  /* Sur téléphone, imposer une section par écran allonge la page
-     sans rien apporter : la hauteur redevient celle du contenu. */
-  .hero-v2,
-  section[id] {
-    min-height: 0;
-    display: block;
-  }
-}
 
 /* ============================================================
    ASSISTANT IA — reprend l'écran réel de Closia
