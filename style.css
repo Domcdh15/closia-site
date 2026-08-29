@@ -2919,3 +2919,26 @@ a { color: inherit; text-decoration: none; }
 
 /* La mention du hero suit la maquette au lieu de flotter à son coin. */
 .hero-demo-note { margin-top: 14px; }
+
+/* ============================================================
+   LE TEXTE RESTE, LE PRODUIT DÉFILE
+   Dans ces sections le visuel est bien plus haut que le texte —
+   747 px d'écart pour « De la détection à l'action ». Le texte
+   s'immobilise le temps qu'on parcoure la maquette, au lieu de
+   remonter hors de l'écran dès les premiers pixels.
+   ============================================================ */
+
+.split { align-items: start; }
+
+.split-text {
+  position: sticky;
+  /* Le bandeau collant fait 62 px : on se pose en dessous. */
+  top: 92px;
+  align-self: start;
+}
+
+@media (max-width: 900px) {
+  /* En une seule colonne, le texte précède le visuel : l'immobiliser
+     le collerait au-dessus de son propre contenu. */
+  .split-text { position: static; }
+}
