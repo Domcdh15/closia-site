@@ -2222,3 +2222,39 @@ a { color: inherit; text-decoration: none; }
   .essentials { padding: 64px 20px; }
   .journey-steps { grid-template-columns: 1fr; gap: 22px; }
 }
+
+/* ============================================================
+   RYTHME VERTICAL
+   Les neuf sections étaient toutes transparentes, sans bordure :
+   empilées sur le même fond, elles se lisaient comme un seul bloc
+   continu. Un filet fin dit où l'une s'arrête.
+   ============================================================ */
+
+#pourquoi,
+#parcours,
+#deals-oublies,
+#fonctions,
+#integrations,
+#faq,
+#contact {
+  border-top: 1px solid var(--hairline);
+}
+
+/* --- Les deux nombres doivent se lire sur la même ligne --- */
+/* Avec align-items: center et des colonnes de hauteurs très
+   différentes (234 px contre 428), le 40 et le 4 se retrouvaient
+   décalés de 97 px : on ne pouvait plus les rapprocher du regard. */
+.funnel-flow { align-items: start; }
+.funnel-middle { padding-top: 26px; }
+
+/* --- Six cartes tiennent en deux rangées de trois --- */
+/* En quatre colonnes, la dernière rangée n'en portait que deux. */
+.essentials-grid { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 900px) {
+  .essentials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .essentials-grid { grid-template-columns: 1fr; }
+}
