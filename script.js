@@ -70,11 +70,12 @@ if (revealEls.length) {
   } else {
     const observer = new IntersectionObserver(
       (entries) => {
+        // Apparition symétrique : la section se révèle en entrant dans
+        // l'écran et se retire en le quittant, dans les deux sens.
+        // On garde donc l'observation active au lieu de s'arrêter au
+        // premier passage.
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
-          }
+          entry.target.classList.toggle("in-view", entry.isIntersecting);
         });
       },
       { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
