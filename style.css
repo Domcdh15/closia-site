@@ -2375,15 +2375,18 @@ a { color: inherit; text-decoration: none; }
   .crm-stage-cell { display: none; }
 }
 
+
 /* ============================================================
-   AGENDA SEMAINE — la vue Semaine de Closia
-   Jours travaillés seulement, créneau horaire réglé, rendez-vous
-   réels et relances placées dans les creux.
+   AGENDA SEMAINE — reprend la vue Semaine de Closia
+   Les couleurs encodent le TYPE de tâche, comme dans le produit :
+   appels ambre, relances bleu, visio violet, RDV physique vert.
+   Les tâches occupent une voie à gauche, les rendez-vous d'agenda
+   la droite de la colonne.
    ============================================================ */
 
 .week-intro {
-  max-width: 640px;
-  margin: 52px auto 22px;
+  max-width: 620px;
+  margin: 52px auto 20px;
   text-align: center;
 }
 
@@ -2398,15 +2401,10 @@ a { color: inherit; text-decoration: none; }
   text-wrap: balance;
 }
 
-.week-intro p {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--text-dim);
-}
+.week-intro p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-dim); }
 
 .week-window {
-  max-width: 900px;
+  max-width: 940px;
   margin: 0 auto;
   background: var(--surface);
   border: 1px solid var(--hairline);
@@ -2417,44 +2415,31 @@ a { color: inherit; text-decoration: none; }
 
 .week-grid {
   display: grid;
-  grid-template-columns: 52px repeat(5, minmax(0, 1fr));
-  gap: 1px;
+  grid-template-columns: 50px repeat(5, minmax(0, 1fr));
   background: var(--hairline);
+  gap: 1px;
   padding: 0 1px 1px;
 }
 
 .week-hours,
-.week-day {
-  background: var(--surface);
-  position: relative;
-  min-height: 300px;
-  padding-top: 34px;
-}
+.week-day { background: var(--surface); }
 
 .week-hours {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 34px 6px 10px 0;
+  padding: 44px 6px 12px 0;
   text-align: right;
 }
 
-.week-hours span {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 9.5px;
-  color: var(--text-faint);
-}
+.week-hours span { font-family: "JetBrains Mono", monospace; font-size: 9.5px; color: var(--text-faint); }
 
 .week-dayname {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
+  height: 34px;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -2470,14 +2455,19 @@ a { color: inherit; text-decoration: none; }
   color: var(--text);
 }
 
-/* Chaque créneau est posé à son heure réelle, comme dans le produit. */
-.week-slot {
+/* Les créneaux se positionnent DANS cette zone, sous l'en-tête.
+   Les placer par rapport à la colonne entière les faisait recouvrir
+   le nom du jour. */
+.week-slots {
+  position: relative;
+  height: 290px;
+}
+
+.wk {
   position: absolute;
-  left: 4px;
-  right: 4px;
-  padding: 5px 7px;
-  border-radius: 6px;
-  font-size: 10px;
+  padding: 4px 6px 4px 7px;
+  border-radius: 5px;
+  font-size: 9.5px;
   font-weight: 600;
   line-height: 1.3;
   overflow: hidden;
@@ -2486,47 +2476,205 @@ a { color: inherit; text-decoration: none; }
   -webkit-line-clamp: 2;
 }
 
-/* Le rendez-vous vient de votre agenda : il ne bouge pas.
-   La relance est ce que Closia place autour. */
-.week-slot.rdv {
-  background: var(--blue-dim);
-  color: var(--blue-deep);
-  border-left: 2.5px solid var(--blue);
-}
+/* Voie de gauche : les tâches. Droite : les rendez-vous d'agenda.
+   C'est la répartition réelle du produit. */
+.wk.t { left: 3px; width: calc(38% - 4px); }
+.wk.e { left: 40%; right: 3px; }
 
-.week-slot.task {
-  background: var(--warning-dim);
-  color: #8a5a06;
-  border-left: 2.5px solid var(--warning);
-}
+.wk.call  { background: rgba(245, 166, 35, 0.16); color: #8a5a06; border-left: 2.5px solid #f5a623; }
+.wk.mail  { background: #eaf0ff;                  color: #1d4ed8; border-left: 2.5px solid #246bfe; }
+.wk.video { background: #f1e9fe;                  color: #6027c7; border-left: 2.5px solid #7c3aed; }
+.wk.pin   { background: #eaf1ec;                  color: #3c5c49; border-left: 2.5px solid #527a61; }
+
+/* Le ↻ marque une tâche oubliée que Closia a replacée. */
+.wk.redo i { font-style: normal; margin-right: 3px; opacity: 0.75; }
 
 .week-legend {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 8px 22px;
-  padding: 13px 16px;
+  gap: 8px 18px;
+  padding: 12px 16px;
   border-top: 1px solid var(--hairline);
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--text-dim);
 }
 
-.week-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.week-legend span { display: inline-flex; align-items: center; gap: 6px; }
 
-.week-key {
-  width: 11px;
-  height: 11px;
-  border-radius: 3px;
-  flex-shrink: 0;
+.wk-key { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+.wk-key.call { background: #f5a623; }
+.wk-key.mail { background: #246bfe; }
+.wk-key.video { background: #7c3aed; }
+.wk-key.pin { background: #527a61; }
+
+.wk-redo i {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--text-dim);
 }
 
-.week-key.rdv { background: var(--blue); }
-.week-key.task { background: var(--warning); }
-
-@media (max-width: 720px) {
-  /* Cinq jours à cette largeur seraient des colonnes de 50 px :
-     on montre trois jours, l'idée passe aussi bien. */
+@media (max-width: 760px) {
   .week-grid { grid-template-columns: 40px repeat(3, minmax(0, 1fr)); }
   .week-day:nth-child(n + 5) { display: none; }
-  .week-slot { font-size: 9px; }
+  .wk { font-size: 8.5px; }
+  .wk.t { width: calc(44% - 4px); }
+  .wk.e { left: 46%; }
+}
+
+/* ============================================================
+   DÉMONSTRATION DE L'ASSISTANT
+   Deux gestes réels : une relance écrite depuis des mots-clés,
+   une prise de note transformée en tâches datées.
+   ============================================================ */
+
+.ai-demo { margin-top: 56px; }
+
+.ai-intro {
+  max-width: 620px;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.ai-intro h3 {
+  margin: 0 0 8px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(20px, 2.6vw, 26px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.ai-intro p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-dim); }
+
+.ai-panes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.ai-pane {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ai-pane-kind {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.ai-field { display: flex; flex-direction: column; gap: 5px; }
+
+.ai-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.ai-input {
+  display: block;
+  background: var(--panel2);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 12.5px;
+  color: var(--text);
+}
+
+.ai-input-note { font-style: italic; color: var(--text-dim); line-height: 1.5; }
+
+/* La flèche dit le sens de la transformation. */
+.ai-arrow {
+  align-self: center;
+  width: 1.5px;
+  height: 16px;
+  background: var(--hairline);
+  position: relative;
+}
+
+.ai-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -3px;
+  border-top: 5px solid var(--hairline);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.ai-output {
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 14px 15px;
+}
+
+.ai-subject {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text);
+  padding-bottom: 9px;
+  margin-bottom: 9px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.ai-output p {
+  margin: 0 0 8px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+.ai-output p:last-child { margin-bottom: 0; }
+
+.ai-tasks { display: flex; flex-direction: column; gap: 7px; }
+
+.ai-task {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  color: var(--text);
+}
+
+.ai-task b {
+  margin-left: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+/* Ce que Closia retient sans en faire une tâche. */
+.ai-task-note { color: var(--text-dim); font-style: italic; }
+
+.ai-task-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.ai-task-dot.call { background: #f5a623; }
+.ai-task-dot.mail { background: #246bfe; }
+.ai-task-dot.info { background: var(--text-faint); }
+
+@media (max-width: 820px) {
+  .ai-panes { grid-template-columns: 1fr; }
 }

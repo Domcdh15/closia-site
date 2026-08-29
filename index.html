@@ -318,52 +318,67 @@
 
       <div class="week-intro">
         <h3>Vos rendez-vous sont fixés. Closia range le reste autour.</h3>
-        <p>La semaine s'ouvre sur ce qui est déjà pris, et les relances viennent se placer dans les creux — aux heures que vous avez définies comme vos heures de travail.</p>
+        <p>Les tâches se placent dans une voie à gauche, vos rendez-vous d'agenda à droite. Ce que vous n'avez pas fait ne disparaît pas : c'est replacé.</p>
       </div>
 
       <div class="week-window">
         <div class="mock-bar"><span></span><span></span><span></span></div>
-        <div class="week-grid" role="img" aria-label="Vue semaine de l'agenda Closia : rendez-vous et relances répartis du lundi au vendredi">
+        <div class="week-grid" role="img" aria-label="Vue Semaine de l'agenda Closia : tâches par type à gauche de chaque jour, rendez-vous à droite">
           <div class="week-hours">
             <span>09:00</span><span>11:00</span><span>13:00</span><span>15:00</span><span>17:00</span>
           </div>
 
           <div class="week-day">
-            <span class="week-dayname">Lun<b>1</b></span>
-            <span class="week-slot task" style="top:6%">Relancer Lambert Finance</span>
-            <span class="week-slot task" style="top:22%">Relancer Charcuterie</span>
-            <span class="week-slot rdv" style="top:52%">Visite chantier Benali</span>
+            <span class="week-dayname">Lun <b>1</b></span>
+            <div class="week-slots">
+              <span class="wk t mail" style="top:2%">Relancer Lambert Finance</span>
+              <span class="wk t call redo" style="top:16%"><i>↻</i>Rappeler Charcuterie</span>
+              <span class="wk e pin" style="top:50%">Visite chantier — Benali BTP</span>
+            </div>
           </div>
 
           <div class="week-day">
-            <span class="week-dayname">Mar<b>2</b></span>
-            <span class="week-slot rdv" style="top:14%">Démo Dubois Transport</span>
-            <span class="week-slot task" style="top:44%">Appeler Moreau Santé</span>
+            <span class="week-dayname">Mar <b>2</b></span>
+            <div class="week-slots">
+              <span class="wk t call" style="top:8%">Appeler Moreau Santé</span>
+              <span class="wk e video" style="top:24%">Démo produit — Dubois Transport</span>
+              <span class="wk t mail redo" style="top:62%"><i>↻</i>Relancer Faure Sport</span>
+            </div>
           </div>
 
           <div class="week-day">
-            <span class="week-dayname">Mer<b>3</b></span>
-            <span class="week-slot task" style="top:6%">Envoyer devis Blanc</span>
-            <span class="week-slot rdv" style="top:34%">RDV Cabinet Lefevre</span>
-            <span class="week-slot task" style="top:70%">Relancer Faure Sport</span>
+            <span class="week-dayname">Mer <b>3</b></span>
+            <div class="week-slots">
+              <span class="wk t mail" style="top:2%">Envoyer devis Blanc Architecture</span>
+              <span class="wk e pin" style="top:34%">RDV — Cabinet Lefevre</span>
+              <span class="wk t call" style="top:70%">Appeler Boulangerie Dupont</span>
+            </div>
           </div>
 
           <div class="week-day">
-            <span class="week-dayname">Jeu<b>4</b></span>
-            <span class="week-slot rdv" style="top:20%">Visio Girard &amp; Fils</span>
-            <span class="week-slot task" style="top:58%">Appeler Boulangerie Dupont</span>
+            <span class="week-dayname">Jeu <b>4</b></span>
+            <div class="week-slots">
+              <span class="wk t video" style="top:12%">Préparer la visio Girard</span>
+              <span class="wk e video" style="top:30%">Visio — Girard &amp; Fils</span>
+              <span class="wk t mail redo" style="top:66%"><i>↻</i>Relancer Fontaine Traiteur</span>
+            </div>
           </div>
 
           <div class="week-day">
-            <span class="week-dayname">Ven<b>5</b></span>
-            <span class="week-slot task" style="top:10%">Relancer Fontaine Traiteur</span>
-            <span class="week-slot rdv" style="top:46%">Point Rocher Immo</span>
+            <span class="week-dayname">Ven <b>5</b></span>
+            <div class="week-slots">
+              <span class="wk t call" style="top:6%">Rappeler Mercier Vins</span>
+              <span class="wk e pin" style="top:44%">Point — Rocher Immobilier</span>
+            </div>
           </div>
         </div>
 
         <div class="week-legend">
-          <span><i class="week-key rdv"></i>Rendez-vous de votre agenda</span>
-          <span><i class="week-key task"></i>Relances placées par Closia</span>
+          <span><i class="wk-key call"></i>Appels</span>
+          <span><i class="wk-key mail"></i>Relances</span>
+          <span><i class="wk-key video"></i>Visio</span>
+          <span><i class="wk-key pin"></i>RDV physique</span>
+          <span class="wk-redo"><i>↻</i>Tâches oubliées, replacées automatiquement</span>
         </div>
       </div>
       <p class="demo-note">Exemple de démonstration. Les entreprises sont fictives.</p>
