@@ -3139,12 +3139,18 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--hairline);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
-  overflow: hidden;
+  overflow: clip;
   min-height: 470px;
+  align-items: start;
 }
 
 /* --- barre latérale --- */
 .tour-nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
   background: var(--surface);
   border-right: 1px solid var(--hairline);
   padding: 26px 12px;
@@ -3183,6 +3189,17 @@ a { color: inherit; text-decoration: none; }
 
 /* --- zone d'écran --- */
 .tour-panels { background: var(--bg); padding: 20px; }
+
+/* Les bénéfices de la section suivent la maquette : on descend dans l'écran
+   choisi sans quitter la barre latérale, qui reste à portée de clic.
+   Le conteneur d'origine est conservé — toutes ses règles en dépendent — mais
+   il n'est plus une section pleine page : on lui reprend largeur et marges. */
+.tour-bene { max-width: none; margin: 34px 0 0; padding: 30px 0 0; border-top: 1px solid var(--hairline); }
+.tour-bene .section-head,
+#parcours.tour-bene .section-head { max-width: 720px; margin: 0 0 22px; text-align: left; }
+.tour-bene .section-head h2 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; }
+.tour-bene .section-head p { font-size: 15px; }
+.tour-bene > :last-child { margin-bottom: 0; }
 .tour-panel { display: none; }
 .tour-panel.is-active { display: block; }
 
