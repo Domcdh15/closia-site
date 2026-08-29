@@ -14,6 +14,9 @@ document.querySelectorAll("[data-lead-intent]").forEach((el) => {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(form).entries());
+  // La base attend un nom complet obligatoire ; le formulaire demande
+  // prénom et nom séparément, plus lisibles à saisir.
+  data.name = [data.first_name, data.last_name].filter(Boolean).join(" ").trim();
 
   if (data.website) {
     // Champ piège rempli par un robot : on fait semblant que ça a marché, sans rien envoyer.
@@ -38,7 +41,11 @@ form.addEventListener("submit", async (e) => {
       },
       body: JSON.stringify({
         name: data.name,
+        first_name: data.first_name || null,
+        last_name: data.last_name || null,
         email: data.email,
+        phone: data.phone || null,
+        company: data.company || null,
         team_size: data.team_size || null,
         message: data.message || null,
       }),

@@ -387,37 +387,64 @@
 
       <div class="ai-demo">
         <div class="ai-intro">
-          <h3>Vous donnez trois mots. Closia écrit le reste.</h3>
-          <p>L'IA part de vos échanges réels avec ce client, pas d'un modèle générique.</p>
+          <h3>Pendant que vous dormiez, Closia a lu votre pipeline.</h3>
+          <p>Chaque matin, il vous rend trois dossiers et le raisonnement derrière chacun.</p>
         </div>
 
-        <div class="ai-panes">
-          <div class="ai-pane">
-            <span class="ai-pane-kind">Rédiger une relance</span>
-            <div class="ai-field">
-              <span class="ai-label">Vos mots-clés</span>
-              <span class="ai-input">relance devis · prix · délai de livraison</span>
-            </div>
-            <div class="ai-arrow" aria-hidden="true"></div>
-            <div class="ai-output">
-              <span class="ai-subject">Objet : Votre devis — précisions sur les délais</span>
-              <p>Bonjour Marc,</p>
-              <p>Je reviens vers vous suite au devis envoyé le 20 août. Vous m'aviez interrogé sur le délai de livraison : nous sommes actuellement à trois semaines après validation.</p>
-              <p>Le prix indiqué reste valable jusqu'au 20 septembre. Souhaitez-vous que nous en discutions cette semaine ?</p>
-            </div>
+        <div class="assist-window">
+          <div class="assist-head">
+            <span class="assist-title">Assistant IA</span>
+            <span class="assist-sub">Votre copilote commercial pour analyser vos opportunités et passer à l'action.</span>
           </div>
 
-          <div class="ai-pane">
-            <span class="ai-pane-kind">Transformer une note en actions</span>
-            <div class="ai-field">
-              <span class="ai-label">Votre prise de note</span>
-              <span class="ai-input ai-input-note">Rdv ok. Budget validé mais attend l'accord de sa direction. Rappeler jeudi. Envoyer les références clients du secteur.</span>
-            </div>
-            <div class="ai-arrow" aria-hidden="true"></div>
-            <div class="ai-tasks">
-              <span class="ai-task"><i class="ai-task-dot call"></i>Rappeler Marc Dubois<b>jeudi 4 sept.</b></span>
-              <span class="ai-task"><i class="ai-task-dot mail"></i>Envoyer les références clients du secteur<b>demain</b></span>
-              <span class="ai-task ai-task-note"><i class="ai-task-dot info"></i>Budget validé, en attente de l'accord de la direction</span>
+          <div class="assist-scan">
+            <span class="assist-scan-label">Closia a analysé aujourd'hui</span>
+            <span><b>18</b> opportunités</span>
+            <span><b>26</b> activités</span>
+            <span><b>13</b> rendez-vous</span>
+            <span class="assist-scan-alert"><b>4</b> deals à traiter</span>
+          </div>
+
+          <div class="assist-body">
+            <span class="assist-eyebrow">Ce qui mérite votre attention</span>
+            <div class="assist-cards">
+
+              <article class="assist-card">
+                <span class="assist-kind risk">Opportunité à risque</span>
+                <span class="assist-company">TechNova Solutions</span>
+                <span class="assist-value">24 000 €</span>
+                <span class="assist-meta">Aucune activité depuis 21 jours.</span>
+                <div class="assist-why">
+                  <span class="assist-why-label">Pourquoi cette action</span>
+                  <p>Deal important sans aucun contact depuis trois semaines — le risque de perte augmente avec le silence.</p>
+                </div>
+                <span class="assist-reco">Relancer aujourd'hui</span>
+              </article>
+
+              <article class="assist-card">
+                <span class="assist-kind mail">Relance à préparer</span>
+                <span class="assist-company">Cherif Informatique</span>
+                <span class="assist-value">7 800 €</span>
+                <span class="assist-meta">Proposition envoyée il y a 34 jours.</span>
+                <div class="assist-why">
+                  <span class="assist-why-label">Pourquoi cette action</span>
+                  <p>Une proposition sans retour depuis un mois : une relance courte remet le sujet devant le prospect.</p>
+                </div>
+                <span class="assist-reco">Envoyer une relance courte</span>
+              </article>
+
+              <article class="assist-card">
+                <span class="assist-kind rdv">Rendez-vous à préparer</span>
+                <span class="assist-company">Cabinet Lefevre Avocats</span>
+                <span class="assist-value">3 500 €</span>
+                <span class="assist-meta">Lundi 31 août.</span>
+                <div class="assist-why">
+                  <span class="assist-why-label">Pourquoi cette action</span>
+                  <p>Arriver avec l'historique, les enjeux et les objections probables fait avancer le dossier.</p>
+                </div>
+                <span class="assist-reco">Préparer le rendez-vous</span>
+              </article>
+
             </div>
           </div>
         </div>
@@ -565,24 +592,42 @@
           <label class="hp-field" aria-hidden="true">Site web (ne pas remplir)
             <input type="text" name="website" tabindex="-1" autocomplete="off" />
           </label>
-          <label>Nom
-            <input type="text" name="name" required placeholder="Votre nom" />
-          </label>
-          <label>Email professionnel
-            <input type="email" name="email" required placeholder="vous@entreprise.com" />
-          </label>
-          <label>Taille de l'équipe
-            <select name="team_size">
-              <option value="">Choisir...</option>
-              <option value="1">Seul(e)</option>
-              <option value="2-5">2 à 5</option>
-              <option value="6-10">6 à 10</option>
-              <option value="11-20">11 à 20</option>
-              <option value="20+">Plus de 20</option>
-            </select>
-          </label>
-          <label>Message
-            <textarea name="message" rows="4" placeholder="Parlez-nous de votre activité et de vos besoins..."></textarea>
+
+          <div class="lead-row">
+            <label>Prénom <span class="req">*</span>
+              <input type="text" name="first_name" required autocomplete="given-name" />
+            </label>
+            <label>Nom <span class="req">*</span>
+              <input type="text" name="last_name" required autocomplete="family-name" />
+            </label>
+          </div>
+
+          <div class="lead-row">
+            <label>Email professionnel <span class="req">*</span>
+              <input type="email" name="email" required autocomplete="email" placeholder="vous@entreprise.com" />
+            </label>
+            <label>Téléphone
+              <input type="tel" name="phone" autocomplete="tel" placeholder="06 12 34 56 78" />
+            </label>
+          </div>
+
+          <div class="lead-row">
+            <label>Société
+              <input type="text" name="company" autocomplete="organization" />
+            </label>
+            <label>Taille de votre équipe
+              <select name="team_size">
+                <option value="">Choisissez une tranche</option>
+                <option>Je travaille seul</option>
+                <option>2 à 3 personnes</option>
+                <option>4 à 10 personnes</option>
+                <option>Plus de 10 personnes</option>
+              </select>
+            </label>
+          </div>
+
+          <label>Votre contexte
+            <textarea name="message" rows="4" placeholder="Outils actuels, situation à nous montrer, question précise…"></textarea>
           </label>
           <button type="submit" class="btn btn-ghost btn-block">Envoyer le message</button>
           <p id="lead-status" class="lead-status" role="status"></p>
