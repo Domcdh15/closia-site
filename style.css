@@ -2258,3 +2258,119 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 600px) {
   .essentials-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   MOCKUP FIDÈLE — la vraie liste Opportunités
+   Reprend la mise en page réelle du produit : regroupement par
+   étape, pastille de priorité, motif d'alerte sous l'entreprise.
+   ============================================================ */
+
+.crm-window {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.crm-body { padding: 16px 18px 20px; }
+
+.crm-stage {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 14px 4px 7px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.crm-stage:first-child { padding-top: 4px; }
+.crm-stage span { font-family: "JetBrains Mono", monospace; font-size: 11px; }
+
+.crm-cols,
+.crm-row {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1.4fr) minmax(0, 0.9fr) 78px 84px 96px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+}
+
+.crm-cols {
+  padding-bottom: 6px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* La première colonne du gabarit est la pastille : l'en-tête n'a pas
+   d'intitulé à y placer. */
+.crm-cols span:first-child { grid-column: 2; }
+
+.crm-row {
+  border-bottom: 1px solid var(--hairline);
+  font-size: 12.5px;
+}
+
+.crm-row:last-child { border-bottom: none; }
+
+.crm-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  justify-self: center;
+}
+
+.crm-dot.red { background: var(--red); }
+.crm-dot.amber { background: var(--warning); }
+.crm-dot.blue { background: var(--blue); }
+
+.crm-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.crm-main b { font-weight: 600; color: var(--text); font-size: 13px; }
+
+/* Le motif d'alerte est le texte que le produit écrit lui-même. */
+.crm-main em {
+  font-style: normal;
+  font-size: 11.5px;
+  color: var(--red);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crm-contact,
+.crm-date,
+.crm-stage-cell {
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crm-value {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  color: var(--text);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.crm-date { font-family: "JetBrains Mono", monospace; font-size: 11.5px; }
+
+@media (max-width: 720px) {
+  /* Sur téléphone on garde ce qui porte l'alerte : entreprise, motif,
+     montant. Le reste sortirait de l'écran. */
+  .crm-cols { display: none; }
+  .crm-row { grid-template-columns: 14px minmax(0, 1fr) auto; }
+  .crm-contact,
+  .crm-date,
+  .crm-stage-cell { display: none; }
+}

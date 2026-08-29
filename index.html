@@ -172,7 +172,7 @@
     <section id="priorites" class="funnel reveal">
       <div class="section-head">
         <span class="eyebrow">Le cœur du produit</span>
-        <h2>Vous avez 40 opportunités.<br />Vous ne pouvez pas vous occuper des 40 aujourd'hui.</h2>
+        <h2>Vous avez 40 opportunités.<br />Vous ne pouvez pas vous occuper des 40 <span class="fade-word">aujourd'hui.</span></h2>
         <p>Closia identifie celles qui méritent réellement votre attention, et vous dit pourquoi.</p>
       </div>
 
@@ -247,7 +247,7 @@
     <section id="pourquoi" class="why reveal">
       <div class="section-head">
         <span class="eyebrow">Transparence</span>
-        <h2>Pas seulement quoi faire.<br />Pourquoi le faire.</h2>
+        <h2>Pas seulement quoi faire.<br /><span class="fade-word">Pourquoi le faire.</span></h2>
         <p>Une recommandation qu'on ne comprend pas, on ne la suit pas. Closia montre toujours le raisonnement derrière l'action qu'il propose.</p>
       </div>
 
@@ -290,7 +290,7 @@
     <section id="parcours" class="journey reveal">
       <div class="section-head">
         <span class="eyebrow">Le parcours</span>
-        <h2>De la détection à l'action.</h2>
+        <h2>De la détection <span class="fade-word">à l'action.</span></h2>
       </div>
 
       <ol class="journey-steps">
@@ -321,43 +321,59 @@
     <section id="deals-oublies" class="forgotten-deals reveal">
       <div class="section-head">
         <span class="eyebrow">Fonctionnalité phare</span>
-        <h2>Un deal ne devrait jamais s'éteindre en silence.</h2>
+        <h2>Un deal ne devrait jamais s'éteindre <span class="fade-word">en silence.</span></h2>
         <p>Closia surveille les signaux de votre pipeline et vous alerte quand l'absence de suivi devient un risque.</p>
       </div>
 
-      <div class="watch-window">
+      <div class="crm-window">
         <div class="mock-bar"><span></span><span></span><span></span></div>
-        <div class="watch-list">
-          <div class="watch-card hot">
-            <div class="watch-head">
-              <span class="mock-dot-status green"></span>
-              <span class="watch-company">Société Leroy</span>
-              <span class="watch-value">2 100 €</span>
-            </div>
-            <div class="watch-reason">Contact récent, forte dynamique.</div>
-            <div class="watch-cta">→ Relancer aujourd'hui</div>
+        <div class="crm-body">
+          <div class="crm-stage">À contacter <span>4</span></div>
+
+          <div class="crm-cols">
+            <span>Entreprise</span><span>Contact</span><span>Montant</span><span>Dern. activité</span><span>Étape</span>
           </div>
-          <div class="watch-card warn">
-            <div class="watch-head">
-              <span class="mock-dot-status amber"></span>
-              <span class="watch-company">Société Dupont</span>
-              <span class="watch-value">3 400 €</span>
-            </div>
-            <div class="watch-reason">Aucune activité depuis 5 jours.</div>
-            <div class="watch-cta">→ Planifier un suivi</div>
+
+          <div class="crm-row">
+            <span class="crm-dot red"></span>
+            <span class="crm-main"><b>Lambert Finance</b><em>Aucune activité depuis 46 jours</em></span>
+            <span class="crm-contact">Pierre Lambert</span>
+            <span class="crm-value">4 200 €</span>
+            <span class="crm-date">12 juil.</span>
+            <span class="crm-stage-cell">À contacter</span>
           </div>
-          <div class="watch-card danger">
-            <div class="watch-head">
-              <span class="mock-dot-status red"></span>
-              <span class="watch-company">Société Martin</span>
-              <span class="watch-value">4 800 €</span>
-            </div>
-            <div class="watch-reason">Aucune activité depuis 9 jours · dernier email ouvert hier.</div>
-            <div class="watch-cta">→ Relancer maintenant</div>
+
+          <div class="crm-row">
+            <span class="crm-dot red"></span>
+            <span class="crm-main"><b>Charcuterie Bonneau</b><em>Aucune activité depuis 26 jours</em></span>
+            <span class="crm-contact">Jean Bonneau</span>
+            <span class="crm-value">1 000 €</span>
+            <span class="crm-date">1 août</span>
+            <span class="crm-stage-cell">À contacter</span>
+          </div>
+
+          <div class="crm-stage">Contact établi <span>3</span></div>
+
+          <div class="crm-row">
+            <span class="crm-dot amber"></span>
+            <span class="crm-main"><b>Dubois Transport</b><em>Tâche oubliée : rappeler pour qualifier le besoin</em></span>
+            <span class="crm-contact">Marc Dubois</span>
+            <span class="crm-value">9 500 €</span>
+            <span class="crm-date">20 août</span>
+            <span class="crm-stage-cell">Contact établi</span>
+          </div>
+
+          <div class="crm-row">
+            <span class="crm-dot blue"></span>
+            <span class="crm-main"><b>Blanc Architecture</b><em>Devis envoyé, relance prévue</em></span>
+            <span class="crm-contact">Nathalie Blanc</span>
+            <span class="crm-value">11 000 €</span>
+            <span class="crm-date">25 août</span>
+            <span class="crm-stage-cell">Contact établi</span>
           </div>
         </div>
       </div>
-      <div class="forgotten-soon-badge">Détection automatique disponible dans l'application dès aujourd'hui</div>
+      <p class="demo-note">Exemple de démonstration. Les entreprises et montants sont fictifs.</p>
     </section>
 
 
@@ -365,7 +381,7 @@
     <section id="fonctions" class="essentials reveal">
       <div class="section-head">
         <span class="eyebrow">Le CRM reste un CRM</span>
-        <h2>Tout ce qu'il faut pour garder vos ventes en mouvement.</h2>
+        <h2>Tout ce qu'il faut pour garder vos ventes <span class="fade-word">en mouvement.</span></h2>
       </div>
 
       <div class="essentials-grid">
@@ -382,7 +398,7 @@
     <section id="integrations" class="integrations reveal">
       <div class="section-head">
         <span class="eyebrow">Écosystème</span>
-        <h2>Closia se branche sur votre environnement commercial.</h2>
+        <h2>Closia se branche sur <span class="fade-word">votre environnement commercial.</span></h2>
         <p>C'est là qu'il va chercher le contexte : vos échanges réels, votre agenda, vos anciens dossiers. Rien à changer dans vos habitudes.</p>
       </div>
 
@@ -426,7 +442,7 @@
 <section id="pricing" class="pricing reveal">
       <div class="section-head">
         <span class="eyebrow">Tarif</span>
-        <h2>Un tarif simple, qui grandit avec votre équipe.</h2>
+        <h2>Un tarif simple, qui grandit <span class="fade-word">avec votre équipe.</span></h2>
       </div>
       <div class="launch-banner">Offre de lancement : 9€ (Solo) et 19€ (Équipe) pendant 3 mois, tarif bloqué 12 mois. Sans engagement.</div>
       <div class="pricing-grid">
@@ -471,7 +487,7 @@
     <section id="faq" class="faq reveal">
       <div class="section-head">
         <span class="eyebrow">FAQ</span>
-        <h2>Vos questions, en clair.</h2>
+        <h2>Vos questions, <span class="fade-word">en clair.</span></h2>
       </div>
       <div class="faq-list">
         <details class="faq-item">
@@ -505,7 +521,7 @@
       <div class="contact-inner">
         <div class="section-head" style="text-align:left;">
           <span class="eyebrow">Voir Closia en action</span>
-          <h2>Voyez ce que Closia ferait avec votre pipeline.</h2>
+          <h2>Voyez ce que Closia ferait <span class="fade-word">avec votre pipeline.</span></h2>
           <p class="contact-sub">On importe quelques prospects, on connecte votre agenda, et on vous montre exactement quelles actions Closia proposerait pour faire avancer vos deals — en moins de 15 minutes.</p>
 
           <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:28px; display:inline-block;">Réserver une démo de 15 min</a>
