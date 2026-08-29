@@ -2986,3 +2986,32 @@ a { color: inherit; text-decoration: none; }
   .eco-row { grid-template-columns: 1fr; gap: 8px; }
   .eco-tag { justify-self: start; padding: 4px 12px; }
 }
+
+/* ============================================================
+   TARIFS — la section tient dans un écran
+   Trois cartes de 32 px de marge, un prix à 48 px et une bannière
+   d'offre à part additionnaient plus d'un écran de hauteur. Tout
+   est resserré sans rien retirer.
+   ============================================================ */
+
+.pricing { padding: 48px 24px; margin: 24px auto; }
+
+.launch-banner { margin-bottom: 24px; padding: 9px 16px; font-size: 13px; }
+
+.price-card { padding: 24px 22px; }
+
+.price-plan { font-size: 17px; }
+.price-sub { font-size: 12.5px; }
+
+/* Le prix reste le point d'ancrage du regard, mais 48 px sur trois
+   cartes prenaient à eux seuls un sixième de l'écran. */
+.price-new { font-size: 38px; }
+.price-row { margin: 14px 0 6px; }
+.price-instead { font-size: 12px; }
+.price-note { font-size: 12.5px; line-height: 1.5; margin-bottom: 16px; }
+
+.price-cta-secondary { margin-top: 10px; font-size: 12.5px; }
+
+@media (max-width: 900px) {
+  .pricing { padding: 40px 18px; }
+}
