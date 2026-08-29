@@ -2770,53 +2770,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   ÉCOSYSTÈME — fondu dans « Les essentiels »
-   Les deux sections répondaient à la même question : ce que le
-   produit contient et ce sur quoi il se branche. Les intégrations
-   passent en lignes plutôt qu'en cartes, la liste étant courte.
-   ============================================================ */
-
-.eco {
-  max-width: 1000px;
-  margin: 44px auto 0;
-  padding-top: 32px;
-  border-top: 1px solid var(--hairline);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.eco-title {
-  margin: 0 0 4px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 19px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  text-align: center;
-}
-
-.eco-line {
-  display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
-}
-
-.eco-text {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-dim);
-}
-
-.eco-text b { font-weight: 700; color: var(--text); }
-
-@media (max-width: 640px) {
-  .eco-line { grid-template-columns: 1fr; gap: 6px; }
-  .eco-line .integ-status { justify-self: start; }
-}
-
-/* ============================================================
    TEXTE À GAUCHE, PRODUIT À DROITE
    Un titre au-dessus d'une maquette empile deux hauteurs ;
    côte à côte, la section tient dans un écran et le produit
@@ -2948,3 +2901,88 @@ a { color: inherit; text-decoration: none; }
    libellé se coupait au milieu d'un mot. */
 #fonctions .week-intro { max-width: 620px; margin: 44px auto 20px; text-align: center; }
 #fonctions .essentials-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* ============================================================
+   ÉCOSYSTÈME — des noms, pas des phrases
+   Trois paragraphes chargés se lisaient comme un pavé. Les noms
+   d'outils sont des étiquettes : on les balaie du regard.
+   ============================================================ */
+
+.eco {
+  max-width: 860px;
+  margin: 48px auto 0;
+  padding-top: 34px;
+  border-top: 1px solid var(--hairline);
+}
+
+.eco-title {
+  margin: 0 0 22px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-align: center;
+}
+
+.eco-row {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 16px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.eco-row:last-of-type { border-bottom: none; }
+
+.eco-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 4px 0;
+  text-align: center;
+}
+
+.eco-tag.live { background: var(--success-dim); color: #147a4a; }
+.eco-tag.soon { background: var(--warning-dim); color: #a35f06; }
+.eco-tag.planned { background: var(--panel2); color: var(--text-faint); }
+
+.eco-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.eco-chips span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 7px;
+  padding: 6px 11px;
+}
+
+/* Ce qui n'existe pas encore ne doit pas peser autant que le reste. */
+.eco-chips.muted span {
+  font-weight: 500;
+  color: var(--text-faint);
+  background: none;
+  border-style: dashed;
+}
+
+.eco-note {
+  margin: 18px 0 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .eco-row { grid-template-columns: 1fr; gap: 8px; }
+  .eco-tag { justify-self: start; padding: 4px 12px; }
+}
