@@ -2728,10 +2728,21 @@ section[id] {
   gap: 12px;
 }
 
+/* Le libellé et son astérisque forment un seul élément : sans cette
+   encapsulation, l'astérisque devenait une ligne flex à part et
+   décalait le champ vers le bas, désalignant les deux colonnes. */
+.lead-form .lead-label {
+  display: block;
+  line-height: 1.3;
+}
+
 .lead-form .req {
-  color: var(--blue);
+  color: #7fd4ff;
   font-weight: 700;
 }
+
+/* Un libellé sur deux lignes ne doit pas étirer son voisin. */
+.lead-row { align-items: start; }
 
 @media (max-width: 560px) {
   /* Deux colonnes sur un téléphone donneraient des champs de 130 px. */
