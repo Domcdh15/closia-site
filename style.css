@@ -2871,8 +2871,6 @@ a { color: inherit; text-decoration: none; }
   .split-text .essentials-grid { grid-template-columns: 1fr; }
 }
 
-/* La mention du hero suit la maquette au lieu de flotter à son coin. */
-.hero-demo-note { margin-top: 14px; }
 
 /* ============================================================
    LE TEXTE RESTE, LE PRODUIT DÉFILE
