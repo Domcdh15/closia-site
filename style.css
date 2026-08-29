@@ -2122,3 +2122,156 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 560px) {
   .integ-group-head { flex-wrap: wrap; gap: 8px; }
 }
+
+/* ============================================================
+   CONDENSATION — le parcours en 4 temps, et les essentiels
+   Ces deux sections remplacent huit sections qui redisaient la
+   même chose. Elles réutilisent les tokens existants.
+   ============================================================ */
+
+.journey,
+.essentials {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+/* --- Détecter → Comprendre → Préparer → Agir --- */
+.journey-steps {
+  list-style: none;
+  margin: 0 0 34px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.journey-step {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 18px;
+  border-top: 2px solid var(--hairline);
+}
+
+/* La numérotation dit une séquence réelle : on ne peut pas préparer
+   une action qu'on n'a pas encore comprise. */
+.journey-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.04em;
+}
+
+.journey-step h3 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.journey-step p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+.journey-prep {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+}
+
+.prep-col {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.prep-kind {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.prep-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.prep-col li {
+  font-size: 13.5px;
+  color: var(--text-dim);
+  padding-left: 15px;
+  position: relative;
+}
+
+.prep-col li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--blue);
+  opacity: 0.5;
+}
+
+/* --- Les essentiels --- */
+.essentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.essential {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.essential h3 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.essential p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+@media (max-width: 900px) {
+  .journey-steps { grid-template-columns: repeat(2, 1fr); }
+  .journey-prep { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 720px) {
+  .journey,
+  .essentials { padding: 64px 20px; }
+  .journey-steps { grid-template-columns: 1fr; gap: 22px; }
+}
