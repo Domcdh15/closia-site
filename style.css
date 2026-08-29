@@ -3130,11 +3130,11 @@ a { color: inherit; text-decoration: none; }
    comme dans Closia, et l'écran correspondant à droite.
    ============================================================ */
 
-.product-tour { max-width: 1140px; margin: 0 auto; padding: 68px 24px; }
+.product-tour { max-width: 1440px; margin: 0 auto; padding: 68px 28px; }
 
 .tour-app {
   display: grid;
-  grid-template-columns: 214px minmax(0, 1fr);
+  grid-template-columns: 224px minmax(0, 1fr);
   background: var(--surface);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-xl);
@@ -3147,18 +3147,10 @@ a { color: inherit; text-decoration: none; }
 .tour-nav {
   background: var(--surface);
   border-right: 1px solid var(--hairline);
-  padding: 22px 12px;
+  padding: 26px 12px;
   display: flex;
   flex-direction: column;
   gap: 2px;
-}
-
-.tour-brand {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--text);
-  padding: 2px 12px 20px;
 }
 
 .tour-item {
@@ -3240,7 +3232,7 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .mk-hero em { display: block; font-size: 11.5px; font-weight: 500; color: rgba(255,255,255,0.88); margin-top: 2px; }
-.mk-stats { display: block; margin-top: 10px; font-size: 11.5px; font-weight: 500; color: rgba(255,255,255,0.9); text-align: left; }
+.mk-stats { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 12px; font-size: 11.5px; font-weight: 500; color: rgba(255,255,255,0.9); text-align: left; }
 .mk-stats b { color: #fff; }
 .mk-stats i { font-style: normal; color: #ffd0d6; }
 
@@ -3463,7 +3455,6 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 900px) {
   .tour-app { grid-template-columns: 1fr; min-height: 0; }
   .tour-nav { flex-direction: row; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--hairline); padding: 10px; }
-  .tour-brand { display: none; }
   .tour-item { white-space: nowrap; padding: 8px 11px; font-size: 12.5px; }
   .mk-cols, .mk-cards, .mk-kpis { grid-template-columns: 1fr; }
   .mk-week { grid-template-columns: repeat(3, minmax(0, 1fr)); }
