@@ -3075,3 +3075,59 @@ a { color: inherit; text-decoration: none; }
 .price-plan { font-size: 16px; }
 .price-note { font-size: 12px; margin-bottom: 12px; }
 .price-cta-secondary { margin-top: 8px; font-size: 12px; }
+
+/* ============================================================
+   ARAIGNÉE DES INTÉGRATIONS
+   Closia au centre, les outils autour, reliés par un trait dont
+   le style dit la disponibilité : plein pour ce qui marche,
+   pointillé pour ce qui est à l'étude.
+   ============================================================ */
+
+.eco-web {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+}
+
+.eco-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+.eco-legend span { display: inline-flex; align-items: center; gap: 7px; }
+
+.eco-key {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.eco-key.live { background: #1c7a4d; }
+.eco-key.soon { background: #a35f06; }
+.eco-key.plan { background: none; border: 1px dashed #98a2ac; }
+
+/* Sous cette largeur les libellés se chevaucheraient : le diagramme
+   laisse la place à une liste. */
+@media (max-width: 700px) {
+  .eco-web { display: none; }
+  .eco-legend { display: none; }
+  .eco-fallback { display: block; }
+}
+
+.eco-fallback { display: none; }
+
+/* La section de l'agenda, désormais autonome. */
+.agenda-week {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 68px 24px;
+}
