@@ -99,3 +99,37 @@ if (revealEls.length) {
   }
   grid.appendChild(fragment);
 })();
+
+// Visite du produit : la barre latérale de Closia, cliquable.
+// Sans JavaScript, tous les panneaux restent affichés — on ne cache
+// jamais l'information derrière un script.
+(function tourProduit() {
+  const nav = document.querySelector(".tour-nav");
+  if (!nav) return;
+  const onglets = [...nav.querySelectorAll(".tour-item")];
+  const panneaux = [...document.querySelectorAll(".tour-panel")];
+
+  function choisir(cle) {
+    onglets.forEach((o) => {
+      const actif = o.dataset.tour === cle;
+      o.classList.toggle("is-active", actif);
+      o.setAttribute("aria-selected", actif ? "true" : "false");
+    });
+    panneaux.forEach((p) => p.classList.toggle("is-active", p.dataset.panel === cle));
+  }
+
+  nav.addEventListener("click", (e) => {
+    const onglet = e.target.closest(".tour-item");
+    if (onglet) choisir(onglet.dataset.tour);
+  });
+
+  // Flèches haut/bas comme dans une vraie barre latérale.
+  nav.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    const i = onglets.findIndex((o) => o.classList.contains("is-active"));
+    const suivant = onglets[(i + (e.key === "ArrowDown" ? 1 : -1) + onglets.length) % onglets.length];
+    e.preventDefault();
+    choisir(suivant.dataset.tour);
+    suivant.focus();
+  });
+})();

@@ -52,6 +52,12 @@
       .reveal { opacity: 1 !important; transform: none !important; }
     </style>
   </noscript>
+  <noscript>
+    <style>
+      .tour-panel { display: block !important; }
+      .tour-panel + .tour-panel { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--hairline); }
+    </style>
+  </noscript>
 </head>
 <body>
 
@@ -374,13 +380,42 @@
       <div class="section-head">
         <span class="eyebrow">Le CRM reste un CRM</span>
         <h2>Tout ce qu'il faut pour garder vos ventes <span class="fade-word">en mouvement.</span></h2>
-      </div><div class="essentials-grid">
-        <div class="essential"><span class="essential-num">Aujourd'hui</span><p>Ce qui mérite votre attention, dans l'ordre, avec la raison.</p></div>
-        <div class="essential"><span class="essential-num">Opportunités</span><p>Votre pipeline en liste ou en tableau, et la prochaine étape de chaque deal.</p></div>
-        <div class="essential"><span class="essential-num">Agenda</span><p>Rendez-vous et tâches au même endroit, synchronisés avec le vôtre.</p></div>
-        <div class="essential"><span class="essential-num">Assistant IA</span><p>Relances rédigées, notes transformées en actions, dossiers analysés.</p></div>
-        <div class="essential"><span class="essential-num">Activités</span><p>Votre activité et vos résultats, sans export à faire.</p></div>
-        <div class="essential"><span class="essential-num">Équipe</span><p>Rôles, attribution des dossiers, résultats partagés.</p></div>
+      </div><div class="tour">
+        <div class="tour-nav" role="tablist" aria-label="Sections de Closia">
+          <span class="tour-brand">Closia</span>
+          <button class="tour-item is-active" data-tour="today" role="tab" aria-selected="true" aria-controls="tour-today">Aujourd'hui</button>
+          <button class="tour-item" data-tour="pipeline" role="tab" aria-selected="false" aria-controls="tour-pipeline">Opportunités</button>
+          <button class="tour-item" data-tour="planning" role="tab" aria-selected="false" aria-controls="tour-planning">Agenda</button>
+          <button class="tour-item" data-tour="assistant" role="tab" aria-selected="false" aria-controls="tour-assistant">Assistant IA</button>
+          <button class="tour-item" data-tour="activities" role="tab" aria-selected="false" aria-controls="tour-activities">Activités</button>
+          <button class="tour-item" data-tour="equipe" role="tab" aria-selected="false" aria-controls="tour-equipe">Équipe</button>
+        </div>
+        <div class="tour-panels">
+          <div class="tour-panel is-active" id="tour-today" role="tabpanel" data-panel="today">
+            <h3>Vous ouvrez Closia, il a déjà trié.</h3>
+            <ul><li>La file du jour, classée par ce qui risque le plus de vous échapper</li><li>Sous chaque recommandation, les signaux qui la justifient</li><li>Les tâches non faites replacées d'elles-mêmes, à l'horaire que vous choisissez</li></ul>
+          </div>
+          <div class="tour-panel" id="tour-pipeline" role="tabpanel" data-panel="pipeline">
+            <h3>Votre pipeline, en liste ou en tableau.</h3>
+            <ul><li>Dernière et prochaine activité visibles sur chaque ligne</li><li>Les colonnes du tableau tiennent toutes à l'écran, sans balayer</li><li>Un dossier sans prochaine étape est signalé avant qu'il ne refroidisse</li></ul>
+          </div>
+          <div class="tour-panel" id="tour-planning" role="tabpanel" data-panel="planning">
+            <h3>Vos rendez-vous et vos tâches au même endroit.</h3>
+            <ul><li>Synchronisation Google Agenda, Outlook en cours d'activation</li><li>Chaque tâche à son heure réelle, colorée par type</li><li>Closia peut organiser votre journée et vous expliquer son ordre</li></ul>
+          </div>
+          <div class="tour-panel" id="tour-assistant" role="tabpanel" data-panel="assistant">
+            <h3>Il part de vos échanges, pas d'un modèle.</h3>
+            <ul><li>Une relance rédigée depuis le vrai fil d'emails avec ce client</li><li>Une prise de note transformée en tâches datées</li><li>Un script d'appel préparé à partir de l'historique du dossier</li></ul>
+          </div>
+          <div class="tour-panel" id="tour-activities" role="tabpanel" data-panel="activities">
+            <h3>Vos chiffres, et ce qu'il y a derrière.</h3>
+            <ul><li>Chaque indicateur s'ouvre sur la liste qui le compose</li><li>Ce qui mérite votre attention remonte en tête</li><li>Réactivité, conversion, pipeline par étape</li></ul>
+          </div>
+          <div class="tour-panel" id="tour-equipe" role="tabpanel" data-panel="equipe">
+            <h3>À plusieurs, sans se marcher dessus.</h3>
+            <ul><li>Rôles administrateur, commercial et customer success</li><li>Un commercial et un CSM responsables sur chaque dossier</li><li>La règle « aucun prospect sans prochaine action », activable par l'admin</li></ul>
+          </div>
+        </div>
       </div>
       <div class="eco">
         <h3 class="eco-title">Et il se branche sur ce que vous utilisez déjà.</h3>
