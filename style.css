@@ -2780,3 +2780,93 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 480px) {
   .footer-inner { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   ÉCOSYSTÈME — fondu dans « Les essentiels »
+   Les deux sections répondaient à la même question : ce que le
+   produit contient et ce sur quoi il se branche. Les intégrations
+   passent en lignes plutôt qu'en cartes, la liste étant courte.
+   ============================================================ */
+
+.eco {
+  max-width: 1000px;
+  margin: 44px auto 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.eco-title {
+  margin: 0 0 4px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-align: center;
+}
+
+.eco-line {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.eco-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+.eco-text b { font-weight: 700; color: var(--text); }
+
+@media (max-width: 640px) {
+  .eco-line { grid-template-columns: 1fr; gap: 6px; }
+  .eco-line .integ-status { justify-self: start; }
+}
+
+/* ============================================================
+   TEXTE À GAUCHE, PRODUIT À DROITE
+   Un titre au-dessus d'une maquette empile deux hauteurs ;
+   côte à côte, la section tient dans un écran et le produit
+   se voit en même temps que l'argument.
+   ============================================================ */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 48px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* L'en-tête de section est centré par défaut : ici il s'aligne
+   à gauche, en regard du visuel. */
+.split-text .section-head {
+  text-align: left;
+  margin: 0;
+  max-width: none;
+}
+
+.split-text .section-head h2 { text-wrap: balance; }
+
+.split-visual { min-width: 0; }
+
+/* Les maquettes reprennent la largeur de leur colonne. */
+.split-visual .why-card,
+.split-visual .crm-window { max-width: none; margin: 0; }
+
+.split-visual .demo-note { text-align: left; margin-left: 0; }
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .split-text .section-head { text-align: center; }
+  .split-visual .demo-note { text-align: center; }
+}
