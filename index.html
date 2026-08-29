@@ -316,6 +316,58 @@
         </li>
       </ol>
 
+      <div class="week-intro">
+        <h3>Vos rendez-vous sont fixés. Closia range le reste autour.</h3>
+        <p>La semaine s'ouvre sur ce qui est déjà pris, et les relances viennent se placer dans les creux — aux heures que vous avez définies comme vos heures de travail.</p>
+      </div>
+
+      <div class="week-window">
+        <div class="mock-bar"><span></span><span></span><span></span></div>
+        <div class="week-grid" role="img" aria-label="Vue semaine de l'agenda Closia : rendez-vous et relances répartis du lundi au vendredi">
+          <div class="week-hours">
+            <span>09:00</span><span>11:00</span><span>13:00</span><span>15:00</span><span>17:00</span>
+          </div>
+
+          <div class="week-day">
+            <span class="week-dayname">Lun<b>1</b></span>
+            <span class="week-slot task" style="top:6%">Relancer Lambert Finance</span>
+            <span class="week-slot task" style="top:22%">Relancer Charcuterie</span>
+            <span class="week-slot rdv" style="top:52%">Visite chantier Benali</span>
+          </div>
+
+          <div class="week-day">
+            <span class="week-dayname">Mar<b>2</b></span>
+            <span class="week-slot rdv" style="top:14%">Démo Dubois Transport</span>
+            <span class="week-slot task" style="top:44%">Appeler Moreau Santé</span>
+          </div>
+
+          <div class="week-day">
+            <span class="week-dayname">Mer<b>3</b></span>
+            <span class="week-slot task" style="top:6%">Envoyer devis Blanc</span>
+            <span class="week-slot rdv" style="top:34%">RDV Cabinet Lefevre</span>
+            <span class="week-slot task" style="top:70%">Relancer Faure Sport</span>
+          </div>
+
+          <div class="week-day">
+            <span class="week-dayname">Jeu<b>4</b></span>
+            <span class="week-slot rdv" style="top:20%">Visio Girard &amp; Fils</span>
+            <span class="week-slot task" style="top:58%">Appeler Boulangerie Dupont</span>
+          </div>
+
+          <div class="week-day">
+            <span class="week-dayname">Ven<b>5</b></span>
+            <span class="week-slot task" style="top:10%">Relancer Fontaine Traiteur</span>
+            <span class="week-slot rdv" style="top:46%">Point Rocher Immo</span>
+          </div>
+        </div>
+
+        <div class="week-legend">
+          <span><i class="week-key rdv"></i>Rendez-vous de votre agenda</span>
+          <span><i class="week-key task"></i>Relances placées par Closia</span>
+        </div>
+      </div>
+      <p class="demo-note">Exemple de démonstration. Les entreprises sont fictives.</p>
+
 </section>
 
     <section id="deals-oublies" class="forgotten-deals reveal">
@@ -392,6 +444,45 @@
         <div class="essential"><h3>Équipe</h3><p>Rôles, attribution des dossiers, résultats partagés.</p></div>
         <div class="essential"><h3>Reporting</h3><p>Votre activité et votre pipeline, sans export à faire.</p></div>
       </div>
+
+      <div class="ai-demo">
+        <div class="ai-intro">
+          <h3>Vous donnez trois mots. Closia écrit le reste.</h3>
+          <p>L'IA part de vos échanges réels avec ce client, pas d'un modèle générique.</p>
+        </div>
+
+        <div class="ai-panes">
+          <div class="ai-pane">
+            <span class="ai-pane-kind">Rédiger une relance</span>
+            <div class="ai-field">
+              <span class="ai-label">Vos mots-clés</span>
+              <span class="ai-input">relance devis · prix · délai de livraison</span>
+            </div>
+            <div class="ai-arrow" aria-hidden="true"></div>
+            <div class="ai-output">
+              <span class="ai-subject">Objet : Votre devis — précisions sur les délais</span>
+              <p>Bonjour Marc,</p>
+              <p>Je reviens vers vous suite au devis envoyé le 20 août. Vous m'aviez interrogé sur le délai de livraison : nous sommes actuellement à trois semaines après validation.</p>
+              <p>Le prix indiqué reste valable jusqu'au 20 septembre. Souhaitez-vous que nous en discutions cette semaine ?</p>
+            </div>
+          </div>
+
+          <div class="ai-pane">
+            <span class="ai-pane-kind">Transformer une note en actions</span>
+            <div class="ai-field">
+              <span class="ai-label">Votre prise de note</span>
+              <span class="ai-input ai-input-note">Rdv ok. Budget validé mais attend l'accord de sa direction. Rappeler jeudi. Envoyer les références clients du secteur.</span>
+            </div>
+            <div class="ai-arrow" aria-hidden="true"></div>
+            <div class="ai-tasks">
+              <span class="ai-task"><i class="ai-task-dot call"></i>Rappeler Marc Dubois<b>jeudi 4 sept.</b></span>
+              <span class="ai-task"><i class="ai-task-dot mail"></i>Envoyer les références clients du secteur<b>demain</b></span>
+              <span class="ai-task ai-task-note"><i class="ai-task-dot info"></i>Budget validé, en attente de l'accord de la direction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="demo-note">Exemple de démonstration. Les entreprises sont fictives.</p>
     </section>
 
         <!-- 8. Intégrations et contexte -->
