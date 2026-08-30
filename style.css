@@ -3194,7 +3194,7 @@ a { color: inherit; text-decoration: none; }
    choisi sans quitter la barre latérale, qui reste à portée de clic.
    Le conteneur d'origine est conservé — toutes ses règles en dépendent — mais
    il n'est plus une section pleine page : on lui reprend largeur et marges. */
-.tour-bene { max-width: none; margin: 34px 0 0; padding: 30px 0 0; border-top: 1px solid var(--hairline); }
+.tour-bene { max-width: none; margin: 0 0 28px; padding: 0; border-top: 0; }
 .tour-bene .section-head,
 #parcours.tour-bene .section-head { max-width: 720px; margin: 0 0 22px; text-align: left; }
 .tour-bene .section-head h2 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; }
@@ -3207,10 +3207,13 @@ a { color: inherit; text-decoration: none; }
 .tour-bene .split { grid-template-columns: minmax(0, 1fr); max-width: none; }
 .tour-bene .split-text { position: static; max-width: 760px; }
 
-/* Et quand le bloc rapatrié ouvre le panneau, il n'a plus rien à séparer. */
-.tour-panel > .tour-bene:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+/* Les trois points de conclusion se détachent de la maquette qui les précède. */
+.tour-panel > .tour-gains { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--hairline); }
 .tour-panel { display: none; }
-.tour-panel.is-active { display: block; }
+.tour-panel.is-active { display: flex; flex-direction: column; }
+.tour-panel > .tour-bene { order: 1; }
+.tour-panel > .mk { order: 2; }
+.tour-panel > .tour-gains { order: 3; }
 
 .mk {
   background: var(--surface);
