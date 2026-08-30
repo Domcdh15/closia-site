@@ -2217,6 +2217,7 @@ a { color: inherit; text-decoration: none; }
    simulation : le filet qui les séparait de la section précédente n'a plus rien
    à séparer, il souligne juste le titre. Seules les sections encore autonomes
    le gardent. */
+#fonctions,
 #integrations,
 #faq,
 #contact {
