@@ -133,3 +133,15 @@ if (revealEls.length) {
     suivant.focus();
   });
 })();
+
+// La barre latérale de la simulation reste calée sous l'en-tête pendant tout le
+// défilement de la section. Sa hauteur est mesurée à l'exécution plutôt que
+// codée en dur : l'en-tête change de hauteur selon la largeur de l'écran, et un
+// nombre figé finirait toujours par être faux quelque part.
+const enTete = document.querySelector(".nav");
+if (enTete) {
+  const calerBarreLaterale = () =>
+    document.documentElement.style.setProperty("--tour-top", `${enTete.offsetHeight + 16}px`);
+  calerBarreLaterale();
+  window.addEventListener("resize", calerBarreLaterale);
+}
