@@ -1024,8 +1024,7 @@ a { color: inherit; text-decoration: none; }
    Le texte est aligné à gauche : ces cartes se lisent, elles ne se scannent
    plus, et du texte centré sur quatre lignes se lit mal. */
 .price-card { text-align: left; }
-.price-card .price-row,
-.price-card .price-instead { justify-content: flex-start; text-align: left; }
+.price-card .price-row { justify-content: flex-start; margin-bottom: 8px; }
 
 .price-stage {
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -1047,11 +1046,33 @@ a { color: inherit; text-decoration: none; }
   margin: 7px 0 14px;
 }
 
+/* La description pousse le bouton en bas : sans elle, les trois cartes
+   n'alignaient plus leurs appels à l'action. */
 .price-body {
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 13.5px;
+  line-height: 1.6;
   color: var(--text-dim);
-  margin: 0 0 12px;
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+/* Le nombre d'utilisateurs et le prix du siège supplémentaire, juste sous le
+   prix : c'est la deuxième chose qu'on cherche sur une carte tarifaire. */
+.price-seats {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 0.5px solid var(--hairline);
+}
+
+.price-footnote {
+  margin: 22px 0 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-faint);
 }
 
 .price-for {
@@ -1150,8 +1171,9 @@ a { color: inherit; text-decoration: none; }
 
 .price-new {
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
