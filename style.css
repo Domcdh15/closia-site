@@ -68,6 +68,10 @@ a { color: inherit; text-decoration: none; }
   gap: 24px;
 }
 
+/* Les liens du milieu portaient le flex:1 qui repoussait les deux boutons à
+   droite. Sans eux, c'est la marque qui prend le relais. */
+.nav-inner .brand { margin-right: auto; }
+
 .nav .brand { color: #fff; }
 
 .brand {
