@@ -3134,7 +3134,7 @@ a { color: inherit; text-decoration: none; }
    comme dans Closia, et l'écran correspondant à droite.
    ============================================================ */
 
-.product-tour { max-width: 1440px; margin: 0 auto; padding: 68px 28px; }
+.product-tour { max-width: 1440px; margin: 0 auto; padding: 44px 28px; }
 
 .tour-app {
   display: grid;
@@ -3198,12 +3198,38 @@ a { color: inherit; text-decoration: none; }
    choisi sans quitter la barre latérale, qui reste à portée de clic.
    Le conteneur d'origine est conservé — toutes ses règles en dépendent — mais
    il n'est plus une section pleine page : on lui reprend largeur et marges. */
-.tour-bene { max-width: none; margin: 0 0 28px; padding: 0; border-top: 0; }
+.tour-bene { max-width: none; margin: 0 0 20px; padding: 0; border-top: 0; }
 .tour-bene .section-head,
 #parcours.tour-bene .section-head { max-width: 720px; margin: 0 0 22px; text-align: left; }
 .tour-bene .section-head h2 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; }
 .tour-bene .section-head p { font-size: 15px; }
 .tour-bene > :last-child { margin-bottom: 0; }
+
+/* --- Tenir dans un écran ---------------------------------------------------
+   Chaque panneau doit se lire sans défiler. Les blocs rapatriés viennent de
+   sections qui occupaient une page entière : on reprend leur respiration, on
+   plafonne les illustrations qui grandissaient avec la largeur, et on resserre
+   les titres. Rien n'est retiré, tout est compacté. */
+.tour-bene .section-head { margin-bottom: 14px; }
+.tour-bene .section-head h2 { font-size: clamp(20px, 1.9vw, 26px); margin-bottom: 6px; }
+.tour-bene .section-head p { font-size: 14px; line-height: 1.5; }
+.tour-bene .eyebrow { margin-bottom: 6px; }
+.tour-bene .demo-note { margin-top: 8px; font-size: 10.5px; }
+
+/* L'araignée est un SVG : sa hauteur suit sa largeur. La borner en largeur est
+   le seul moyen de la borner en hauteur. */
+.tour-bene .eco-web { max-width: 600px; margin-left: auto; margin-right: auto; }
+.tour-bene .eco-legend { margin-top: 10px; font-size: 11px; }
+
+.tour-bene .why-card-head { padding: 14px 18px; }
+.tour-bene .why-card-body { padding: 14px 18px 16px; }
+.tour-bene .why-reasons { gap: 4px; }
+.tour-bene .why-reasons li { font-size: 12.5px; line-height: 1.45; }
+.tour-bene .why-conclusion { font-size: 12.5px; padding: 10px 12px; }
+
+.tour-bene .week-legend { margin-top: 10px; gap: 8px 16px; font-size: 11.5px; }
+.tour-bene .journey-step h3 { font-size: 16px; }
+.tour-bene .journey-step p { font-size: 13px; }
 
 /* Deux blocs rapatriés ont perdu leur visuel, devenu un doublon de la maquette
    du panneau. Ce qui reste doit reprendre toute la largeur au lieu de tenir
@@ -3212,7 +3238,7 @@ a { color: inherit; text-decoration: none; }
 .tour-bene .split-text { position: static; max-width: 760px; }
 
 /* Les trois points de conclusion se détachent de la maquette qui les précède. */
-.tour-panel > .tour-gains { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--hairline); }
+.tour-panel > .tour-gains { margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--hairline); }
 .tour-panel { display: none; }
 .tour-panel.is-active { display: flex; flex-direction: column; }
 .tour-panel > .tour-bene { order: 1; }
