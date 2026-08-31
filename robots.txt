@@ -4,4 +4,4 @@ Allow: /
 # Pages volontairement hors index : elles portent déjà une balise noindex.
 Disallow: /subscribe.html
 
-Sitemap: https://clos-ia.fr/sitemap.xml
+Sitemap: https://www.clos-ia.fr/sitemap.xml
