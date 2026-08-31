@@ -3095,12 +3095,12 @@ main#top {
   text-align: center;
 }
 
-.eco-tag.live { background: var(--success-dim); color: #147a4a; }
+.eco-tag.live { background: #2e6ff2; color: #ffffff; }
 .eco-tag.soon { background: var(--warning-dim); color: #a35f06; }
-.eco-tag.planned { background: var(--panel2); color: var(--text-faint); }
-.eco-tag.import { background: #f0ebfa; color: #6b46c1; }
+.eco-tag.planned { background: var(--panel2); color: #5b6472; }
+.eco-tag.import { background: #dfe9fd; color: #1746b8; }
 
-.eco-chips.import span { border-color: #d9cdf2; color: #6b46c1; }
+.eco-chips.import span { border-color: #bcd2fb; color: #1746b8; }
 
 .eco-chips {
   display: flex;
@@ -3261,10 +3261,10 @@ main#top {
   flex-shrink: 0;
 }
 
-.eco-key.live { background: #1c7a4d; }
+.eco-key.live { background: #2e6ff2; }
 .eco-key.soon { background: #a35f06; }
-.eco-key.plan { background: none; border: 1px dashed #98a2ac; }
-.eco-key.import { background: #6b46c1; }
+.eco-key.plan { background: none; border: 1px dashed #8a94a6; }
+.eco-key.import { background: #dfe9fd; border: 1px solid #2e6ff2; }
 
 /* Sous cette largeur les libellés se chevaucheraient : le diagramme
    laisse la place à une liste. */
