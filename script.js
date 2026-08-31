@@ -47,6 +47,7 @@ form.addEventListener("submit", async (e) => {
         phone: data.phone || null,
         company: data.company || null,
         team_size: data.team_size || null,
+        industry: data.industry || null,
         message: data.message || null,
       }),
     });
