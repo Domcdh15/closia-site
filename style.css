@@ -3098,6 +3098,9 @@ main#top {
 .eco-tag.live { background: var(--success-dim); color: #147a4a; }
 .eco-tag.soon { background: var(--warning-dim); color: #a35f06; }
 .eco-tag.planned { background: var(--panel2); color: var(--text-faint); }
+.eco-tag.import { background: #f0ebfa; color: #6b46c1; }
+
+.eco-chips.import span { border-color: #d9cdf2; color: #6b46c1; }
 
 .eco-chips {
   display: flex;
@@ -3261,6 +3264,7 @@ main#top {
 .eco-key.live { background: #1c7a4d; }
 .eco-key.soon { background: #a35f06; }
 .eco-key.plan { background: none; border: 1px dashed #98a2ac; }
+.eco-key.import { background: #6b46c1; }
 
 /* Sous cette largeur les libellés se chevaucheraient : le diagramme
    laisse la place à une liste. */
