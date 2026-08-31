@@ -30,8 +30,16 @@ function selectPlan(card) {
   } else {
     seatsField.classList.add("visible");
     seatsInput.min = 1;
+    const plafonnee = !selectedPlan.overage;
+    if (plafonnee) seatsInput.max = selectedPlan.seatsIncluded;
+    else seatsInput.removeAttribute("max");
     if (Number(seatsInput.value) < 1) seatsInput.value = selectedPlan.seatsIncluded;
-    seatsHint.textContent = `${selectedPlan.seatsIncluded} utilisateur${selectedPlan.seatsIncluded > 1 ? "s" : ""} inclus, puis ${selectedPlan.overage}€/utilisateur supplémentaire.`;
+    if (plafonnee && Number(seatsInput.value) > selectedPlan.seatsIncluded) {
+      seatsInput.value = selectedPlan.seatsIncluded;
+    }
+    seatsHint.textContent = plafonnee
+      ? `Jusqu'à ${selectedPlan.seatsIncluded} utilisateurs. Au-delà, il faut la formule supérieure.`
+      : `${selectedPlan.seatsIncluded} utilisateurs inclus, puis ${selectedPlan.overage}€ par utilisateur supplémentaire.`;
   }
 
   updateSummary();
@@ -39,7 +47,10 @@ function selectPlan(card) {
 
 function updateSummary() {
   if (!selectedPlan) return;
-  const seats = Math.max(1, Number(seatsInput.value) || 1);
+  // Le total ne peut pas dépasser ce que la formule couvre : sans ce plafond,
+  // la page afficherait un prix que le CRM refusera d'honorer à l'invitation.
+  const brut = Math.max(1, Number(seatsInput.value) || 1);
+  const seats = selectedPlan.overage ? brut : Math.min(brut, selectedPlan.seatsIncluded);
   const extra = Math.max(0, seats - selectedPlan.seatsIncluded);
   const launchTotal = selectedPlan.price + extra * selectedPlan.overage;
   const standardTotal = selectedPlan.standardPrice + extra * selectedPlan.overage;
