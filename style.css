@@ -1538,13 +1538,6 @@ main#top {
    Réutilise les tokens existants : aucune nouvelle couleur.
    ============================================================ */
 
-.demo-note {
-  margin: 22px auto 0;
-  max-width: 640px;
-  text-align: center;
-  font-size: 12.5px;
-  color: var(--text-faint);
-}
 
 /* --- 3. CRM classique vs Closia --- */
 .contrast-grid {
@@ -3048,57 +3041,14 @@ main#top {
   text-align: center;
 }
 
-.eco-row {
-  display: grid;
-  grid-template-columns: 92px minmax(0, 1fr);
-  gap: 16px;
-  align-items: baseline;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--hairline);
-}
 
-.eco-row:last-of-type { border-bottom: none; }
 
-.eco-tag {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  border-radius: 999px;
-  padding: 4px 0;
-  text-align: center;
-}
 
-.eco-tag.live { background: #2e6ff2; color: #ffffff; }
-.eco-tag.soon { background: var(--warning-dim); color: #a35f06; }
-.eco-tag.planned { background: var(--panel2); color: #5b6472; }
-.eco-tag.import { background: #dfe9fd; color: #1746b8; }
 
-.eco-chips.import span { border-color: #bcd2fb; color: #1746b8; }
 
-.eco-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
 
-.eco-chips span {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: 7px;
-  padding: 6px 11px;
-}
 
 /* Ce qui n'existe pas encore ne doit pas peser autant que le reste. */
-.eco-chips.muted span {
-  font-weight: 500;
-  color: var(--text-faint);
-  background: none;
-  border-style: dashed;
-}
 
 .eco-note {
   margin: 18px 0 0;
@@ -3563,7 +3513,7 @@ main#top {
 .probleme, .demo, .pourquoi, .parcours, .benefice, .manager, .roles {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 76px 28px;
+  padding: 54px 28px;
 }
 
 /* — Problème : quatre chiffres qui écrasent, puis la question qui bloque — */
@@ -3610,31 +3560,27 @@ main#top {
   margin: 34px 0 0;
 }
 
-.pb-sub {
-  font-size: 16px;
-  color: var(--text-dim);
-  text-align: center;
-  max-width: 520px;
-  margin: 12px auto 0;
-  line-height: 1.55;
-}
 
 /* — Démonstration : l'entonnoir, puis la carte qui fait tout comprendre — */
 .demo-flow {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin: 8px 0 34px;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px 0 30px;
+  flex-wrap: wrap;
 }
 
 .demo-step {
+  flex: 1 1 230px;
   background: var(--panel);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-md);
-  padding: 14px 22px;
+  padding: 16px 20px;
   text-align: center;
-  min-width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .demo-step .demo-num {
@@ -3656,7 +3602,7 @@ main#top {
 
 .demo-step.is-out b { color: var(--blue-deep); }
 
-.demo-arrow { color: var(--text-faint); font-size: 17px; line-height: 1; }
+.demo-arrow { display: flex; align-items: center; color: var(--text-faint); font-size: 17px; }
 
 .deal-card {
   background: var(--panel);
@@ -3756,13 +3702,6 @@ main#top {
   white-space: nowrap;
 }
 
-.demo-note {
-  text-align: center;
-  font-size: 13px;
-  color: var(--text-faint);
-  margin: 22px auto 0;
-  max-width: 520px;
-}
 
 /* — Parcours : quatre étapes numérotées, parce que l'ordre compte vraiment — */
 .etapes {
@@ -3881,7 +3820,7 @@ main#top {
 .role em { font-style: normal; font-size: 13.5px; color: var(--text-dim); line-height: 1.5; }
 
 @media (max-width: 860px) {
-  .probleme, .demo, .pourquoi, .parcours, .benefice, .manager, .roles { padding: 52px 20px; }
+  .probleme, .demo, .pourquoi, .parcours, .benefice, .manager, .roles { padding: 40px 20px; }
   .pb-grid { grid-template-columns: 1fr 1fr; }
   .pb-stat b { font-size: 32px; }
   .pb-punch { font-size: 22px; }
@@ -3901,7 +3840,7 @@ main#top {
 
 /* — Import : quatre gestes, une flèche entre chacun. La honnêteté sur la
      nature de l'opération vaut mieux qu'une promesse de synchronisation. — */
-.import-crm { max-width: 1080px; margin: 0 auto; padding: 76px 28px; }
+.import-crm { max-width: 1080px; margin: 0 auto; padding: 54px 28px; }
 
 .imp-steps {
   display: flex;
@@ -3939,8 +3878,12 @@ main#top {
 }
 
 @media (max-width: 860px) {
-  .import-crm { padding: 52px 20px; }
+  .import-crm { padding: 40px 20px; }
   .imp-arrow { display: none; }
   .imp-step { flex-basis: 100%; }
 }
 
+@media (max-width: 700px) {
+  .demo-flow { flex-direction: column; }
+  .demo-arrow { justify-content: center; transform: rotate(90deg); }
+}
