@@ -3262,117 +3262,37 @@ main#top {
    comme dans Closia, et l'écran correspondant à droite.
    ============================================================ */
 
-.product-tour { max-width: 1440px; margin: 0 auto; padding: 44px 28px; }
 
-.tour-app {
-  display: grid;
-  grid-template-columns: 224px minmax(0, 1fr);
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  overflow: clip;
-  min-height: 470px;
-  align-items: start;
-}
 
 /* --- barre latérale --- */
-.tour-nav {
-  position: sticky;
-  top: var(--tour-top, 88px);
-  align-self: start;
-  max-height: calc(100vh - var(--tour-top, 88px) - 24px);
-  overflow-y: auto;
-  background: var(--surface);
-  border-right: 1px solid var(--hairline);
-  padding: 26px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
 
-.tour-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-align: left;
-  background: none;
-  border: none;
-  border-radius: 9px;
-  padding: 10px 12px;
-  font-family: inherit;
-  font-size: 13.5px;
-  font-weight: 500;
-  color: var(--text-dim);
-  cursor: pointer;
-  transition: background 140ms ease, color 140ms ease;
-}
 
-.tour-item svg { flex-shrink: 0; opacity: 0.75; }
-.tour-item:hover { background: var(--panel2); color: var(--text); }
 
-.tour-item.is-active {
-  background: var(--blue-dim);
-  color: var(--blue);
-  font-weight: 700;
-}
 
-.tour-item.is-active svg { opacity: 1; }
 
 /* --- zone d'écran --- */
-.tour-panels { background: var(--bg); padding: 20px; }
 
 /* Les bénéfices de la section suivent la maquette : on descend dans l'écran
    choisi sans quitter la barre latérale, qui reste à portée de clic.
    Le conteneur d'origine est conservé — toutes ses règles en dépendent — mais
    il n'est plus une section pleine page : on lui reprend largeur et marges. */
-.tour-bene { max-width: none; margin: 0 0 20px; padding: 0; border-top: 0; }
-.tour-bene .section-head,
-#parcours.tour-bene .section-head { max-width: 720px; margin: 0 0 22px; text-align: left; }
-.tour-bene .section-head h2 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; }
-.tour-bene .section-head p { font-size: 15px; }
-.tour-bene > :last-child { margin-bottom: 0; }
 
 /* --- Tenir dans un écran ---------------------------------------------------
    Chaque panneau doit se lire sans défiler. Les blocs rapatriés viennent de
    sections qui occupaient une page entière : on reprend leur respiration, on
    plafonne les illustrations qui grandissaient avec la largeur, et on resserre
    les titres. Rien n'est retiré, tout est compacté. */
-.tour-bene .section-head { margin-bottom: 14px; }
-.tour-bene .section-head h2 { font-size: clamp(20px, 1.9vw, 26px); margin-bottom: 6px; }
-.tour-bene .section-head p { font-size: 14px; line-height: 1.5; }
-.tour-bene .eyebrow { margin-bottom: 6px; }
-.tour-bene .demo-note { margin-top: 8px; font-size: 10.5px; }
 
 /* L'araignée est un SVG : sa hauteur suit sa largeur. La borner en largeur est
    le seul moyen de la borner en hauteur. */
-.tour-bene .eco-web { max-width: 600px; margin-left: auto; margin-right: auto; }
-.tour-bene .eco-legend { margin-top: 10px; font-size: 11px; }
 
-.tour-bene .why-card-head { padding: 14px 18px; }
-.tour-bene .why-card-body { padding: 14px 18px 16px; }
-.tour-bene .why-reasons { gap: 4px; }
-.tour-bene .why-reasons li { font-size: 12.5px; line-height: 1.45; }
-.tour-bene .why-conclusion { font-size: 12.5px; padding: 10px 12px; }
 
-.tour-bene .week-legend { margin-top: 8px; gap: 6px 16px; font-size: 11px; }
-.tour-bene .week-grid { --week-row: 52px; }
-.tour-bene .journey-step h3 { font-size: 16px; }
-.tour-bene .journey-step p { font-size: 13px; }
 
 /* Deux blocs rapatriés ont perdu leur visuel, devenu un doublon de la maquette
    du panneau. Ce qui reste doit reprendre toute la largeur au lieu de tenir
    dans la colonne de texte d'une mise en page à deux colonnes. */
-.tour-bene .split { grid-template-columns: minmax(0, 1fr); max-width: none; }
-.tour-bene .split-text { position: static; max-width: 760px; }
 
 /* Les trois points de conclusion se détachent de la maquette qui les précède. */
-.tour-panel > .tour-gains { margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--hairline); }
-.tour-panel { display: none; }
-.tour-panel.is-active { display: flex; flex-direction: column; }
-.tour-panel > .tour-bene { order: 1; }
-.tour-panel > .mk { order: 2; }
-.tour-panel > .tour-gains { order: 3; }
 
 .mk {
   background: var(--surface);
@@ -3611,46 +3531,16 @@ main#top {
 .mk-switch.on::after { left: auto; right: 2px; }
 
 /* --- les apports, sous l'écran --- */
-.tour-gains {
-  list-style: none;
-  margin: 14px 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px 18px;
-}
 
-.tour-gains li {
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: var(--text-dim);
-  padding-left: 16px;
-  position: relative;
-}
 
-.tour-gains li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-  border-radius: 2px;
-  background: var(--blue);
-  opacity: 0.55;
-}
 
 @media (max-width: 900px) {
-  .tour-app { grid-template-columns: 1fr; min-height: 0; }
-  .tour-nav { flex-direction: row; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--hairline); padding: 10px; }
-  .tour-item { white-space: nowrap; padding: 8px 11px; font-size: 12.5px; }
   .mk-cols, .mk-cards, .mk-kpis { grid-template-columns: 1fr; }
   .mk-week { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .mk-wcol:nth-child(n+4) { display: none; }
   .mk-row { grid-template-columns: 12px minmax(0, 1fr) auto; }
   .mk-row > span:nth-child(3), .mk-row > span:nth-child(5) { display: none; }
   .mk-row.head { display: none; }
-  .tour-gains { grid-template-columns: 1fr; }
 }
 
 .tour { max-width: none; }
@@ -3665,3 +3555,393 @@ main#top {
 
 @media (max-width: 900px) { #parcours .journey-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { #parcours .journey-steps { grid-template-columns: 1fr; } }
+
+/* ═══ REFONTE : PROBLÈME → DÉMONSTRATION → POURQUOI → PARCOURS → BÉNÉFICE → MANAGER ═══
+   Une seule règle guide ces sections : le regard doit toujours savoir où aller.
+   D'où peu de couleurs, un seul accent, et des chiffres qui portent la lecture. */
+
+.probleme, .demo, .pourquoi, .parcours, .benefice, .manager, .roles {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 76px 28px;
+}
+
+/* — Problème : quatre chiffres qui écrasent, puis la question qui bloque — */
+.pb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 34px auto 0;
+  max-width: 780px;
+}
+
+.pb-stat {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: 22px 16px;
+  text-align: center;
+}
+
+.pb-stat b {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-stat span {
+  display: block;
+  margin-top: 7px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.35;
+}
+
+.pb-punch {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 34px 0 0;
+}
+
+.pb-sub {
+  font-size: 16px;
+  color: var(--text-dim);
+  text-align: center;
+  max-width: 520px;
+  margin: 12px auto 0;
+  line-height: 1.55;
+}
+
+/* — Démonstration : l'entonnoir, puis la carte qui fait tout comprendre — */
+.demo-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 34px;
+}
+
+.demo-step {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: 14px 22px;
+  text-align: center;
+  min-width: 290px;
+}
+
+.demo-step .demo-num {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 5px;
+}
+
+.demo-step b { font-size: 15px; font-weight: 700; }
+
+.demo-step.is-out {
+  border-color: var(--blue);
+  background: var(--blue-dim);
+}
+
+.demo-step.is-out b { color: var(--blue-deep); }
+
+.demo-arrow { color: var(--text-faint); font-size: 17px; line-height: 1; }
+
+.deal-card {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 620px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.deal-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.deal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+.deal-id { flex: 1; min-width: 0; }
+.deal-id b { display: block; font-size: 16px; font-weight: 700; }
+.deal-id em { display: block; font-style: normal; font-size: 12.5px; color: var(--text-dim); margin-top: 2px; }
+
+.deal-prio {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--red);
+  background: var(--red-dim);
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.deal-lab {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 9px;
+}
+
+.deal-signals { padding: 18px 22px; border-bottom: 1px solid var(--hairline); }
+.deal-signals ul { margin: 0; padding: 0; list-style: none; }
+
+.deal-signals li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+.deal-signals li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.deal-why { padding: 18px 22px; background: var(--panel2); border-bottom: 1px solid var(--hairline); }
+.deal-why p { margin: 0; font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
+.deal-conf { display: inline-block; margin-top: 11px; font-size: 12.5px; color: var(--text-dim); }
+.deal-conf b { color: var(--success); }
+
+.deal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 22px;
+  flex-wrap: wrap;
+}
+
+.deal-reco { font-size: 14px; font-weight: 700; }
+
+.deal-btn {
+  background: var(--gradient-cta);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.demo-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-faint);
+  margin: 22px auto 0;
+  max-width: 520px;
+}
+
+/* — Parcours : quatre étapes numérotées, parce que l'ordre compte vraiment — */
+.etapes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.etape {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: 22px 18px;
+}
+
+.etape-n {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+  margin-bottom: 11px;
+}
+
+.etape b { display: block; font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.etape em { font-style: normal; font-size: 13.5px; color: var(--text-dim); line-height: 1.5; }
+
+/* — Bénéfice : la même journée, avant et après — */
+.av-ap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.av, .ap {
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+}
+
+.av { background: var(--panel2); border: 1px solid var(--hairline); }
+.ap { background: var(--blue-dim); border: 1px solid rgba(46, 111, 242, 0.22); }
+
+.av-lab {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 12px;
+}
+
+.ap .av-lab { color: var(--blue-deep); }
+.av p, .ap p { margin: 0; font-size: 16.5px; line-height: 1.55; }
+.av p { color: var(--text-dim); }
+.ap p { color: var(--text); font-weight: 600; }
+
+/* — Manager : ce qui demande un arbitrage, et sur quel dossier — */
+.mg-card {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  max-width: 720px;
+  margin: 0 auto 34px;
+  overflow: hidden;
+}
+
+.mg-head { padding: 16px 22px; border-bottom: 1px solid var(--hairline); font-size: 15px; }
+.mg-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.mg-cols > div { padding: 18px 22px; }
+.mg-cols > div + div { border-left: 1px solid var(--hairline); }
+
+.mg-lab {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 11px;
+}
+
+.mg-line { display: flex; align-items: center; gap: 9px; font-size: 13.5px; padding: 4px 0; }
+.mg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.mg-dot.red { background: var(--red); }
+.mg-dot.amber { background: var(--warning); }
+
+.mg-focus { padding: 20px 22px; background: var(--panel2); border-top: 1px solid var(--hairline); }
+.mg-focus b { display: block; font-size: 15px; margin-bottom: 4px; }
+.mg-focus em { display: block; font-style: normal; font-size: 13px; color: var(--text-dim); line-height: 1.55; }
+
+.mg-reco {
+  display: block;
+  margin-top: 13px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--blue-deep);
+}
+
+/* — Rôles : trois phrases, pas une de plus — */
+.roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 34px; }
+
+.role {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+}
+
+.role b { display: block; font-size: 15px; font-weight: 700; margin-bottom: 7px; }
+.role em { font-style: normal; font-size: 13.5px; color: var(--text-dim); line-height: 1.5; }
+
+@media (max-width: 860px) {
+  .probleme, .demo, .pourquoi, .parcours, .benefice, .manager, .roles { padding: 52px 20px; }
+  .pb-grid { grid-template-columns: 1fr 1fr; }
+  .pb-stat b { font-size: 32px; }
+  .pb-punch { font-size: 22px; }
+  .etapes { grid-template-columns: 1fr 1fr; }
+  .av-ap { grid-template-columns: 1fr; }
+  .mg-cols { grid-template-columns: 1fr; }
+  .mg-cols > div + div { border-left: none; border-top: 1px solid var(--hairline); }
+  .roles-grid { grid-template-columns: 1fr; }
+  .demo-step { min-width: 0; width: 100%; }
+  .deal-actions { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 560px) {
+  .pb-grid { grid-template-columns: 1fr 1fr; }
+  .etapes { grid-template-columns: 1fr; }
+}
+
+/* — Import : quatre gestes, une flèche entre chacun. La honnêteté sur la
+     nature de l'opération vaut mieux qu'une promesse de synchronisation. — */
+.import { max-width: 1080px; margin: 0 auto; padding: 76px 28px; }
+
+.imp-steps {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.imp-step {
+  flex: 1 1 180px;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+}
+
+.imp-step b { display: block; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.imp-step em { font-style: normal; font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+.imp-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--text-faint);
+  font-size: 17px;
+}
+
+.imp-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-faint);
+  max-width: 620px;
+  margin: 22px auto 0;
+  line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .import { padding: 52px 20px; }
+  .imp-arrow { display: none; }
+  .imp-step { flex-basis: 100%; }
+}
+
+.cta-note { font-size: 13px; color: var(--text-faint); margin: 12px 0 0; }

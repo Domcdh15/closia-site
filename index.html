@@ -75,8 +75,6 @@
   </noscript>
   <noscript>
     <style>
-      .tour-panel { display: block !important; }
-      .tour-panel + .tour-panel { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--hairline); }
     </style>
   </noscript>
 </head>
@@ -89,12 +87,13 @@
         <span class="brand-text">Closia</span>
       </a>
       <nav class="nav-links">
-        <a href="#produit">Comment ça marche</a>
+        <a href="#demo">Comment ça marche</a>
         <a href="#pricing">Formules</a>
         <a href="#fonctions">Intégrations</a>
       </nav>
       <a href="https://app.clos-ia.fr" class="btn btn-ghost btn-sm">Se connecter</a>
       <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Demander une démo</a>
+        <p class="cta-note">Une démonstration de 15 minutes, sans engagement.</p>
     </div>
   </header>
 
@@ -106,33 +105,100 @@
         <p class="hero-sub">Closia analyse votre portefeuille chaque jour, détecte les opportunités qui méritent votre attention et vous prépare les prochaines actions.</p>
         <div class="hero-actions">
           <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary">Voir ce que Closia ferait avec mon pipeline</a>
-          <a href="#produit" class="btn btn-ghost">Voir la démo</a>
+          <a href="#demo" class="btn btn-ghost">Voir la démo</a>
         </div>
       </div>
 
     </section>
 
 
-    <!-- 3. CRM classique vs Closia -->
-<section id="produit" class="product-tour reveal">
+    <!-- PROBLÈME : ce n'est pas le manque de données, c'est le manque de tri -->
+    <section id="probleme" class="probleme reveal">
       <div class="section-head">
-        <h2>Six écrans. <span class="fade-word">Un seul réflexe.</span></h2>
-        <p>Choisissez une section pour voir ce que Closia y apporte.</p>
+        <h2>Vous avez un CRM.<br />Mais savez-vous <span class="fade-word">où agir aujourd'hui&nbsp;?</span></h2>
+      </div>
+      <div class="pb-grid">
+        <div class="pb-stat"><b>37</b><span>opportunités ouvertes</span></div>
+        <div class="pb-stat"><b>8</b><span>relances à faire</span></div>
+        <div class="pb-stat"><b>4</b><span>propositions sans réponse</span></div>
+        <div class="pb-stat"><b>3</b><span>commerciaux</span></div>
+      </div>
+      <p class="pb-punch">Par quoi commencer&nbsp;?</p>
+      <p class="pb-sub">Le problème n'a jamais été le manque de données. C'est qu'aucune ne vous dit laquelle compte aujourd'hui.</p>
+    </section>
+
+    <!-- DÉMONSTRATION : le moment où l'on comprend -->
+    <section id="demo" class="demo reveal">
+      <div class="section-head">
+        <span class="eyebrow">La différence</span>
+        <h2>18 opportunités.<br /><span class="fade-word">4 méritent votre journée.</span></h2>
+        <p>Chaque nuit, Closia relit votre portefeuille et ne remonte que ce qui bouge.</p>
       </div>
 
-      <div class="tour">
-        <div class="tour-app">
-          <div class="tour-nav" role="tablist" aria-label="Sections de Closia">
-            <button class="tour-item is-active" data-tour="today" role="tab" aria-selected="true" aria-controls="tour-today"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l9-2 9 2v10a9 9 0 0 1-18 0z"/></svg>Aujourd'hui</button>
-            <button class="tour-item" data-tour="pipeline" role="tab" aria-selected="false" aria-controls="tour-pipeline"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/></svg>Opportunités</button>
-            <button class="tour-item" data-tour="planning" role="tab" aria-selected="false" aria-controls="tour-planning"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18v16H3z M8 2v4 M16 2v4"/></svg>Agenda</button>
-            <button class="tour-item" data-tour="assistant" role="tab" aria-selected="false" aria-controls="tour-assistant"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg>Assistant IA</button>
-            <button class="tour-item" data-tour="activities" role="tab" aria-selected="false" aria-controls="tour-activities"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16 M4 12h16 M4 18h10"/></svg>Activités</button>
-            <button class="tour-item" data-tour="equipe" role="tab" aria-selected="false" aria-controls="tour-equipe"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M2 20a6 6 0 0 1 12 0"/></svg>Équipe</button>
-          </div>
-          <div class="tour-panels">
-          <div class="tour-panel is-active" id="tour-today" role="tabpanel" data-panel="today">
-            <div class="mk mk-today"><div class="mk-hero">Bonjour Thomas<em>Voici ce qui mérite votre attention aujourd'hui.</em>
+      <div class="demo-flow">
+        <div class="demo-step"><span class="demo-num">Votre portefeuille</span><b>18 opportunités</b></div>
+        <div class="demo-arrow" aria-hidden="true">↓</div>
+        <div class="demo-step"><span class="demo-num">Closia analyse les signaux</span><b>ancienneté · engagement · montant · prochaine étape</b></div>
+        <div class="demo-arrow" aria-hidden="true">↓</div>
+        <div class="demo-step is-out"><span class="demo-num">Ce matin</span><b>4 méritent votre attention</b></div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-head">
+          <span class="deal-dot" aria-hidden="true"></span>
+          <div class="deal-id"><b>Martin Industrie</b><em>Proposition envoyée · 24&nbsp;000&nbsp;€</em></div>
+          <span class="deal-prio">Priorité élevée</span>
+        </div>
+        <div class="deal-signals">
+          <span class="deal-lab">Signaux détectés</span>
+          <ul>
+            <li>21 jours sans aucune activité</li>
+            <li>Proposition envoyée, sans réponse</li>
+            <li>Dernier email ouvert deux fois</li>
+            <li>Aucune prochaine étape planifiée</li>
+          </ul>
+        </div>
+        <div class="deal-why">
+          <span class="deal-lab">Pourquoi cette recommandation&nbsp;?</span>
+          <p>L'opportunité reste active — le contact ouvre encore vos emails — mais elle perd de la dynamique et rien n'est prévu pour la relancer.</p>
+          <span class="deal-conf">Niveau de confiance&nbsp;: <b>élevé</b></span>
+        </div>
+        <div class="deal-actions">
+          <span class="deal-reco">Closia recommande&nbsp;: appeler aujourd'hui</span>
+          <span class="deal-btn">Préparer l'appel</span>
+        </div>
+      </div>
+
+      <p class="demo-note">Closia propose, vous décidez. Chaque recommandation montre ce sur quoi elle s'appuie.</p>
+    </section>
+
+    <!-- POURQUOI : l'IA doit rendre des comptes -->
+    <section id="pourquoi" class="pourquoi reveal">
+      <div class="section-head">
+        <span class="eyebrow">Jamais une boîte noire</span>
+        <h2>Pas seulement quoi faire.<br /><span class="fade-word">Pourquoi le faire.</span></h2>
+        <p>Une recommandation qu'on ne peut pas discuter, on finit par l'ignorer. Chacune s'ouvre sur les signaux qui l'ont produite.</p>
+      </div>
+      <div class="mk mk-assistant"><div class="mk-scan"><b>Closia a analysé aujourd'hui</b> <span><b>18</b> opportunités</span> <span><b>26</b> activités</span> <span class="alert"><b>4</b> à traiter</span></div>
+<div class="mk-cards">
+  <div class="mk-card"><span class="k-risk">Opportunité à risque</span><b>TechNova Solutions</b><span class="mk-num">24 000 €</span><em>Aucun contact depuis 21 jours — le risque grandit avec le silence.</em><span class="mk-reco">Relancer aujourd'hui</span></div>
+  <div class="mk-card"><span class="k-mail">Relance à préparer</span><b>Cherif Informatique</b><span class="mk-num">7 800 €</span><em>Proposition sans retour depuis un mois.</em><span class="mk-reco">Envoyer une relance courte</span></div>
+  <div class="mk-card"><span class="k-rdv">Rendez-vous à préparer</span><b>Cabinet Lefevre</b><span class="mk-num">3 500 €</span><em>Arriver avec l'historique et les objections probables.</em><span class="mk-reco">Préparer le rendez-vous</span></div>
+</div></div>
+    </section>
+
+    <!-- PARCOURS -->
+    <section id="parcours" class="parcours reveal">
+      <div class="section-head">
+        <h2>De votre portefeuille<br /><span class="fade-word">à votre prochaine action.</span></h2>
+      </div>
+      <div class="etapes">
+        <div class="etape"><span class="etape-n">01</span><b>Détecter</b><em>Closia analyse votre portefeuille.</em></div>
+        <div class="etape"><span class="etape-n">02</span><b>Prioriser</b><em>Les opportunités importantes remontent.</em></div>
+        <div class="etape"><span class="etape-n">03</span><b>Comprendre</b><em>Closia explique pourquoi.</em></div>
+        <div class="etape"><span class="etape-n">04</span><b>Agir</b><em>Closia prépare la prochaine action.</em></div>
+      </div>
+      <div class="mk mk-today"><div class="mk-hero">Bonjour Thomas<em>Voici ce qui mérite votre attention aujourd'hui.</em>
   <span class="mk-stats"><b>5</b> actions <b>2</b> RDV <b>2</b> relances <i>1 en retard</i></span></div>
 <div class="mk-cols">
   <div><span class="mk-lab">À faire aujourd'hui</span>
@@ -146,187 +212,55 @@
     <div class="mk-watch green"><b>Société Leroy</b><span>2 100 €</span><em>Forte dynamique</em></div>
   </div>
 </div></div>
-            
-            <div id="pourquoi" class="why tour-bene">
-      <div class="split">
-        <div class="split-text"><div class="section-head">
-        <span class="eyebrow">Transparence</span>
-        <h2>Pas seulement quoi faire.<br /><span class="fade-word">Pourquoi le faire.</span></h2>
-        <p>Une recommandation qu'on ne comprend pas, on ne la suit pas. Closia montre toujours le raisonnement derrière l'action qu'il propose.</p>
-      </div></div>
-        <div class="split-visual">
+    </section>
 
-      <div class="why-card">
-        <div class="why-card-head">
+    <!-- BÉNÉFICE -->
+    <section id="benefice" class="benefice reveal">
+      <div class="section-head">
+        <h2>Moins de temps à chercher.<br /><span class="fade-word">Plus de temps à vendre.</span></h2>
+      </div>
+      <div class="av-ap">
+        <div class="av">
+          <span class="av-lab">Avant</span>
+          <p>«&nbsp;Je dois passer en revue toutes mes opportunités pour savoir laquelle traiter.&nbsp;»</p>
+        </div>
+        <div class="ap">
+          <span class="av-lab">Avec Closia</span>
+          <p>«&nbsp;Closia m'indique les 4 dossiers qui méritent mon attention aujourd'hui, et pourquoi.&nbsp;»</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANAGER -->
+    <section id="manager" class="manager reveal">
+      <div class="section-head">
+        <span class="eyebrow">Pour les responsables</span>
+        <h2>Sachez où votre intervention<br /><span class="fade-word">peut faire la différence.</span></h2>
+        <p>Closia analyse l'activité de votre équipe et fait remonter les dossiers qui demandent votre arbitrage.</p>
+      </div>
+
+      <div class="mg-card">
+        <div class="mg-head"><b>7 dossiers demandent votre attention</b></div>
+        <div class="mg-cols">
           <div>
-            <span class="why-company">Martin Industrie</span>
-            <span class="why-contact">Julien Martin · Directeur des achats</span>
+            <span class="mg-lab">Commerciaux</span>
+            <div class="mg-line"><span class="mg-dot red" aria-hidden="true"></span>3 opportunités à risque</div>
+            <div class="mg-line"><span class="mg-dot amber" aria-hidden="true"></span>2 sans prochaine action</div>
           </div>
-          <div class="why-head-meta">
-            <span class="why-value">4 800 €</span>
-            <span class="why-badge">Priorité élevée</span>
-          </div>
-        </div>
-
-        <div class="why-card-body">
-          <span class="why-title">Pourquoi agir maintenant&nbsp;?</span>
-          <ul class="why-reasons">
-            <li>9 jours sans aucune activité</li>
-            <li>Proposition envoyée il y a 12 jours</li>
-            <li>Dernier email ouvert récemment</li>
-            <li>Montant supérieur à votre moyenne</li>
-            <li>Aucune prochaine étape planifiée</li>
-          </ul>
-
-          <p class="why-conclusion">L'intérêt semble toujours présent, mais l'absence de suivi augmente le risque de décrochage.</p>
-
-          <div class="why-reco">
-            <span class="why-reco-label">Action recommandée</span>
-            <span class="why-reco-value">Appeler aujourd'hui</span>
+          <div>
+            <span class="mg-lab">Customer Success</span>
+            <div class="mg-line"><span class="mg-dot red" aria-hidden="true"></span>1 client à risque</div>
+            <div class="mg-line"><span class="mg-dot amber" aria-hidden="true"></span>1 renouvellement à surveiller</div>
           </div>
         </div>
-      </div>
-      <p class="demo-note">Exemple de démonstration. Les entreprises et montants sont fictifs.</p>
-    </div>
-      </div>
-            </div>
-<ul class="tour-gains"><li>La file du jour, classée par ce qui risque le plus de vous échapper</li><li>Sous chaque recommandation, les signaux qui la justifient</li><li>Les tâches non faites replacées d'elles-mêmes</li></ul>
-          </div>
-          <div class="tour-panel" id="tour-pipeline" role="tabpanel" data-panel="pipeline">
-            <div class="mk mk-pipeline"><span class="mk-lab">À contacter <b>4</b></span>
-<div class="mk-row head"><span>Entreprise</span><span>Contact</span><span>Montant</span><span>Dern. activité</span></div>
-<div class="mk-row"><span class="mk-dot red"></span><span><b>Lambert Finance</b><em>46 jours sans activité</em></span><span>P. Lambert</span><span class="mk-num">4 200 €</span><span class="mk-num">12 juil.</span></div>
-<div class="mk-row"><span class="mk-dot red"></span><span><b>Charcuterie Bonneau</b><em>26 jours sans activité</em></span><span>J. Bonneau</span><span class="mk-num">1 000 €</span><span class="mk-num">1 août</span></div>
-<span class="mk-lab">Contact établi <b>3</b></span>
-<div class="mk-row"><span class="mk-dot amber"></span><span><b>Dubois Transport</b><em>Tâche oubliée depuis 7 jours</em></span><span>M. Dubois</span><span class="mk-num">9 500 €</span><span class="mk-num">20 août</span></div>
-<div class="mk-row"><span class="mk-dot blue"></span><span><b>Blanc Architecture</b><em>Devis sans réponse</em></span><span>N. Blanc</span><span class="mk-num">11 000 €</span><span class="mk-num">25 août</span></div></div>
-            
-            <div id="deals-oublies" class="forgotten-deals tour-bene">
-      <div class="split">
-        <div class="split-text"><div class="section-head">
-                <span class="eyebrow">Vos opportunités</span>
-          <h2>Un deal ne devrait jamais s'éteindre <span class="fade-word">en silence.</span></h2>
-        <p>Closia surveille les signaux de votre pipeline et vous alerte quand l'absence de suivi devient un risque.</p>
-      </div></div>
-        
-      </div>
-            </div>
-<ul class="tour-gains"><li>Dernière et prochaine activité sur chaque ligne</li><li>Liste ou tableau, toutes les étapes à l'écran</li><li>Un dossier sans prochaine étape est signalé</li></ul>
-          </div>
-          <div class="tour-panel" id="tour-planning" role="tabpanel" data-panel="planning">
-            
-            
-            <div id="agenda" class="agenda-week tour-bene">
-      <div class="section-head">
-        <span class="eyebrow">Votre semaine</span>
-        <h2>Vos rendez-vous sont fixés.<br /><span class="fade-word">Closia range le reste autour.</span></h2>
-        <p>Les tâches se placent dans une voie à gauche, vos rendez-vous d'agenda à droite. Ce que vous n'avez pas fait ne disparaît pas : c'est replacé.</p>
-      </div>
-
-      <div class="week-window">
-        <div class="mock-bar"><span></span><span></span><span></span></div>
-        <div class="week-grid" role="img" aria-label="Vue Semaine de l'agenda Closia : tâches par type à gauche de chaque jour, rendez-vous à droite">
-          <div class="week-hours">
-            <span>09:00</span><span>11:00</span><span>13:00</span><span>15:00</span><span>17:00</span>
-          </div>
-
-          <div class="week-day">
-            <span class="week-dayname">Lun <b>1</b></span>
-            <div class="week-slots">
-              <span class="wk t mail" style="top:2%">Relancer Lambert</span>
-              <span class="wk t call redo" style="top:16%"><i>↻</i>Rappeler Bonneau</span>
-              <span class="wk e pin" style="top:50%">Chantier Benali</span>
-            </div>          </div>
-
-          <div class="week-day">
-            <span class="week-dayname">Mar <b>2</b></span>
-            <div class="week-slots">
-              <span class="wk t call" style="top:8%">Appeler Moreau</span>
-              <span class="wk e video" style="top:24%">Démo Dubois</span>
-              <span class="wk t mail redo" style="top:62%"><i>↻</i>Relancer Faure</span>
-            </div>
-          </div>
-
-          <div class="week-day">
-            <span class="week-dayname">Mer <b>3</b></span>
-            <div class="week-slots">
-              <span class="wk t mail" style="top:2%">Devis Blanc</span>
-              <span class="wk e pin" style="top:34%">RDV Lefevre</span>
-              <span class="wk t call" style="top:70%">Appeler Dupont</span>
-            </div>
-          </div>
-
-          <div class="week-day">
-            <span class="week-dayname">Jeu <b>4</b></span>
-            <div class="week-slots">
-              <span class="wk t video" style="top:12%">Préparer Girard</span>
-              <span class="wk e video" style="top:30%">Visio Girard</span>
-              <span class="wk t mail redo" style="top:66%"><i>↻</i>Relancer Fontaine</span>
-            </div>
-          </div>
-
-          <div class="week-day">
-            <span class="week-dayname">Ven <b>5</b></span>
-            <div class="week-slots">
-              <span class="wk t call" style="top:6%">Rappeler Mercier</span>
-              <span class="wk e pin" style="top:44%">Point Rocher</span>
-            </div>
-          </div>
+        <div class="mg-focus">
+          <span class="mg-lab">Où intervenir&nbsp;?</span>
+          <b>Martin Industrie — 24&nbsp;000&nbsp;€</b>
+          <em>21 jours sans activité. Proposition envoyée. Aucune prochaine étape.</em>
+          <span class="mg-reco">Intervention suggérée&nbsp;: demander à Thomas de reprendre contact aujourd'hui.</span>
         </div>
-
-        <div class="week-legend">
-          <span><i class="wk-key call"></i>Appels</span>
-          <span><i class="wk-key mail"></i>Relances</span>
-          <span><i class="wk-key video"></i>Visio</span>
-          <span><i class="wk-key pin"></i>RDV physique</span>
-          <span class="wk-redo"><i>↻</i>Tâches oubliées, replacées automatiquement</span>
-              <p class="demo-note">Exemple de démonstration. Les entreprises sont fictives.</p>
-
       </div>
-      </div>
-            </div>
-<ul class="tour-gains"><li>Vos rendez-vous Google repris automatiquement</li><li>Chaque tâche à son heure, colorée par type</li><li>Closia peut organiser votre journée</li></ul>
-
-          </div>
-          <div class="tour-panel" id="tour-assistant" role="tabpanel" data-panel="assistant">
-            <div class="mk mk-assistant"><div class="mk-scan"><b>Closia a analysé aujourd'hui</b> <span><b>18</b> opportunités</span> <span><b>26</b> activités</span> <span class="alert"><b>4</b> à traiter</span></div>
-<div class="mk-cards">
-  <div class="mk-card"><span class="k-risk">Opportunité à risque</span><b>TechNova Solutions</b><span class="mk-num">24 000 €</span><em>Aucun contact depuis 21 jours — le risque grandit avec le silence.</em><span class="mk-reco">Relancer aujourd'hui</span></div>
-  <div class="mk-card"><span class="k-mail">Relance à préparer</span><b>Cherif Informatique</b><span class="mk-num">7 800 €</span><em>Proposition sans retour depuis un mois.</em><span class="mk-reco">Envoyer une relance courte</span></div>
-  <div class="mk-card"><span class="k-rdv">Rendez-vous à préparer</span><b>Cabinet Lefevre</b><span class="mk-num">3 500 €</span><em>Arriver avec l'historique et les objections probables.</em><span class="mk-reco">Préparer le rendez-vous</span></div>
-</div></div>
-            
-            <div id="parcours" class="journey tour-bene">
-      <div class="section-head">
-        <span class="eyebrow">Le parcours</span>
-        <h2>De la détection <span class="fade-word">à l'action.</span></h2>
-      </div><ol class="journey-steps">
-        <li class="journey-step">
-          <span class="journey-num">01</span>
-          <h3>Détecter</h3>
-          <p>Closia repère les deals sans suivi, les tâches en retard et les opportunités qui refroidissent.</p>
-        </li>
-        <li class="journey-step">
-          <span class="journey-num">02</span>
-          <h3>Comprendre</h3>
-          <p>Il lit vos emails, votre agenda et votre historique, et explique pourquoi le dossier mérite votre attention.</p>
-        </li>
-        <li class="journey-step">
-          <span class="journey-num">03</span>
-          <h3>Préparer</h3>
-          <p>Il prépare l'appel, la relance ou le rendez-vous à partir du contexte réel — jamais d'une page blanche.</p>
-        </li>
-        <li class="journey-step">
-          <span class="journey-num">04</span>
-          <h3>Agir</h3>
-          <p>Vous appelez, vous envoyez depuis votre propre boîte, le deal avance.</p>
-        </li>
-      </ol>
-            </div>
-<ul class="tour-gains"><li>Une relance écrite depuis le vrai fil d'emails</li><li>Une prise de note transformée en tâches datées</li><li>Un script d'appel préparé depuis le dossier</li></ul>
-          </div>
-          <div class="tour-panel" id="tour-activities" role="tabpanel" data-panel="activities">
-            <div class="mk mk-activities"><div class="mk-kpis">
+      <div class="mk mk-activities"><div class="mk-kpis">
   <div><b>113 700 €</b><em>Pipeline ouvert</em></div>
   <div><b>7</b><em>Deals gagnés</em></div>
   <div><b>48 200 €</b><em>CA généré</em></div>
@@ -336,39 +270,23 @@
 <div class="mk-alert red"><b>5 opportunités sans prochaine action</b><em>Risque de perdre le suivi</em><span class="mk-act">Voir</span></div>
 <div class="mk-alert amber"><b>18 deals à risque</b><em>Aucun échange depuis plus de sept jours</em><span class="mk-act">Voir</span></div>
 <span class="mk-note">Chaque chiffre s'ouvre sur la liste qui le compose.</span></div>
-            
-            
-<div class="tour-bene">
-        <div class="section-head">
-          <span class="eyebrow">Vos chiffres</span>
-          <h2>Un chiffre qui ne s'ouvre pas <span class="fade-word">ne sert à rien.</span></h2>
-          <p>Chaque indicateur se déplie sur la liste des dossiers qui le composent — et la performance se lit au choix sur votre travail ou sur celui de l'équipe.</p>
-        </div>
-            </div>
-<ul class="tour-gains"><li>Chaque indicateur s'ouvre sur sa liste</li><li>Ce qui mérite votre attention remonte en tête</li><li>Réactivité, conversion, pipeline par étape</li></ul>
-          </div>
-          <div class="tour-panel" id="tour-equipe" role="tabpanel" data-panel="equipe">
-            <div class="mk mk-equipe"><span class="mk-lab">Membres <b>3</b></span>
+    </section>
+
+    <!-- RÔLES -->
+    <section id="roles" class="roles reveal">
+      <div class="roles-grid">
+        <div class="role"><b>Pour les commerciaux</b><em>Savoir quelles opportunités traiter en priorité.</em></div>
+        <div class="role"><b>Pour les Customer Success</b><em>Savoir quels clients demandent votre attention.</em></div>
+        <div class="role"><b>Pour les managers</b><em>Savoir où intervenir.</em></div>
+      </div>
+      <div class="mk mk-equipe"><span class="mk-lab">Membres <b>3</b></span>
 <div class="mk-mem"><b>Catherine Croizier</b><em>catherine@menuiserie-dupont.fr</em><span class="mk-role admin">Admin</span></div>
 <div class="mk-mem"><b>Thomas Berger</b><em>thomas@menuiserie-dupont.fr</em><span class="mk-role">Commercial</span></div>
 <div class="mk-mem"><b>Sophie Leroy</b><em>sophie@menuiserie-dupont.fr</em><span class="mk-role">Customer Success</span></div>
 <div class="mk-rule"><b>Aucun prospect sans prochaine action</b><em>S'applique à toute l'équipe · activé par l'admin</em><span class="mk-switch on"></span></div></div>
-            
-            <div id="equipe-bene" class="tour-bene">
-        <div class="section-head">
-          <span class="eyebrow">À plusieurs</span>
-          <h2>Chacun sa vue, <span class="fade-word">l'équipe au complet.</span></h2>
-          <p>L'administrateur décide de ce que chaque commercial voit du travail des autres, et attribue les dossiers nommément.</p>
-        </div>
-            </div>
-<ul class="tour-gains"><li>Rôles admin, commercial et customer success</li><li>Un commercial et un CSM responsables par dossier</li><li>La règle « aucun prospect sans action », activable</li></ul>
-          </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-      <section id="fonctions" class="essentials reveal">
+    <section id="fonctions" class="essentials reveal">
       <div class="section-head">
         <span class="eyebrow">Écosystème</span>
         <h2>Il se branche sur ce que <span class="fade-word">vous utilisez déjà.</span></h2>
@@ -419,7 +337,24 @@
 
 
         <!-- 8. Intégrations et contexte -->
-<section id="pricing" class="pricing reveal">
+<section id="import" class="import reveal">
+      <div class="section-head">
+        <h2>Passez de votre CRM à Closia <span class="fade-word">simplement.</span></h2>
+        <p>Vous utilisez déjà HubSpot, Salesforce ou Pipedrive&nbsp;? Exportez votre portefeuille, Closia reconnaît les colonnes, détecte les doublons et commence à analyser.</p>
+      </div>
+      <div class="imp-steps">
+        <div class="imp-step"><b>Exportez</b><em>Un fichier depuis votre CRM actuel.</em></div>
+        <div class="imp-arrow" aria-hidden="true">→</div>
+        <div class="imp-step"><b>Importez</b><em>Closia reconnaît les colonnes.</em></div>
+        <div class="imp-arrow" aria-hidden="true">→</div>
+        <div class="imp-step"><b>Analysez</b><em>Les signaux sont calculés dès le premier jour.</em></div>
+        <div class="imp-arrow" aria-hidden="true">→</div>
+        <div class="imp-step"><b>Agissez</b><em>Vos priorités du jour apparaissent.</em></div>
+      </div>
+      <p class="imp-note">C'est une reprise de données, effectuée une fois — pas une synchronisation permanente avec votre ancien CRM. Nous préférons le dire clairement.</p>
+    </section>
+
+    <section id="pricing" class="pricing reveal">
       <div class="section-head">
         <span class="eyebrow">Formules</span>
         <h2>Closia s'adapte <span class="fade-word">à votre façon de vendre.</span></h2>
@@ -449,7 +384,7 @@
             <span class="price-pending">Tarif communiqué à l'ouverture</span>
           </div>
           <div class="price-seats">De 2 à 5 utilisateurs</div>
-          <p class="price-claim">À plusieurs, la visibilité devient essentielle.</p>
+          <p class="price-claim">Une vision commune de votre portefeuille commercial.</p>
           <p class="price-body">Donnez à toute l'équipe une vision claire des opportunités, des priorités et des actions à mener.</p>
           <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary btn-block">Demander une démo</a>
           <span class="price-note">Ouverture des inscriptions prochainement</span>
@@ -462,7 +397,7 @@
             <span class="price-pending">Tarif communiqué à l'ouverture</span>
           </div>
           <div class="price-seats">Jusqu'à 10 utilisateurs · pour les équipes qui se pilotent</div>
-          <p class="price-claim">Quand le portefeuille grandit, la vision commerciale devient stratégique.</p>
+          <p class="price-claim">Pilotez votre portefeuille et votre équipe avec une vision claire des priorités.</p>
           <p class="price-body">Pilotez votre activité commerciale avec une vision claire des opportunités, des risques et des priorités.</p>
           <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-ghost btn-block">Demander une démo</a>
           <span class="price-note">Ouverture des inscriptions prochainement</span>
@@ -470,7 +405,7 @@
 
       </div>
 
-      <p class="price-footnote">Les tarifs seront publiés à l'ouverture des inscriptions. Demandez une démo pour en être informé en premier.</p>
+      <p class="price-footnote">Les tarifs seront publiés à l'ouverture des inscriptions, et seront mensuels — il n'y a pas d'offre annuelle. Résiliable à tout moment, sans préavis.</p>
     </section>
 
     <section id="faq" class="faq reveal">
@@ -483,10 +418,7 @@
           <summary>En quoi Closia est différent d'HubSpot ou Pipedrive ?</summary>
           <p>HubSpot et Pipedrive structurent vos données. Closia s'en sert pour vous dire quoi faire aujourd'hui, et pourquoi.</p>
         </details>
-        <details class="faq-item">
-          <summary>Puis-je résilier à tout moment ?</summary>
-          <p>Oui, sans engagement ni préavis — il suffit de nous écrire.</p>
-        </details>
+        
         <details class="faq-item">
           <summary>Mes données sont-elles sécurisées ?</summary>
           <p>Chaque compte n'accède qu'aux siennes, par des règles appliquées au niveau de la base, avec hébergement européen.</p>
@@ -495,14 +427,12 @@
           <summary>Puis-je importer mes prospects depuis mon CRM actuel ?</summary>
           <p>Oui, vous-même : exportez un fichier depuis HubSpot, Salesforce ou Pipedrive, Closia reconnaît les colonnes et détecte les doublons. C'est une reprise de vos données, pas une synchronisation — Closia remplace votre CRM.</p>
         </details>
-        <details class="faq-item">
-          <summary>Quelle IA utilise Closia ?</summary>
-          <p>Claude, d'Anthropic, appelé uniquement depuis nos serveurs.</p>
-        </details>
+        
         <details class="faq-item">
           <summary>Comment Closia détermine-t-il les priorités ?</summary>
           <p>Il croise le montant, l'étape, le temps écoulé depuis le dernier échange, les tâches en retard et le contenu de vos emails — et affiche toujours les signaux retenus.</p>
-        </details>
+        <p style="margin-top:10px;">Claude, d'Anthropic, appelé uniquement depuis nos serveurs.</p>
+      </details>
       </div>
     </section>
 
@@ -513,7 +443,7 @@
           <h2>Voyez ce que Closia ferait <span class="fade-word">avec votre pipeline.</span></h2>
           <p class="contact-sub">On importe quelques prospects, on connecte votre agenda, et on vous montre exactement quelles actions Closia proposerait pour faire avancer vos deals — en moins de 15 minutes.</p>
 
-          <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:28px; display:inline-block;">Réserver une démo de 15 min</a>
+          <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:28px; display:inline-block;">Demander une démo</a>
         </div>
         <form id="lead-form" class="lead-form">
           <div class="lead-form-head">
@@ -599,9 +529,9 @@
 
       <div class="footer-col">
         <span class="footer-col-title">Closia</span>
-        <a href="#produit">Comment ça marche</a>
+        <a href="#demo">Comment ça marche</a>
         <a href="#pricing">Formules</a>
-        <a href="#produit">Intégrations</a>
+        <a href="#fonctions">Intégrations</a>
         <a href="#faq">FAQ</a>
         <a href="blog/">Blog</a>
       </div>
