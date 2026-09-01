@@ -166,19 +166,11 @@ main#top {
 .hero-v2-top { position: relative; z-index: 1; max-width: 700px; }
 
 .hero-v2-title {
-  font-size: 52px;
+  font-size: clamp(26px, 3.6vw, 42px);
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 1.05;
   margin: 18px 0 0;
-}
-
-/* La première ligne est le repoussoir : elle décrit ce que fait n'importe quel
-   CRM. L'affaiblir visuellement fait porter la promesse par la seconde — le
-   contraste est le message. */
-.hero-foil {
-  color: var(--text-faint);
-  font-weight: 700;
 }
 
 .fade-word {
@@ -194,7 +186,6 @@ main#top {
 
 @media (max-width: 860px) {
   .hero-v2 { padding: 72px 20px 0; }
-  .hero-v2-title { font-size: 30px; }
 }
 
 .hero-sub {
