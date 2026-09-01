@@ -3901,7 +3901,7 @@ main#top {
 
 /* — Import : quatre gestes, une flèche entre chacun. La honnêteté sur la
      nature de l'opération vaut mieux qu'une promesse de synchronisation. — */
-.import { max-width: 1080px; margin: 0 auto; padding: 76px 28px; }
+.import-crm { max-width: 1080px; margin: 0 auto; padding: 76px 28px; }
 
 .imp-steps {
   display: flex;
@@ -3939,7 +3939,7 @@ main#top {
 }
 
 @media (max-width: 860px) {
-  .import { padding: 52px 20px; }
+  .import-crm { padding: 52px 20px; }
   .imp-arrow { display: none; }
   .imp-step { flex-basis: 100%; }
 }
