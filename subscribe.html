@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Confirmer mon abonnement — Closia</title>
+  <title>Inscriptions bientôt ouvertes — Closia</title>
   <meta name="robots" content="noindex" />
   <link rel="icon" href="logo-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -113,147 +113,18 @@
   </header>
 
   <main class="sub-main">
-    <a href="index.html#pricing" class="back">← Retour aux tarifs</a>
+    <a href="index.html" class="back">← Retour à l'accueil</a>
 
     <div class="sub-head">
-      <h1>Confirmer votre abonnement</h1>
-      <p>Choisissez votre formule et vos coordonnées de facturation — nous préparons votre espace et revenons vers vous sous 24h avec votre accès et votre facture.</p>
+      <h1>Les inscriptions ne sont pas encore ouvertes</h1>
+      <p>Closia termine sa mise en place. Les formules et leurs tarifs seront publiés à l'ouverture
+         des inscriptions.</p>
+      <p>D'ici là, le plus simple est de voir le produit en fonctionnement : nous prenons une demi-heure
+         ensemble, et vous serez prévenu en premier de l'ouverture.</p>
+      <p style="margin-top:26px;">
+        <a href="https://calendar.app.google/dCuVr6ieb45SDheB7" target="_blank" rel="noopener" class="btn btn-primary">Demander une démo</a>
+      </p>
     </div>
-
-    <form id="subscribe-form">
-      <div class="sub-section">
-        <div class="sub-label">Formule</div>
-        <div class="plan-grid" id="plan-grid">
-          <button type="button" class="plan-card" data-plan="solo" data-price="12" data-standard-price="19" data-seats-included="1" data-overage="0">
-            <div class="plan-name">Solo</div>
-            <div class="plan-sub">1 utilisateur</div>
-            <div class="plan-price">19€<span>/mois</span></div>
-            <div class="plan-launch-note">Offre de lancement : 12€/mois les 3 premiers mois</div>
-            <ul class="plan-features">
-              <li>1 utilisateur</li>
-              <li>Opportunités, agenda et relances au même endroit</li>
-              <li>Assistant IA — 300 générations par mois</li>
-              <li>Agenda Google et Gmail synchronisés</li>
-              <li>Devis et signature en ligne</li>
-              <li>Import depuis HubSpot, Salesforce, Pipedrive ou un fichier</li>
-              <li>Export de vos données</li>
-            </ul>
-          </button>
-          <button type="button" class="plan-card" data-plan="equipe" data-price="49" data-standard-price="69" data-seats-included="5" data-overage="0">
-            <div class="plan-name">Équipe</div>
-            <div class="plan-sub">De 2 à 5 utilisateurs</div>
-            <div class="plan-price">69€<span>/mois</span></div>
-            <div class="plan-launch-note">Offre de lancement : 49€/mois les 3 premiers mois</div>
-            <ul class="plan-features">
-              <li>Tout ce que contient Solo, pour chaque utilisateur</li>
-              <li>Jusqu'à 5 utilisateurs</li>
-              <li>Rôles admin, commercial et customer success</li>
-              <li>Un commercial et un CSM responsables par dossier</li>
-              <li>Règle « aucun prospect sans prochaine action »</li>
-              <li>Performance personnelle et performance d'équipe</li>
-              <li>Slack et Notion</li>
-              <li>Assistant IA — 500 générations par mois et par utilisateur</li>
-            </ul>
-          </button>
-          <button type="button" class="plan-card" data-plan="business" data-price="99" data-standard-price="129" data-seats-included="10" data-overage="15">
-            <div class="plan-name">Business</div>
-            <div class="plan-sub">Jusqu'à 10 utilisateurs · pour les équipes qui se pilotent</div>
-            <div class="plan-price">129€<span>/mois</span></div>
-            <div class="plan-launch-note">Offre de lancement : 99€/mois les 3 premiers mois</div>
-            <ul class="plan-features">
-              <li>Tout ce que contient Équipe</li>
-              <li>Jusqu'à 10 utilisateurs, puis 15€ par utilisateur</li>
-              <li>Objectifs fixés par l'admin, et leur atteinte</li>
-              <li>Classement nominatif par commercial</li>
-              <li>Point hebdomadaire envoyé au manager</li>
-              <li>Journal d'activité de l'équipe</li>
-              <li>Assistant IA — 600 générations par mois et par utilisateur</li>
-            </ul>
-          </button>
-        </div>
-        <p class="plan-ai-note">Le quota IA se réinitialise chaque mois glissant et est individuel (par utilisateur).</p>
-      </div>
-
-      <div class="sub-section seats-field" id="seats-field">
-        <div class="field">
-          <label for="seats">Combien de personnes ont besoin de l'outil ?</label>
-          <input type="number" id="seats" name="seats" min="1" value="1" />
-          <span class="hint" id="seats-hint"></span>
-        </div>
-      </div>
-
-      <div class="sub-section">
-        <div class="sub-label">Entreprise</div>
-        <div class="field">
-          <label for="company_name">Nom de l'entreprise *</label>
-          <input type="text" id="company_name" name="company_name" required placeholder="ex : Girard Coiffure SAS" />
-        </div>
-        <div class="field">
-          <label for="billing_siret_or_vat">SIRET (France) ou n° de TVA intracommunautaire (UE)</label>
-          <input type="text" id="billing_siret_or_vat" name="billing_siret_or_vat" placeholder="ex : 123 456 789 00012" />
-        </div>
-        <div class="field">
-          <label for="billing_address">Adresse de facturation *</label>
-          <input type="text" id="billing_address" name="billing_address" required placeholder="Numéro et rue" />
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="billing_postal_code">Code postal *</label>
-            <input type="text" id="billing_postal_code" name="billing_postal_code" required />
-          </div>
-          <div class="field">
-            <label for="billing_city">Ville *</label>
-            <input type="text" id="billing_city" name="billing_city" required />
-          </div>
-        </div>
-        <div class="field">
-          <label for="billing_country">Pays *</label>
-          <input type="text" id="billing_country" name="billing_country" required value="France" />
-        </div>
-      </div>
-
-      <div class="sub-section">
-        <div class="sub-label">Contact facturation</div>
-        <div class="field-row">
-          <div class="field">
-            <label for="contact_name">Nom du contact *</label>
-            <input type="text" id="contact_name" name="contact_name" required placeholder="Votre nom" />
-          </div>
-          <div class="field">
-            <label for="contact_email">Email de facturation *</label>
-            <input type="email" id="contact_email" name="contact_email" required placeholder="facturation@entreprise.com" />
-          </div>
-        </div>
-        <div class="field">
-          <label for="contact_phone">Téléphone <span class="hint">(facultatif)</span></label>
-          <input type="tel" id="contact_phone" name="contact_phone" placeholder="06 12 34 56 78" />
-        </div>
-        <div class="field">
-          <label for="payment_method">Mode de paiement souhaité *</label>
-          <select id="payment_method" name="payment_method" required>
-            <option value="">Choisir...</option>
-            <option value="virement">Virement bancaire</option>
-            <option value="carte">Carte bancaire</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="message">Message <span class="hint">(facultatif)</span></label>
-          <input type="text" id="message" name="message" placeholder="Une précision à nous donner ?" />
-        </div>
-      </div>
-
-      <div class="summary">
-        <div class="summary-row"><span>Formule</span><span id="summary-plan">Solo</span></div>
-        <div class="summary-row"><span>Utilisateurs</span><span id="summary-seats">1 (inclus)</span></div>
-        <div class="summary-row summary-total"><span>Total estimé</span><span id="summary-total">9€ / mois</span></div>
-        <div class="summary-note">Ce montant est une estimation. Aucun paiement n'est prélevé maintenant — nous vous envoyons une facture selon le mode de paiement choisi une fois votre espace créé.</div>
-      </div>
-
-      <div style="max-width: 620px;">
-        <button type="submit" class="btn btn-primary btn-block">Confirmer mon abonnement</button>
-        <p id="sub-status" role="status"></p>
-      </div>
-    </form>
   </main>
 
   <footer class="footer">
@@ -272,7 +143,6 @@
     </div>
   </footer>
 
-  <script src="subscribe.js"></script>
   <script src="/assistant-widget.js" defer></script>
 </body>
 </html>
