@@ -100,3 +100,14 @@ if (revealEls.length) {
   }
   grid.appendChild(fragment);
 })();
+
+// Hauteur de l'en-tête collant, publiée en variable CSS : le hero s'en sert
+// pour occuper exactement le premier écran, sans déborder ni laisser une bande.
+(function hauteurEnTete() {
+  const enTete = document.querySelector(".nav");
+  if (!enTete) return;
+  const mesurer = () =>
+    document.documentElement.style.setProperty("--nav-h", `${enTete.offsetHeight}px`);
+  mesurer();
+  window.addEventListener("resize", mesurer);
+})();

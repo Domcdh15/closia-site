@@ -153,14 +153,19 @@ main#top {
   position: relative;
   max-width: 1300px;
   margin: 0 auto;
-  /* Sans maquette en dessous, le hero se referme sur son texte : la
-     visite du produit prend le relais juste après. */
-  padding: 96px 24px 72px;
+  padding: 24px 24px 72px;
   overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  /* Le hero occupe le premier écran à lui seul : laisser apparaître le début
+     de la section suivante coupe la promesse en deux avant qu'elle ait porté.
+     svh plutôt que vh — sur mobile, vh compte la barre d'adresse qui se
+     rétracte, et la section déborde toujours d'une centaine de pixels. */
+  min-height: calc(100vh - var(--nav-h, 64px));
+  min-height: calc(100svh - var(--nav-h, 64px));
 }
 
 .hero-v2-top { position: relative; z-index: 1; max-width: 860px; }
