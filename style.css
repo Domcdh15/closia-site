@@ -1238,11 +1238,6 @@ main#top {
   font-weight: 700;
 }
 
-.faq {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 68px 24px;
-}
 
 .faq-list {
   display: flex;
@@ -3515,7 +3510,7 @@ main#top {
    Une seule règle guide ces sections : le regard doit toujours savoir où aller.
    D'où peu de couleurs, un seul accent, et des chiffres qui portent la lecture. */
 
-.probleme, .demo, .pourquoi, .parcours, .benefice, .manager, .roles {
+.demo, .parcours, .pour-qui {
   max-width: 1080px;
   margin: 0 auto;
   padding: 54px 28px;
@@ -3825,7 +3820,7 @@ main#top {
 .role em { font-style: normal; font-size: 13.5px; color: var(--text-dim); line-height: 1.5; }
 
 @media (max-width: 860px) {
-  .probleme, .demo, .pourquoi, .parcours, .benefice, .manager, .roles { padding: 40px 20px; }
+  .demo, .parcours, .pour-qui { padding: 40px 20px; }
   .pb-grid { grid-template-columns: 1fr 1fr; }
   .pb-stat b { font-size: 32px; }
   .pb-punch { font-size: 22px; }
@@ -3845,7 +3840,6 @@ main#top {
 
 /* — Import : quatre gestes, une flèche entre chacun. La honnêteté sur la
      nature de l'opération vaut mieux qu'une promesse de synchronisation. — */
-.import-crm { max-width: 1080px; margin: 0 auto; padding: 54px 28px; }
 
 .imp-steps {
   display: flex;
