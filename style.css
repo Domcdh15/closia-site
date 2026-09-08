@@ -624,7 +624,7 @@ main#top {
   padding: 68px 24px;
 }
 
-/* Dispersion → Closia */
+/* Dispersion → Clos-ia */
 .dispersion { max-width: 1100px; margin: 0 auto; padding: 68px 24px; }
 
 .dispersion-visual {
@@ -1534,12 +1534,12 @@ main#top {
 }
 
 /* ============================================================
-   REFONTE NARRATIVE — CRM vs Closia, 40→4, Pourquoi, Préparer, IA
+   REFONTE NARRATIVE — CRM vs Clos-ia, 40→4, Pourquoi, Préparer, IA
    Réutilise les tokens existants : aucune nouvelle couleur.
    ============================================================ */
 
 
-/* --- 3. CRM classique vs Closia --- */
+/* --- 3. CRM classique vs Clos-ia --- */
 .contrast-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2480,7 +2480,7 @@ main#top {
 
 
 /* ============================================================
-   AGENDA SEMAINE — reprend la vue Semaine de Closia
+   AGENDA SEMAINE — reprend la vue Semaine de Clos-ia
    Les couleurs encodent le TYPE de tâche, comme dans le produit :
    appels ambre, relances bleu, visio violet, RDV physique vert.
    Les tâches occupent une voie à gauche, les rendez-vous d'agenda
@@ -2589,7 +2589,7 @@ main#top {
 .wk.video { background: #f1e9fe;                  color: #6027c7; border-left: 2.5px solid #7c3aed; }
 .wk.pin   { background: #eaf1ec;                  color: #3c5c49; border-left: 2.5px solid #527a61; }
 
-/* Le ↻ marque une tâche oubliée que Closia a replacée. */
+/* Le ↻ marque une tâche oubliée que Clos-ia a replacée. */
 .wk.redo i { font-style: normal; margin-right: 3px; opacity: 0.75; }
 
 .week-legend {
@@ -2630,7 +2630,7 @@ main#top {
 
 
 /* ============================================================
-   ASSISTANT IA — reprend l'écran réel de Closia
+   ASSISTANT IA — reprend l'écran réel de Clos-ia
    Bandeau, ligne d'analyse du jour, et trois dossiers avec le
    raisonnement qui les justifie.
    ============================================================ */
@@ -3150,7 +3150,7 @@ main#top {
 
 /* ============================================================
    ARAIGNÉE DES INTÉGRATIONS
-   Closia au centre, les outils autour, reliés par un trait dont
+   Clos-ia au centre, les outils autour, reliés par un trait dont
    le style dit la disponibilité : plein pour ce qui marche,
    pointillé pour ce qui est à l'étude.
    ============================================================ */
@@ -3209,7 +3209,7 @@ main#top {
 /* ============================================================
    SIMULATION DU PRODUIT
    Une fenêtre d'application : barre latérale collée à gauche
-   comme dans Closia, et l'écran correspondant à droite.
+   comme dans Clos-ia, et l'écran correspondant à droite.
    ============================================================ */
 
 
