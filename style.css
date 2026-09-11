@@ -1306,7 +1306,11 @@ main#top {
   padding: 96px 24px 120px;
 }
 
+/* La FAQ et le bloc de démonstration sont deux enfants voisins de la même
+   section, sans rien entre eux : la dernière question touchait le bloc bleu,
+   bord à bord, comme si les deux n'en faisaient qu'un. */
 .contact-inner {
+  margin-top: 64px;
   background: var(--gradient-flow);
   border-radius: var(--radius-xl);
   padding: 48px;
@@ -1381,7 +1385,7 @@ main#top {
   .feature-grid { grid-template-columns: 1fr 1fr; }
   .feature-lead { grid-column: span 2; }
   .steps { grid-template-columns: 1fr; }
-  .contact-inner { grid-template-columns: 1fr; padding: 28px; }
+  .contact-inner { grid-template-columns: 1fr; padding: 28px; margin-top: 40px; }
   .nav-links { display: none; }
 }
 
