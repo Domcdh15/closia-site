@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page introuvable — Clos-ia</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    /* Les chemins sont absolus : une page d'erreur est servie depuis n'importe
+       quelle adresse, y compris /blog/quelque-chose-qui-n-existe-pas, où des
+       chemins relatifs iraient chercher la feuille de style au mauvais endroit. */
+    .oops { max-width: 620px; margin: 0 auto; padding: 88px 24px 120px; text-align: center; }
+    .oops .code { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin: 0 0 12px; }
+    .oops h1 { font-size: clamp(26px, 5vw, 34px); margin: 0 0 14px; letter-spacing: -0.02em; }
+    .oops p { font-size: 15px; color: var(--text-dim); line-height: 1.7; margin: 0 auto 32px; max-width: 460px; }
+    .oops .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .oops .pistes { margin-top: 56px; padding-top: 28px; border-top: 0.5px solid var(--hairline); }
+    .oops .pistes-titre { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 14px; }
+    .oops .pistes-liens { display: flex; gap: 10px 26px; justify-content: center; flex-wrap: wrap; }
+    .oops .pistes-liens a { font-size: 14px; color: var(--text-dim); }
+    .oops .pistes-liens a:hover { color: var(--blue); }
+    @media (max-width: 560px) {
+      .oops { padding: 56px 20px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="brand">
+        <img src="/logo-icon.png" width="34" height="34" alt="Clos-ia" style="object-fit:contain;" />
+        <span class="brand-text">Clos-ia</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="oops">
+    <p class="code">Erreur 404</p>
+    <h1>Cette page n'existe pas.</h1>
+    <p>
+      Le lien est peut-être erroné, ou la page a changé d'adresse depuis.
+      Rien n'est cassé de votre côté.
+    </p>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+      <a href="https://app.clos-ia.fr" class="btn btn-ghost">Accéder à mon compte</a>
+    </div>
+
+    <div class="pistes">
+      <div class="pistes-titre">Vous cherchiez peut-être</div>
+      <div class="pistes-liens">
+        <a href="/#demo">Comment ça marche</a>
+        <a href="/#fonctions">Intégrations</a>
+        <a href="/#pricing">Formules</a>
+        <a href="/#faq">Questions fréquentes</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contact">Demander une démo</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
