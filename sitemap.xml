@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Seules les pages indexables y figurent. Les pages légales et
+     subscribe.html portent une balise noindex tant qu'elles sont
+     incomplètes : les déclarer ici reviendrait à demander leur
+     indexation tout en l'interdisant, ce que Google signale comme une
+     contradiction. À rouvrir le jour de l'immatriculation. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.clos-ia.fr/</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.clos-ia.fr/blog/</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.clos-ia.fr/blog/alternative-hubspot-petites-equipes.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.clos-ia.fr/blog/prioriser-relances-commerciales-ia.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
